@@ -1,0 +1,277 @@
+ <?php
+             foreach($user as $row): 
+            ?>             
+            <tr>
+
+             
+
+              <td><?php echo $row->comp_name; ?></td>
+              
+              <!-- <td><?php echo $row->btype_name?></td> -->
+              <td style="text-align: center";>
+                                        <?php 
+                                          if($row->comp_status == 1){
+                                            ?>
+                                              <span data-toggle="tooltip" data-placement="top" title="View Company Details">
+                                              <a class="btn btn-default" id="company-view" onclick="view_company_popup('<?=$row->comp_id?>','<?=$row->comp_name?>','<?=$row->comp_telno?>','<?=$row->comp_add?>','<?=$row->btype_name?>','<?=base_url() ?>');" data-toggle="modal" data-target="#viewCompany">
+                                              <i class="fa fa-eye"></i></a></span>
+
+                                              <span data-toggle="tooltip" data-placement="top" title="Archive Company">
+                                              <a class="btn btn-default" id="user-delete" onclick="archive_company('<?=$row->comp_id?>','<?=$row->comp_name?>','<?=$row->comp_telno?>','<?=$row->comp_add?>','<?=$row->btype_name?>','<?=base_url() ?>');" data-toggle="modal" data-target="#archiveCompany"><i class="fa fa-archive"></i></a></span>
+                                                                     
+                                            <?php } ?>
+              </td>
+                      
+                                    
+            </tr>
+            <?php endforeach; ?>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<div class="modal fade" id="addCompany" role="dialog">
+    <div class="modal-dialog" >
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add New Company</h4>
+        </div>
+        <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                          <label>Company Name</label> &nbsp;&nbsp;
+                          <!-- <label class="error" id="error_name"> field is required.</label>
+                          <label class="error" id="error_name2"> industry already exists.</label> -->
+                          <input class="form-control" id="comp_name" name="comp_name" type="text" autofocus>
+                      </div> 
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                          <label>Contact Number</label> &nbsp;&nbsp;
+                          <!-- <label class="error" id="error_name"> field is required.</label>
+                          <label class="error" id="error_name2"> industry already exists.</label> -->
+                          <input class="form-control" id="comp_telno" name="comp_telno" type="text" >
+                      </div> 
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                          <label>Address</label> &nbsp;&nbsp;
+                          <!-- <label class="error" id="error_name"> field is required.</label>
+                          <label class="error" id="error_name2"> industry already exists.</label> -->
+                          <input class="form-control" id="comp_add" name="comp_add" type="text" >
+                      </div> 
+                    </div>  
+                </div>
+                <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                          <label>Nature of Business</label>&nbsp;&nbsp;
+                          <select style="margin-top: 0px; height: 50px;" name="btype_name" id="btype_id" class="form-control" >
+                               <?php 
+                                  foreach($type as $row) { ?>
+                                    <option value="<?php echo $row->btype_id ?>"><?php echo $row->btype_name ?></option>
+                                <?php
+                                  } ?>
+                          </select> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                  <div class="form-group">       
+                                   <?php 
+                            foreach($user as $row): endforeach; 
+                                ?>
+                                  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#company" onclick="add_business_popup();">+</button>
+
+                              <div id="company" class="collapse">
+                                  <table class="table table-hover" id="dataTables-user-list">
+                                    <thead>
+                                        <div class="row">
+                                          <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label>Add New - Nature of Business</label> &nbsp;&nbsp;
+                                                <!-- <label class="error" id="error_name"> field is required.</label>
+                                                <label class="error" id="error_name2"> industry already exists.</label> -->
+                                                <input class="form-control" id="nature_business" name="nature_business" type="text" >
+                                            </div> 
+                                          </div>  
+                                      </div>
+                                    </thead>
+                                    <tbody id="contact-body">  
+
+                                    </tbody>
+                                    </table>
+                              </div>
+                                <?php 
+                        ?>
+                      </div>
+                    </div>
+                </div>
+              </div>
+       <div class="modal-footer">
+                <button id="newCompanySubmit" type="button" class="btn btn-info">SUBMIT</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
+
+              </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div  id="viewCompany" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: #fff;">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel"  style="color: #fff;">VIEW COMPANY DETAILS</h4>
+                    </div>     
+                    <div class="modal-body">
+                    <!-- <a id="linkexport" class="btn btn-secondary" href='' style="margin-bottom: 10px;">Export Client Data</a> -->
+                    <input type="hidden" id="hidden-id">
+               
+                      <input type="hidden"  id="view-c-id" value="">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <div class="form-group">
+                              <label>COMPANY NAME</label> &nbsp;&nbsp;
+<!--                                <label class="error" id="edit-error_name"> field is required.</label>
+                              <label class="error" id="edit-error_name2"> name must be alphanumeric.</label> -->
+                              <input class="form-control" id="view-comp-name" placeholder="company name" name="view-comp-name"  disabled>
+                            </div> 
+                          </div> 
+                        </div><!-- col-lg-6 -->
+
+                          <div class="row">
+                          <div class="col-lg-12">
+                            <div class="form-group">
+                              <label>CONTACT NUMBER</label> &nbsp;&nbsp;
+<!--                           <label class="error" id="edit-error_email"> field is required.</label>
+                              <label class="error" id="edit-error_email2"> email has already exist.</label>
+                              <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
+                              <input class="form-control" id="view-comp-telno" placeholder="contact Number" name="view-comp-telno" disabled>
+                            </div> 
+                          </div> <!-- col-lg-6 -->
+                        </div> <!-- row -->
+
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <div class="form-group">
+                              <label>ADDRESS</label> &nbsp;&nbsp;
+<!--                           <label class="error" id="edit-error_email"> field is required.</label>
+                              <label class="error" id="edit-error_email2"> email has already exist.</label>
+                              <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
+                              <textarea class="form-control" rows="6" cols="50" id="view-comp-add" placeholder="Address" name="view-comp-add" disabled></textarea>
+                            </div> 
+                          </div> <!-- col-lg-6 -->  
+                        </div>
+
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <div class="form-group">
+                              <label>NATURE OF BUSINESS</label> &nbsp;&nbsp;
+<!--                           <label class="error" id="edit-error_email"> field is required.</label>
+                              <label class="error" id="edit-error_email2"> email has already exist.</label>
+                              <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
+                              <textarea class="form-control" rows="6" cols="50" id="view-btype-name" placeholder="Business" name="view-btype-name" disabled></textarea>
+                            </div> 
+                          </div> <!-- col-lg-6 -->  
+                        </div>
+                        </input> <!-- row -->
+                        <?php 
+                            foreach($user as $row): endforeach; 
+                                ?>
+                                  <!-- <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" onclick="view_contacts_popup();">Other Contacts</button>
+
+                              <div id="demo" class="collapse">
+                                  <table class="table table-hover" id="dataTables-user-list">
+                                    <thead>
+                                        <tr>
+                                          <th>CONTACT NO.</th>
+                                          <th>CONTACT PERSON</th>
+                                          <th>ACTIONS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="contact-body">  
+
+                                    </tbody>
+                                    </table>
+                              </div> -->
+                                <?php 
+                        ?>
+                          
+                    </div> <!-- Mode-body -->
+                  </div> <!-- Model-dialog -->
+                </div> <!-- Model-content -->
+              </div> <!-- viewClient -->
+
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+
+              <div class="modal fade" id="archiveCompany" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: #fff;">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel" style="color: #fff;">ARCHIVE CONFIRMATION</h4>
+                    </div>
+                    <div class="modal-body">
+                        <label>You are going to archive <label id="view-comp-name" style="color:blue;">.</label><br/>
+                        <label>Click <b>Yes</b> to continue.</label>
+                    </div>
+                    <div class="modal-footer">
+                        <a id="archiveYesButton" class="btn btn-info" style="color: #fff;">YES</a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>                        
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+		
+		
+		
+		
+		 <?php 
+                                  foreach($type as $row) { ?>
+                                    <option value="<?php echo $row->btype_id ?>"><?php echo $row->btype_name ?></option>
+                                <?php
+                                  } ?>

@@ -1,0 +1,109 @@
+<?php $this->load->view('include/navbar2'); ?>
+
+<title>SITA | Account Settings</title>
+
+<div class="content">
+  
+      
+      <center>
+          <!-- <h4 style="color: black"><img src="assets/img/TUPlogo.png" alt="TUP Logo" style="height:45px; width: 45px">Technological University of the Philippines - Manila</h4> -->
+          <!-- <p style="color: black; font-size: 20px"><b>SITA : SIT ASSISTANT</b></p> -->
+          <img src="assets/img/sita2.png" alt="TUP Logo" style="height:11%; width: 11%">
+      </center>
+      <hr style="background-color: #800000">
+   
+	      <div class="dashtitle">
+	      	 <center><h3 style="color: #800000"><b>ACCOUNT SETTINGS</b></h3></center>
+	      </div>
+	  
+     
+      <br>
+        <?php
+	
+       if ($display_info->num_rows() > 0)
+		   {
+				foreach ($display_info->result() as $row)
+				{ ?>
+    <div class="container">
+      	<div class="row">
+      		<div class="col-md-12">
+      			<h4><b>Personal Information</b></h4>
+      			<hr style="background-color: #800000">
+      			<div class="col-md-8">
+      				<h4>Name:	<?php echo $row->s_fname . " " . $row->s_lname . " " .  $row->s_mname;?></h4>
+      			</div>
+      			<div class="col-md-8">
+      				<h4>Cellphone No.:	<?php echo $row->s_cellphone; ?></h4>
+      			</div>
+      			
+      			<a href="personalinfo" class="btn btn-maroon btn-md pull-right" role="button"><span class="glyphicon glyphicon-edit" style="padding-right: 4px"></span>Edit Personal Information</a>
+      		</div>
+      	</div>
+		
+		<?php
+				}
+				
+		   } ?>
+      	
+      	<div class="row">
+      		<div class="col-md-12">
+      			<h4><b>Academic Information</b></h4>
+      			<hr style="background-color: #800000">
+      			<div class="col-md-8">
+      				<h4>Student No.:	15-037-001</h4>
+      			</div>
+      			<div class="col-md-8">
+      				<h4>College:	College of Science (COS)</h4>
+      			</div>
+      			<div class="col-md-8">
+      				<h4>Course:		Bachelor of Science in Information Technology</h4>
+      			</div>
+      			<div class="col-md-8">
+      				<h4>Year:	4th Year</h4>
+      			</div>
+      			<div class="col-md-8" style="padding-bottom: 15px">
+      				<h4>Section: B</h4>
+      			</div>
+      			
+      		</div>
+      	</div>
+      	
+      	<div class="row">
+      		<div class="col-md-12">
+      			<h4><b>Account Details</b></h4>
+      			<hr style="background-color: #800000">
+      			<div class="col-md-8">
+      				<h4>E-mail Address:		meredithgrey@gmail.com</h4>
+      			</div>
+      			<div class="col-md-8">
+      				<h4>Username:	Meredith_Grey</h4>
+      			</div>
+      			<div class="col-md-8">
+      				<h4>Password:	***********</h4>
+      			</div>
+      			<div class="col-md-8">
+      				<h4>Display Picture:	<i>assets/img/Grey.jpeg</i></h4>
+      			</div>
+      			<a href="acctdetails" class="btn btn-maroon btn-md pull-right" role="button"><span class="glyphicon glyphicon-edit" style="padding-right: 4px"></span>Edit Account Details</a>
+      			
+      		</div>
+      	</div>
+
+	</div>
+
+		
+	  
+    
+  	<script type="text/javascript">
+  		var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+  	</script>
+
+</div>
