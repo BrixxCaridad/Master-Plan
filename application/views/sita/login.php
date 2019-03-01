@@ -20,7 +20,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Student ID No. is required">
-						<input class="input100" type="text" name="uname" autofocus="" autocomplete="" >
+						<input class="input100" type="text" name="uname" autofocus="" autocomplete="off" >
 						
 						<span class="error focus-input100" data-placeholder="Student ID No."></span>
 						<!--<span class="focus-input100" data-placeholder="&#xf207;"></span>-->

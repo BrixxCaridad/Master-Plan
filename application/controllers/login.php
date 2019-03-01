@@ -25,7 +25,7 @@ class login extends CI_Controller {
 				{
 			        $this->session->set_userdata('account_id',$s['id_num']);
                     $this->session->set_userdata('account_name',$s['s_fname'].' '.$s['s_lname']);
-                    $this->session->set_userdata('account_type','student');
+                    $this->session->set_userdata('account_type','Student');
                     $this->session->set_userdata('logged_in',TRUE);
 				}
 				redirect(base_url('dashboard'), 'refresh');	
@@ -37,7 +37,7 @@ class login extends CI_Controller {
 				{
 			        $this->session->set_userdata('account_id',$f['id']);
                     $this->session->set_userdata('account_name',$f['fic_name']);
-                    $this->session->set_userdata('account_type','fic');
+                    $this->session->set_userdata('account_type','Faculty in Charge');
                     $this->session->set_userdata('logged_in',TRUE);
 				}	
 				redirect(base_url('dashboard'), 'refresh');	

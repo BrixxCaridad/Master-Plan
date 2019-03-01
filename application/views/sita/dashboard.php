@@ -14,7 +14,7 @@
       <hr style="background-color: #800000">
     
       <div class="dashboard">
-            <h3 style="color: #800000">Welcome to your Student Dashboard, <?php echo $_SESSION['account_name']; ?>!</h3>
+            <h3 style="color: #800000">Welcome to your <?php echo $_SESSION['account_type']; ?> Dashboard, <?php echo $_SESSION['account_name']; ?>!</h3>
             <p id="demo"></p>
         <script>
           document.getElementById("demo").innerHTML = Date();
