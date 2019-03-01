@@ -41,6 +41,12 @@
             <div class="col-md-8">
               <h4>Cellphone No.:  <?php echo $row->Cellphone; ?></h4>
             </div>
+            <div class="col-md-8">
+              <h4>Civil Status:  <?php echo $row->Civil_Stat; ?></h4>
+            </div>
+            <div class="col-md-8">
+              <h4>Religion:  <?php echo $row->Religion; ?></h4>
+            </div>
       			<a href="<?php echo base_url('accountsettings/personalinfo');?>" class="btn btn-maroon btn-md pull-right" role="button"><span class="glyphicon glyphicon-edit" style="padding-right: 4px"></span>Edit Personal Information</a>
       		</div>
       	</div>

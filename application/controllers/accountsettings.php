@@ -33,7 +33,9 @@ class accountsettings extends CI_Controller {
 				'Student_Lastname'=>$_POST['s_lname'],
 				'Student_Middlename'=>$_POST['s_mname'],
 				'Birthday'=>$_POST['s_birthday'],
-				'Cellphone'=>$_POST['s_cellphone']
+				'Cellphone'=>$_POST['s_cellphone'],
+				'Civil_Stat'=>$_POST['s_status'],
+				'Religion'=>$_POST['s_religion'],
 			);
 			$this->sita_model->update_studentinfo_byid($_SESSION['account_id'],$studentinfo);	
 			redirect(base_url('accountsettings'),'refresh');

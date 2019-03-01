@@ -70,6 +70,20 @@
                                 <input type="txt" class="form-control" id="txt" name="s_cellphone" value="<?php echo $row->Cellphone; ?>" style="font-size: 20px">
                             </div>
                     </div>
+
+                    <div class="form-group" style="padding-bottom: 50px">
+                        <label class="control-label col-sm-2" for="email" style="font-size: 20px">Civil Status</label>
+                            <div class="col-sm-5">          
+                                <input type="txt" class="form-control" id="txt" name="s_status" value="<?php echo $row->Civil_Stat; ?>" style="font-size: 20px">
+                            </div>
+                    </div>
+
+                    <div class="form-group" style="padding-bottom: 50px">
+                        <label class="control-label col-sm-2" for="email" style="font-size: 20px">Religion</label>
+                            <div class="col-sm-5">          
+                                <input type="txt" class="form-control" id="txt" name="s_religion" value="<?php echo $row->Religion; ?>" style="font-size: 20px">
+                            </div>
+                    </div>
               <?php endforeach;?>
               <input class="btn btn-maroon btn-md pull-right" type="submit" value="Submit" role="button"/>
               </form>
