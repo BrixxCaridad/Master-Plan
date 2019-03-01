@@ -1,4 +1,4 @@
-<?php $this->load->view('include/navbar2'); ?>
+
 
 <title>SITA | Companies</title>
 
@@ -15,99 +15,128 @@
         <div class="col-md-7">
           <div class="search">
             <form class="search-form">
-              <input type="text" placeholder="Search for companies, job specifications, or location">
+              <input type="text" name="comp_query" placeholder="Search for companies, job specifications, or location">
               <input type="submit" value="Search">
             </form>
           </div>
         </div>
-        <div class="col-md-5" style="padding-top: 5px">
-            <h5>Filter by: 
-              <button type="button" class="btn btn-cmaroon">Company</button>
-              <button type="button" class="btn btn-cmaroon">Job Specifications</button>
-              <button type="button" class="btn btn-cmaroon">Location</button>
-            </h5>
+        <?php if($_SESSION['account_type']=='IRJP'):?>
+        <div class="col-md-2" style="padding-top: 5px;">
+          <button type="button" class="btn btn-cmaroon btn-md" data-toggle="modal" data-target="#myModal">Add Company</button>
         </div>
+        <?php endif;?>
       </div>
       <br>
       
-      <div class="table-responsive" style="font-size: 14px">   
+       <div class="table-responsive" style="font-size: 14px">          
+        <table class="table">
+          
+          <thead style="color: #800000">
+            <th colspan="10" style="background-color: #ffe8e8; color: #800000; font-size: 20px; text-align: center">LIST OF ACCREDITED COMPANIES</th>
+            <table class="table table-hover" id="dataTables-user-list">
+            <tr>
+              <th>COMPANY NAME</th>
+              <th>COMPANY TEL.</th>
+              <th>COMPANY ADDRESS</th>
+              <th>BUSINESS TYPE</th>
+              <th>NATURE</th>
+            </tr>
+          </thead>
+
+
+          <tbody>
+      <?php echo form_open("companies2/display_company"); ?>
+           <?php 
+       if ($display_company->num_rows() > 0)
+       {
+        foreach ($display_company->result() as $row)
+        {?>
+          
+          <tr>
+            <td><?php echo $row->comp_name; ?> </td>
+            <td><?php echo $row->comp_telno; ?> </td>
+            <td><?php echo $row->comp_add; ?> </td>            
+            <td><?php echo $row->btype_name; ?> </td>    
+            <td><?php echo $row->nature_business; ?> </td>    
+          </tr>
+          
+        <?php
+        }
+        
+       }
+       else
+       {?>
+        <tr>
+        <td colspan="3"> No Data Found</td>
+        </tr>
+
+      <?php
+       }
+       
+       
+       ?>
+       
+       <?php echo form_close(); ?>
+            </tbody>
       
-  <table class="table">
-    <thead style="color: #800000">
-      <th colspan="9" style="background-color: #ffe8e8; color: #800000; font-size: 20px; text-align: center">ACCREDITED COMPANIES</th>
+
       
-      <tr>
-        <th>No.</th>
-        <th>Company Name</th>
-        <th>Location</th>
-        <th>Job Specification</th>
-        <th>E-mail Address</th>
-        <th>Bookmark</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Grey Sloan Memorial Hospital</td>
-        <td>Seattle, Washington DC</td>
-        <td>Surgical Intern</td>
-        <td>gsmh@gmail.com</td>
-        <td><span class="glyphicon glyphicon-star"></span></td>
-      </tr>
+      </table>
+      </div>
 
-      <tr>
-        <td>2</td>
-        <td>Seattle Grace Hospital</td>
-        <td>Seattle, Washington DC</td>
-        <td>Surgical Intern</td>
-        <td>sgh@gmail.com</td>
-        <td><span class="glyphicon glyphicon-star-empty"></span></td>
-      </tr>
 
-      <tr>
-        <td>3</td>
-        <td>Seattle Presbyterian Hospital</td>
-        <td>Seattle, Washington DC</td>
-        <td>Surgical Intern</td>
-        <td>sph@gmail.com</td>
-        <td><span class="glyphicon glyphicon-star-empty"></span></td>
-      </tr>
 
-      <tr>
-        <td>4</td>
-        <td>Denny Duquette Memorial Clinic</td>
-        <td>Seattle, Washington DC</td>
-        <td>Clinic Assistant</td>
-        <td>ddmc@gmail.com</td>
-        <td><span class="glyphicon glyphicon-star-empty"></span></td>
-      </tr>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" style="text-align:left;">Add Company</h4>
+        </div>
+        <div class="modal-body">
+          <form id="insert_form" action="<?php echo base_url('irjp/company?action=add')?>" method="POST">
+              <label>Company Name</label> &nbsp;&nbsp;
+              <!--<label class="error" id="error_name2"> industry already exists.</label> -->
+              <input class="form-control" placeholder="Company" id="comp_name" name="comp_name" type="text" autofocus required/>
+              <br>
+         
+              <label>Contact Number</label> &nbsp;&nbsp;
+              <!--<label class="error" id="error_name2"> industry already exists.</label> -->
+              <input class="form-control" placeholder="Contact" id="comp_telno" name="comp_telno" type="text" required/>
+              <br>
 
-      <tr>
-        <td>5</td>
-        <td>Mercy West Hospital</td>
-        <td>Seattle, Washington DC</td>
-        <td>Surgical Intern</td>
-        <td>mwh@gmail.com</td>
-        <td><span class="glyphicon glyphicon-star-empty"></span></td>
-      </tr>
+              <label>Address</label> &nbsp;&nbsp;
+              <!--<label class="error" id="error_name2"> industry already exists.</label> -->
+              <input class="form-control" placeholder="Address" id="comp_add" name="comp_add" type="text" required/>
+              <br>
 
-      <tr>
-        <td>6</td>
-        <td>Klausmann Institute for Medical Research</td>
-        <td>Zurich, Switzerland</td>
-        <td>Surgical Intern</td>
-        <td>mwh@gmail.com</td>
-        <td><span class="glyphicon glyphicon-star-empty"></span></td>
-      </tr>
+              <label>Nature of Business</label>&nbsp;&nbsp;
+              <select style="margin-top: 0px; height: 35px;" name="nature" id="nature" class="form-control" required/>
+              <?php foreach ($display_nature->result() as $row){?>
+                <option value="<?php echo $row->id?>"><?php echo $row->nature_business?></option>
+              <?php } ?>
+              </select> 
+              <br>
 
-    </tbody>
-  </table>
-  <script type="text/javascript">
-      $(document).ready(function (){
-          $('table.display').DataTable();
-      } );
-  </script>
+              <label>Nature of Business</label>&nbsp;&nbsp;
+              <select style="margin-top: 0px; height: 35px;" name="btype" id="btype" class="form-control" required/>
+              <?php foreach ($display_btype->result() as $row){?>
+                <option value="<?php echo $row->id?>"><?php echo $row->btype_name?></option>
+              <?php } ?>
+              </select> 
+              <br>
+              </select> 
+        </div>
+        <div class="modal-footer">
+            <input id="newCompanySubmit" name="submit" type="submit" class="btn btn-success">
+          </form>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+    </div>
   </div>
+  
 <style type="text/css">
 /* ===========================
    ====== Search Box ====== 

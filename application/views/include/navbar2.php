@@ -28,11 +28,11 @@
   </div>
  
   
-  <a href="dashboard">Dashboard</a>
+  <a href="<?php echo base_url('dashboard')?>">Dashboard</a>
   <a href="requirements">Requirements</a>
-  <a href="companies2">Companies</a>
+  <a href="<?php echo base_url('companies')?>">Companies</a>
   <a href="messages2">Messages<span class="badge">2</span></a>
-  <a href="accountsettings">Account Settings</a>
+  <a href="<?php echo base_url('accountsettings')?>">Account Settings</a>
   <a href="<?php echo base_url('login/logout');?>">Logout</a>
 
  

@@ -3,27 +3,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class irjp extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+	
 	public function index()
 	{
 		$this->load->view('include/header');
 		$this->load->view('sita/irjp');
-		
-		//$this->load->view('include/footer');
+	}
+
+	public function company()
+	{
+		$this->load->model('company_model');
+		if(isset($_GET['action'])){
+			if($_GET['action']=='add'){
+				$company_info = array(
+					'comp_name'=>$_POST['comp_name'],
+					'comp_telno'=>$_POST['comp_telno'],
+					'comp_add'=>$_POST['comp_add'],
+					'nature'=>$_POST['nature'],
+					'btype_id'=>$_POST['btype']
+				);
+				$this->company_model->add_company($company_info);
+				redirect(base_url('companies'),'refresh');
+			}
+		}
 	}
 
 }
