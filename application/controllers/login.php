@@ -23,21 +23,21 @@ class login extends CI_Controller {
 				$q=$this->sita->getstudentfrom_cred($uname,$password);
 				foreach ($q as $s) 
 				{
-			        $this->session->set_userdata('account_id',$s['id_num']);
-                    $this->session->set_userdata('account_name',$s['s_fname'].' '.$s['s_lname']);
+			        $this->session->set_userdata('account_id',$s['Student_ID']);
+                    $this->session->set_userdata('account_name',$s['Student_Firstname'].' '.$s['Student_Middlename'].'. '.$s['Student_Lastname']);
                     $this->session->set_userdata('account_type','Student');
                     $this->session->set_userdata('logged_in',TRUE);
 				}
 				redirect(base_url('dashboard'), 'refresh');	
 			}
-			elseif($account=='fic')
+			elseif($account=='faculty')
 			{
 				$q=$this->sita->getficfrom_cred($uname,$password);	
 				foreach ($q as $f) 
 				{
-			        $this->session->set_userdata('account_id',$f['id']);
-                    $this->session->set_userdata('account_name',$f['fic_name']);
-                    $this->session->set_userdata('account_type','Faculty in Charge');
+			        $this->session->set_userdata('account_id',$f['Faculty_ID']);
+                    $this->session->set_userdata('account_name',$f['Faculty_Firstname'].' '.$f['Faculty_Middlename'].'. '.$f['Faculty_Lastname']);
+                    $this->session->set_userdata('account_type','Faculty');
                     $this->session->set_userdata('logged_in',TRUE);
 				}	
 				redirect(base_url('dashboard'), 'refresh');	

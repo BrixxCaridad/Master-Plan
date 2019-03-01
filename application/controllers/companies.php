@@ -14,8 +14,8 @@ class companies extends CI_Controller {
 		{
 			$data["display_company"] = $this->company_model->display_company();
 		}
-		$data["display_nature"] = $this->company_model->display_nature();
-		$data["display_btype"] = $this->company_model->display_btype();
+		// $data["display_nature"] = $this->company_model->display_nature();
+		// $data["display_btype"] = $this->company_model->display_btype();
 		$this->load->view('include/header');
 		$this->load->view('include/navbar2');
 		$this->load->view('sita/companies',$data);

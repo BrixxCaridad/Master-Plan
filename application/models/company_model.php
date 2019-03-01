@@ -12,35 +12,22 @@ class company_model extends CI_Model {
 	{
 		$this->db->select("*");
 		$this->db->from("company");
-		$this->db->join('business_type', 'company.btype_id = business_type.id', 'left');
-        $this->db->join('nature_table', 'company.nature = nature_table.id', 'left');
+		$this->db->join('classification', 'company.Company_Code = classification.Company_Code', 'left');
+        $this->db->join('type', 'classification.Type_No = type.Type_No', 'left');
 		$query = $this->db->get();
 		return $query;							
 	}
-	function display_nature()
-	{
-		$this->db->select("*");
-		$this->db->from("nature_table");
-		$query = $this->db->get();
-		return $query;							
-	}
-	function display_btype()
-	{
-		$this->db->select("*");
-		$this->db->from("business_type");
-		$query = $this->db->get();
-		return $query;							
-	}
+	
 	function search_company($q)
 	{
 		$this->db->select("*");
 		$this->db->from("company");
-		$this->db->join('business_type', 'company.btype_id = business_type.id', 'left');
-        $this->db->join('nature_table', 'company.nature = nature_table.id', 'left');
-        $this->db->like("comp_name",$q);
-        $this->db->or_like("comp_add",$q);
-        $this->db->or_like("btype_name",$q);
-        $this->db->or_like("nature_business",$q);
+		$this->db->join('classification', 'company.Company_Code = classification.Company_Code', 'left');
+        $this->db->join('type', 'classification.Type_No = type.Type_No', 'left');
+        $this->db->like("Company_Name",$q);
+        $this->db->or_like("Company_Address",$q);
+        $this->db->or_like("Type",$q);
+        $this->db->or_like("company.Company_Code",$q);
 		$query = $this->db->get();
 		return $query;							
 	}

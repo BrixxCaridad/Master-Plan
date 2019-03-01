@@ -16,7 +16,7 @@
         <!-- <img src="" alt="Meredith Grey" style="height: 50%; width: 50%; border-radius: 50%"> -->
         <div class="col-md-2">
           <center>
-            <img class="img-responsive img-circle" src="assets/img/Grey.jpeg" alt="Meredith Grey" width="50%" height="50%" style="border-radius: 50%"> 
+            <img class="img-responsive img-circle" src="<?php echo base_url('assets/img/Grey.jpeg')?>" alt="Meredith Grey" width="50%" height="50%" style="border-radius: 50%"> 
         
             <a href="depinfo"> <?php echo $_SESSION['account_name']; ?></a>
             <p style="color: white"><?php echo $_SESSION['account_id']; ?></p>

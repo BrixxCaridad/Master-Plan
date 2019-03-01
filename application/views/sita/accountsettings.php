@@ -1,4 +1,4 @@
-<?php $this->load->view('include/navbar2'); ?>
+
 
 <title>SITA | Account Settings</title>
 
@@ -30,64 +30,48 @@
       			<h4><b>Personal Information</b></h4>
       			<hr style="background-color: #800000">
       			<div class="col-md-8">
-      				<h4>Name:	<?php echo $row->s_fname . " " . $row->s_lname . " " .  $row->s_mname;?></h4>
+      				<h4>Name:	<?php echo $row->Student_Firstname . " " . $row->Student_Middlename . " " .  $row->Student_Lastname;?></h4>
       			</div>
       			<div class="col-md-8">
-      				<h4>Cellphone No.:	<?php echo $row->s_cellphone; ?></h4>
+      				<h4>Address:	</h4>
       			</div>
-      			
-      			<a href="personalinfo" class="btn btn-maroon btn-md pull-right" role="button"><span class="glyphicon glyphicon-edit" style="padding-right: 4px"></span>Edit Personal Information</a>
+      			<div class="col-md-8">
+              <h4>Birthday:  <?php echo $row->Birthday; ?></h4>
+            </div>
+            <div class="col-md-8">
+              <h4>Cellphone No.:  <?php echo $row->Cellphone; ?></h4>
+            </div>
+            <div class="col-md-8">
+              <h4>Civil Status:  <?php echo $row->Civil_Stat; ?></h4>
+            </div>
+            <div class="col-md-8">
+              <h4>Religion:  <?php echo $row->Religion; ?></h4>
+            </div>
+      			<a href="<?php echo base_url('accountsettings/personalinfo');?>" class="btn btn-maroon btn-md pull-right" role="button"><span class="glyphicon glyphicon-edit" style="padding-right: 4px"></span>Edit Personal Information</a>
       		</div>
       	</div>
 		
-		<?php
-				}
-				
-		   } ?>
+
       	
       	<div class="row">
       		<div class="col-md-12">
       			<h4><b>Academic Information</b></h4>
       			<hr style="background-color: #800000">
       			<div class="col-md-8">
-      				<h4>Student No.:	15-037-001</h4>
+      				<h4>Student No.:	<?php echo $row->Student_ID; ?></h4>
       			</div>
       			<div class="col-md-8">
-      				<h4>College:	College of Science (COS)</h4>
+      				<h4>College:	<?php echo $row->College_Code; ?></h4>
       			</div>
       			<div class="col-md-8">
-      				<h4>Course:		Bachelor of Science in Information Technology</h4>
+      				<h4>Course:		<?php echo $row->Course_Code; ?></h4>
       			</div>
-      			<div class="col-md-8">
-      				<h4>Year:	4th Year</h4>
-      			</div>
-      			<div class="col-md-8" style="padding-bottom: 15px">
-      				<h4>Section: B</h4>
-      			</div>
-      			
       		</div>
       	</div>
-      	
-      	<div class="row">
-      		<div class="col-md-12">
-      			<h4><b>Account Details</b></h4>
-      			<hr style="background-color: #800000">
-      			<div class="col-md-8">
-      				<h4>E-mail Address:		meredithgrey@gmail.com</h4>
-      			</div>
-      			<div class="col-md-8">
-      				<h4>Username:	Meredith_Grey</h4>
-      			</div>
-      			<div class="col-md-8">
-      				<h4>Password:	***********</h4>
-      			</div>
-      			<div class="col-md-8">
-      				<h4>Display Picture:	<i>assets/img/Grey.jpeg</i></h4>
-      			</div>
-      			<a href="acctdetails" class="btn btn-maroon btn-md pull-right" role="button"><span class="glyphicon glyphicon-edit" style="padding-right: 4px"></span>Edit Account Details</a>
-      			
-      		</div>
-      	</div>
+      	   <?php
+        }
+        
+       } ?>
 
 	</div>
 

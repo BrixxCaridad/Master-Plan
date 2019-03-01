@@ -38,8 +38,8 @@
               <th>COMPANY NAME</th>
               <th>COMPANY TEL.</th>
               <th>COMPANY ADDRESS</th>
-              <th>BUSINESS TYPE</th>
-              <th>NATURE</th>
+              <th>COMPANY CODE</th>
+              <th>TYPE</th>
             </tr>
           </thead>
 
@@ -53,11 +53,11 @@
         {?>
           
           <tr>
-            <td><?php echo $row->comp_name; ?> </td>
-            <td><?php echo $row->comp_telno; ?> </td>
-            <td><?php echo $row->comp_add; ?> </td>            
-            <td><?php echo $row->btype_name; ?> </td>    
-            <td><?php echo $row->nature_business; ?> </td>    
+            <td><?php echo $row->Company_Name; ?> </td>
+            <td><?php echo $row->Company_Phone; ?> </td>
+            <td><?php echo $row->Company_Address; ?> </td>            
+            <td><?php echo $row->Company_Code; ?> </td>    
+            <td><?php echo $row->Type; ?> </td>    
           </tr>
           
         <?php
@@ -82,60 +82,12 @@
 
       
       </table>
-      </div>
+</div>
 
 
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" style="text-align:left;">Add Company</h4>
-        </div>
-        <div class="modal-body">
-          <form id="insert_form" action="<?php echo base_url('irjp/company?action=add')?>" method="POST">
-              <label>Company Name</label> &nbsp;&nbsp;
-              <!--<label class="error" id="error_name2"> industry already exists.</label> -->
-              <input class="form-control" placeholder="Company" id="comp_name" name="comp_name" type="text" autofocus required/>
-              <br>
-         
-              <label>Contact Number</label> &nbsp;&nbsp;
-              <!--<label class="error" id="error_name2"> industry already exists.</label> -->
-              <input class="form-control" placeholder="Contact" id="comp_telno" name="comp_telno" type="text" required/>
-              <br>
 
-              <label>Address</label> &nbsp;&nbsp;
-              <!--<label class="error" id="error_name2"> industry already exists.</label> -->
-              <input class="form-control" placeholder="Address" id="comp_add" name="comp_add" type="text" required/>
-              <br>
-
-              <label>Nature of Business</label>&nbsp;&nbsp;
-              <select style="margin-top: 0px; height: 35px;" name="nature" id="nature" class="form-control" required/>
-              <?php foreach ($display_nature->result() as $row){?>
-                <option value="<?php echo $row->id?>"><?php echo $row->nature_business?></option>
-              <?php } ?>
-              </select> 
-              <br>
-
-              <label>Nature of Business</label>&nbsp;&nbsp;
-              <select style="margin-top: 0px; height: 35px;" name="btype" id="btype" class="form-control" required/>
-              <?php foreach ($display_btype->result() as $row){?>
-                <option value="<?php echo $row->id?>"><?php echo $row->btype_name?></option>
-              <?php } ?>
-              </select> 
-              <br>
-              </select> 
-        </div>
-        <div class="modal-footer">
-            <input id="newCompanySubmit" name="submit" type="submit" class="btn btn-success">
-          </form>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-          </div>
-        </div>
-    </div>
-  </div>
   
 <style type="text/css">
 /* ===========================
