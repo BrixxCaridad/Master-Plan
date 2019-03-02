@@ -72,8 +72,10 @@
 						<td style="color: red"><strong><?php echo $row->Status; ?> </strong></td>
 						<?php } ?>																	
 
-						<td><a href="<?php echo base_url("depinfo/edit/".$row->Sit_No)?>" id="<?php echo $row->Sit_No; ?>" class="btn btn-warning update_btn" role="button"><span class="glyphicon glyphicon-pencil"></span> Update</a>						
-						<button type="submit" id="<?php echo $row->Sit_No; ?>" href="#"  class="btn btn-danger delete_data" role="button"><span class="glyphicon glyphicon-trash" style="padding-right: 4px"></span>Delete</button></td>
+						<td>
+              <a href="<?php echo base_url("depinfo/edit/".$row->Sit_No)?>" id="<?php echo $row->Sit_No; ?>" class="btn btn-warning update_btn" role="button"><span class="glyphicon glyphicon-pencil"></span> Update</a>						
+              <a href="<?php echo base_url("depinfo/delete/".$row->Sit_No)?>" id="<?php echo $row->Sit_No; ?>" class="btn btn-danger delete_data" role="button"><span class="glyphicon glyphicon-trash" style="padding-right: 4px"></span>Delete</a>   
+            </td>
 					</tr>
 					
 				<?php

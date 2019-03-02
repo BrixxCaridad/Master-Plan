@@ -28,6 +28,18 @@ class sita_model extends CI_Model {
 		return $query;		
 	}
 
+	public function update_dep_byid($id,$data)
+	{
+		$this->db->where('Sit_No', $id);
+		$this->db->update("sit",$data);
+	}
+
+	public function delete_dep_byid($id)
+	{
+		$this->db->where('Sit_No', $id);
+		$this->db->delete("sit");
+	}
+
 	function login($uname, $password)
 	{
 		$this->db->where('Student_ID', $uname);

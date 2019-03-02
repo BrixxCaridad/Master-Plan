@@ -12,13 +12,10 @@ class depinfo extends CI_Controller {
 		$this->load->view('sita/depinfo',$data);
 	}
 	
-	public function delete_data()
+	public function delete($id)
 	{
-		$id = $this->uri->segment(3);
-		$this->load->model('dep_info_model');
-		
-		$this->dep_info_model->delete_data($id);
-		
+		$this->load->model('sita_model');
+		$this->sita_model->delete_dep_byid($id);	
 		redirect(base_url() . "depinfo");
 	}
 	
@@ -31,6 +28,20 @@ class depinfo extends CI_Controller {
 		$this->load->view('sita/update_depinfo',$data);
 	}
 	
+	public function update()
+	{
+		$this->load->model('sita_model');
+		//find company code
+		$dep_info=array(
+			//'Company_Code' => $_POST['add_depcomp'],
+			'Date_Deployed' => $_POST['add_datedep'],
+			'Date_Ending' => $_POST['add_endtrain'],
+			'Visit_Date' => $_POST['add_datevisit'],
+			'Status' => $_POST['add_status']
+		);
+		$this->sita_model->update_dep_byid($_POST['id'],$dep_info);	
+		redirect(base_url() . "depinfo");
+	}
 	
 	
 	
