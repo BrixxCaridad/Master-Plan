@@ -30,27 +30,36 @@ class fic extends CI_Controller {
             redirect(base_url());
         }*/
 
-        $this->load->model('faculty_model','ficm');
+        $this->load->model('faculty_model');
       
     } 
 
     public function index()
 	{
-     
-       $data['data'] = $this->ficm->get_student_list($_SESSION['account_id']);
+		$data = array(
+            /*'formTitle' => 'Deployment Information',
+            'title' => 'Deployment Information',*/
+            'users' => $this->faculty_model->get_student_list(),
+            //'type' => $this->irjp_model->get_student_num(),
+        );
 
-        $this->load->view('include/ficnavbar2'); 
 		$this->load->view('include/header');
 		$this->load->view('fic/ficdashboard',$data);
-  
-		$this->load->view('include/footer');
+
+		
+		//$this->load->view('include/footer');
 	}
 
 	function add_student(){
-       // Array ( [id_num] => aaaaaaa [s_lname] => bbbb [f_fname] => cccc [m_mname] => dddddd )
-      
-        $data = array('id' = >$_POST['id_num'],'lname'=>$_POST['s_lname'],'fname'=>'f_fname','mname'=>$_POST['m_lname'])
-        $this->ficm->add_student($data);
+        $this->ajax_checking();
+
+
+        $postData = $this->input->post();
+        $insert = $this->faculty_model->add_student($postData);
+        if($insert['status'] == 'success')
+            $this->session->set_flashdata('success', 'Student '.$postData['s_lname'].' has been successfully added!');
+
+        echo json_encode($insert);
     }
 
 

@@ -20,16 +20,7 @@
             </form>
           </div>
         </div>
-        <?php 
-          //delete this line if session is available
-
-        if(!isset($_SESSION['account_type'])){
-             $this->session->set_userdata('account_type','Student');
-        }
-        
-      
-
-        if($_SESSION['account_type']=='IRJP'):?>
+        <?php if($_SESSION['account_type']=='IRJP'):?>
         <div class="col-md-2" style="padding-top: 5px;">
           <button type="button" class="btn btn-cmaroon btn-md" data-toggle="modal" data-target="#myModal">Add Company</button>
         </div>

@@ -1,3 +1,39 @@
+<?php  
+  
+
+  // session_start();
+
+  if(isset($_SESSION["id"]))
+  {
+      $user_id = $_SESSION["id"];
+      include ("connections.php");
+
+      $get_record = mysqli_query($connections, "SELECT * FROM facultyincharge WHERE role='$user_id'");
+          while ($row =  mysqli_fetch_assoc($get_record)) {
+              $db_fic_uname = $row["fic_uname"];
+              $db_role = $row["role"];
+              $db_fic_department = $row["fic_department"];
+
+               }
+  }
+  else
+  {
+      echo "You must login first.";
+  }
+
+  // include("connections.php"); 
+  // $view_query = mysqli_query($connections, "SELECT * FROM students WHERE");
+  //              while ($row =  mysqli_fetch_assoc($view_query)) {
+  //                 $db_s_fname = $row["s_fname"];
+  //                 echo $db_s_fname . "<br>";
+  //              }
+             
+   
+?>
+<!DOCTYPE html>
+<html>
+
+<body>
 
 <div class="ficsidebar">
 
@@ -31,3 +67,7 @@
 
 </div>
 
+
+
+</body>
+</html>

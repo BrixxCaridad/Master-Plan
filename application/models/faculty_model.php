@@ -8,22 +8,24 @@ class  faculty_model extends CI_Model {
 
     function __construct(){ 
         parent::__construct();
-        $this->load->model('sita_model','sita');
     }
 
-    function get_student_list($id){
-         $this->db->select('*');
-        $this->db->from('sit');
-        $this->db->join('student', 'sit.Student_ID = student.Student_ID', 'left');
-        $query = $this->db->get();
-        
-        return $query->result_array();
-
+    function get_student_list(){
+        $this->db->select(' id_num, s_lname, s_fname, s_mname, s_cellphone, s_telephone, s_status, course_name');
+        //$this->db->distinct();
+        $this->db->from('students');
+        $this->db->join('course', 'students.course_id = course.course_id');
+        $this->db->join('facultyincharge', 'facultyincharge.fic_num = students.fic_num');
+        // $this->db->where('client_status', 1);
+        //$this->db->where('faculty.fic_num', fic_num);
+        //$this->db->order_by('clients.c_id','DESC');
+        $query=$this->db->get();
+        return $query->result();
     }
 
     function get_stud_by_id($id){
         $this->db->select('*');
-        $this->db->from('student');
+        $this->db->from('students');
         $this->db->where('id', $id);
         $query=$this->db->get();
         return $query->result_array();
@@ -34,7 +36,7 @@ class  faculty_model extends CI_Model {
 
         //$validate = $this->validate_company($postData);
         $this->db->insert('id_num', 's_lname', 'f_name', 'm_name');
-        $this->db->to('student');
+        $this->db->to('students');
         $query=$this->db->get();
         return $query->result_array();
     }
@@ -42,7 +44,7 @@ class  faculty_model extends CI_Model {
 
     function validate_student($postData){
         $this->db->where('id_num', $postData['id_num']);
-        $this->db->from('student');
+        $this->db->from('students');
         $this->db->join('course', 'students.course_id = course.course_id');
         $query=$this->db->get();
         if ($query->num_rows() == 0)
