@@ -684,26 +684,29 @@ div.content {
 
 /*---------------------------------------FORMS.PHP------------------------------------*/
 
-button.accordion {
+button.accordion, button.accordionM {
     background-color: #eee;
     color: #444;
     cursor: pointer;
-    padding: 18px;
-    width: 100%;
+    padding: 10px;
+    width: 80%;
     text-align: left;
     border: none;
     outline: none;
     transition: 0.4s;
     font-size: 15px;
+	margin-top: -20px;
+	margin-bottom: -8px;
+	margin-left: 10%;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-button.accordion.active, button.accordion:hover {
+button.accordion.active, button.accordion:hover, button.accordionM.active, button.accordionM:hover {
     background-color: #660000;
     color: white;
 }
 
-button.accordion:after {
+button.accordion:after, button.accordionM:after {
     content: '\02795'; /* Unicode character for "plus" sign (+) */
     font-size: 13px;
     color: #777;
@@ -711,75 +714,87 @@ button.accordion:after {
     margin-left: 5px;
 }
 
-button.accordion.active:after {
+button.accordion.active:after , button.accordionM.active:after{
     content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
 /* Style the accordion panel. Note: hidden by default */
-div.panel {
+div.panel, div.panelM {
     padding: 0 18px;
     background-color: #eee;
     max-height: 0;
     overflow: hidden;
     transition: 0.6s ease-in-out;
     opacity: 0;
+	position: relative;
+	width: 80%;
+	margin-left: 10%;
+	
+}
+p.supporting{
+	margin-left: 10%;
+	}
+h4.header4{
+	margin-left: 5%
 }
 
 /* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
-div.panel.show {
+div.panel.show, div.panelM.show {
     opacity: 1;
+	width: 80%;
+	margin-left: 10%;
     max-height: 1500px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
 }
 
 /*---------------------------------------MESSAGES.PHP------------------------------------*/
 
-button.accordionM {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 10px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-    font-size: 15px;
-}
+/* button.accordionM { */
+    /* background-color: #eee; */
+    /* color: #444; */
+    /* cursor: pointer; */
+    /* padding: 10px; */
+    /* width: 80%; */
+    /* text-align: left; */
+    /* border: none; */
+    /* outline: none; */
+    /* transition: 0.4s; */
+    /* font-size: 15px; */
+/* } */
 
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-button.accordionM.active, button.accordionM:hover {
-    background-color: #660000;
-    color: white;
-}
+Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover)
+/* button.accordionM.active, button.accordionM:hover { */
+    /* background-color: #660000; */
+    /* color: white; */
+/* } */
 
-button.accordionM:after {
+/* button.accordionM:after { */
     
-    font-size: 13px;
-    color: black;
-    float: right;
-    margin-left: 5px;
-}
+    /* font-size: 13px; */
+    /* color: black; */
+    /* float: right; */
+    /* margin-left: 5px; */
+/* } */
 
-button.accordionM.active:after {
+/* button.accordionM.active:after { */
     
-    color: #fff;
-}
+    /* color: #fff; */
+/* } */
 
-/* Style the accordion panel. Note: hidden by default */
-div.panelM {
-    padding: 0 18px;
-    background-color: #eee;
-    max-height: 0;
-    overflow: hidden;
-    transition: 0.6s ease-in-out;
-    opacity: 0;
-}
+Style the accordion panel. Note: hidden by default
+/* div.panelM { */
+    /* padding: 0 18px; */
+    /* background-color: #eee; */
+    /* max-height: 0; */
+    /* overflow: hidden; */
+    /* transition: 0.6s ease-in-out; */
+    /* opacity: 0; */
+/* } */
 
-/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
-div.panelM.show {
-    opacity: 1;
-    max-height: 1500px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
-}
+The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content
+/* div.panelM.show { */
+    /* opacity: 1; */
+    /* max-height: 1500px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */ */
+/* } */
 
 
 /*----------------------------------WELCOME PAGE---------------------------------*/
