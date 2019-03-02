@@ -34,7 +34,6 @@
   <a href="messages2">Messages<span class="badge">2</span></a>
   <a href="<?php echo base_url('accountsettings')?>">Account Settings</a>
   <a href="<?php echo base_url('login/logout');?>">Logout</a>
-
  
 
 </div>

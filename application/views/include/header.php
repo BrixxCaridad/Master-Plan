@@ -41,9 +41,9 @@
 	<link rel="stylesheet" type="text/css" href="assets/DataTables/datatables.css">
 	<script type="text/javascript" charset="utf8" src="/DataTables/user_list.js"></script>-->
 	<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
-  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
-
-  <!-- Latest compiled and minified CSS -->
+	<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" charset="utf8" src="<?php echo base_url('assets/js/search.js')?>"></script>
+	<script type="text/javascript" charset="utf8" src="<?php echo base_url('assets/js/tablesorter.js')?>"></script> <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
 
 <!-- jQuery library  --> 
