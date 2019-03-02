@@ -31,7 +31,11 @@
         <th>Date of On-site Visitation</th>
         <th>Visited</th>
         <th>Status of SIT</th>
+        <?php 
+        if(isset($_SESSION['account_type'])){
+        if($_SESSION['account_type']!='Student'){?>
         <th>Actions</th>
+        <?php }}?>
       </tr>
     </thead>
     <tbody>
@@ -71,11 +75,14 @@
 							?>
 						<td style="color: red"><strong><?php echo $row->Status; ?> </strong></td>
 						<?php } ?>																	
-
+            <?php 
+            if(isset($_SESSION['account_type'])){
+            if($_SESSION['account_type']!='Student'){?>
 						<td>
               <a href="<?php echo base_url("depinfo/edit/".$row->Sit_No)?>" id="<?php echo $row->Sit_No; ?>" class="btn btn-warning update_btn" role="button"><span class="glyphicon glyphicon-pencil"></span> Update</a>						
               <a href="<?php echo base_url("depinfo/delete/".$row->Sit_No)?>" id="<?php echo $row->Sit_No; ?>" class="btn btn-danger delete_data" role="button"><span class="glyphicon glyphicon-trash" style="padding-right: 4px"></span>Delete</a>   
             </td>
+          <?php }}?>
 					</tr>
 					
 				<?php
@@ -99,8 +106,11 @@
   </div>
   
     <!--<button data-toggle="modal" data-target="#myModal" class="btn btn-maroon btn-md pull-right" role="button"><span class="glyphicon glyphicon-pencil" style="padding-right: 4px"></span>Fill Out Forms</button> -->
+    <?php 
+        if(isset($_SESSION['account_type'])){
+        if($_SESSION['account_type']!='Student'){?>
     <a href="add_deployment_cont" class="btn btn-maroon btn-md pull-right" role="button"><span class="glyphicon glyphicon-plus" style="padding-right: 4px"></span>Add Deployment</a>
-  
+    <?php }}?>
   
   
   

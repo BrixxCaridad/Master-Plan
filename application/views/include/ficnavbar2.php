@@ -8,7 +8,7 @@
       
       <div class="col-md-2">
           <center>
-            <img class="img-responsive img-circle" src="assets/img/panpan.jpg" alt="May Garcia" style="border-radius: 50% width= 50% height=50%"> 
+            <img class="img-responsive img-circle" src="<?php echo base_url()?>assets/img/panpan.jpg" alt="May Garcia" style="border-radius: 50% width= 50% height=50%"> 
           </center>
 
           <center>
