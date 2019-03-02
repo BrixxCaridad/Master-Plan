@@ -49,7 +49,7 @@ class requirements extends CI_Controller {
                 {   
                         $data = $this->upload->data();
                         $file= array('NBI'=>'/NBI/'.$data['raw_name'],
-                        'Student_ID'=>"15-232-765");
+                        'Student_ID'=>$_SESSION['account_id']);
                        $this->preDep->uploadNBI($file);
 					
 			   } 
@@ -71,7 +71,7 @@ class requirements extends CI_Controller {
                 {   
                         $data = $this->upload->data();
                        $file= array('MCert'=>'/MedCert/'.$data['raw_name'],
-                        'Student_ID'=>"15-232-765");
+                        'Student_ID'=>$_SESSION['account_id']);
                        $this->preDep->uploadMED($file);
 					  
                       // 	print_r($file);
@@ -94,7 +94,7 @@ class requirements extends CI_Controller {
                 {   
                         $data = $this->upload->data();
                        $file= array('CTax'=>'/Tax/'.$data['raw_name'],
-                        'Student_ID'=>"15-232-765");
+                        'Student_ID'=>$_SESSION['account_id']);
                        $this->preDep->uploadTax($file);
 					          
                       // 	print_r($file);
@@ -118,7 +118,7 @@ class requirements extends CI_Controller {
                 {   
                         $data = $this->upload->data();
                        $file= array('GTax'=>'/GTax/'.$data['raw_name'],
-                        'Student_ID'=>"15-232-765");
+                        'Student_ID'=>$_SESSION['account_id']);
                        $this->preDep->uploadGTax($file);
                     
                       //  print_r($file);
@@ -140,7 +140,7 @@ class requirements extends CI_Controller {
                 {   
                         $data = $this->upload->data();
                        $file= array('ESheet'=>'/EvalSheet/'.$data['raw_name'],
-                        'Student_ID'=>"15-232-765");
+                        'Student_ID'=>$_SESSION['account_id']);
                        $this->preDep->uploadEval($file);
                     
                       //  print_r($file);
@@ -164,7 +164,7 @@ class requirements extends CI_Controller {
                 {   
                         $data = $this->upload->data();
                        $file= array('resume'=>'/Resume/'.$data['raw_name'],
-                        'Student_ID'=>"15-232-765");
+                        'Student_ID'=>$_SESSION['account_id']);
                        $this->preDep->uploadResume($file);
                     
                       //  print_r($file);
@@ -187,7 +187,7 @@ class requirements extends CI_Controller {
                 {   
                         $data = $this->upload->data();
                        $file= array('RegistrationForm'=>'/RegForm/'.$data['raw_name'],
-                        'Student_ID'=>"15-232-765");
+                        'Student_ID'=>$_SESSION['account_id']);
                        $this->preDep->uploadRegform($file);
                     
                       //  print_r($file);
