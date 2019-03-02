@@ -70,12 +70,9 @@
 						<?php if ($row->Status == "Finish"){
 							?>
 						<td style="color: red"><strong><?php echo $row->Status; ?> </strong></td>
-						<?php } ?>
-						
-						
-						
-						<!--<button id="<?php// echo $row->id; ?>" data-toggle="modal" data-target="#myModal" class="btn btn-info update_dep" role="button"><span class="glyphicon glyphicon-plus">  View</span></button> -->
-						<td><a href="<?php echo base_url("update_depinfo_cont/view_dep/".$row->Sit_No)?>" id="<?php echo $row->Sit_No; ?>" class="btn btn-warning update_btn" role="button"><span class="glyphicon glyphicon-pencil"></span> Update</a>						
+						<?php } ?>																	
+
+						<td><a href="<?php echo base_url("depinfo/edit/".$row->Sit_No)?>" id="<?php echo $row->Sit_No; ?>" class="btn btn-warning update_btn" role="button"><span class="glyphicon glyphicon-pencil"></span> Update</a>						
 						<button type="submit" id="<?php echo $row->Sit_No; ?>" href="#"  class="btn btn-danger delete_data" role="button"><span class="glyphicon glyphicon-trash" style="padding-right: 4px"></span>Delete</button></td>
 					</tr>
 					

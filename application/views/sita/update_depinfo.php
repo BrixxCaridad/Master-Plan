@@ -1,13 +1,3 @@
-<?php $this->load->view('include/navbar2'); ?>
-<head>
-<link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-<link rel="icon" type="image/png" href="assets/img/TUPlogo.png"/>
-<link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="assets/fonts/iconic/css/material-design-iconic-font.min.css">
-<link rel="stylesheet" type="text/css" href="assets/vendor/animate/animate.css">
-</head>
-
 
 <title>SITA | Deployment Information</title>
 <div class="content">
@@ -16,7 +6,7 @@
      <center>
           <!-- <h4 style="color: black"><img src="assets/img/TUPlogo.png" alt="TUP Logo" style="height:45px; width: 45px">Technological University of the Philippines - Manila</h4> -->
           <!-- <p style="color: black; font-size: 20px"><b>SITA : SIT ASSISTANT</b></p> -->
-          <img src="assets/img/sita2.png" alt="TUP Logo" style="height:11%; width: 11%">
+          <img src="<?php echo base_url('assets/img/sita2.png')?>" alt="TUP Logo" style="height:11%; width: 11%">
       </center>
       <hr style="background-color: #800000">
       
@@ -24,39 +14,38 @@
 	  <div class="container">
   <h2>Edit Deployment</h2>
   
-  <?php echo form_open_multipart("update_depinfo_cont/update"); ?>
+  <?php echo form_open_multipart("update_depinfo_cont/update"); 
+  if ($display_dep->num_rows() > 0)
+       {
+        foreach ($display_dep->result() as $row)
+        {
+          ?>
   
   <div class="col-md-12">
 	
-	
-      
-					
     <div class="form-group col-md-6">
       <label class="control-label col-sm-2" for="email">Company:</label>
       <div class="col-sm-10">
-        <input type="hidden" class="form-control" id="id" value="<?php echo $display_dep[0]['id']; ?>" name="id" >
-        <input type="text" class="form-control" id="add_depcomp" value="<?php echo $display_dep[0]['comp_name']; ?>" name="add_depcomp">
+        <input type="hidden" class="form-control" id="id" value="<?php echo $row->Sit_No; ?>" name="id" >
+        <input type="text" class="form-control" id="add_depcomp" value="<?php echo $row->Company_Name; ?>" name="add_depcomp">
       </div>
     </div>
-    <div class="form-group col-md-6">
+    <!--<div class="form-group col-md-6">
       <label class="control-label col-sm-2" for="pwd">Supervisor:</label>
       <div class="col-sm-10">          
         <input type="text" class="form-control" id="add_depsup" value="<?php echo $display_dep[0]['supervisor']; ?>" name="add_depsup">
       </div>
-    </div>
-	
-	
-	 
+    </div>-->
 	 <div class="form-group col-md-6">
       <label class="control-label col-sm-2" for="pwd">Date Deployed:</label>
       <div class="col-sm-10">          
-        <input type="date" class="form-control" id="add_datedep" value="<?php echo $display_dep[0]['date_deployed']; ?>" name="add_datedep">
+        <input type="date" class="form-control" id="add_datedep" value="<?php echo $row->Date_Deployed; ?>" name="add_datedep">
       </div>
     </div>
 	 <div class="form-group col-md-6">
       <label class="control-label col-sm-2" for="pwd">End of Training:</label>
       <div class="col-sm-10">          
-        <input type="date" class="form-control" id="add_endtrain" value="<?php echo $display_dep[0]['end_train']; ?>" name="add_endtrain">
+        <input type="date" class="form-control" id="add_endtrain" value="<?php echo $row->Date_Ending;?>" name="add_endtrain">
       </div>
     </div>
 	
@@ -124,16 +113,12 @@
 				
 		  
  
-  <?php echo form_close(); ?>
+  <?php }}echo form_close(); ?>
 </div>
       
       
       <center>
       <br>
-  
-    
-  
-
 </div>
 
 <script>
