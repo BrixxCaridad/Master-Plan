@@ -1,4 +1,4 @@
-<?php $this->load->view('include/navbar2'); ?>
+
 
 <title>SITA | Deployment Information</title>
 <div class="content">
@@ -19,7 +19,7 @@
   <div class="table-responsive" style="font-size: 14px">          
   <table id="myTable"  class="table">
     <thead style="color: #800000">
-      <th colspan="10" style="background-color: #ffe8e8; color: #800000; font-size: 20px; text-align: center">DEPLOYMENT INFORMATION</th>
+      <th colspan="11" style="background-color: #ffe8e8; color: #800000; font-size: 20px; text-align: center">DEPLOYMENT INFORMATION</th>
       <tr>
         <th>Company</th>
         <th>Supervisor</th>
@@ -43,43 +43,39 @@
 				foreach ($display_dep->result() as $row)
 				{ ?>
 					
-					<tr>
-															
-						<td><?php echo $row->comp_name; ?> </td>
-						<td><?php echo $row->supervisor; ?> </td>
-						<td><?php echo $row->date_deployed; ?> </td>
-						<td><?php echo $row->end_train; ?> </td>
-						<td><?php echo $row->required_hrs; ?> </td>
-						<td><?php echo $row->rendered_hrs; ?> </td>
-						<td><?php echo $row->remaining_hrs; ?> </td>
+					<tr>				
+						<td><?php echo $row->Company_Name; ?> </td>
+						<td><?php echo $row->Faculty_Lastname ; ?> </td>
+						<td><?php echo $row->Date_Deployed; ?> </td>
+						<td><?php echo $row->Date_Ending; ?> </td>
+						<td><?php echo (int)$row->Rendered_Hours+(int)$row->Remaining_Hours; ?> </td>
+						<td><?php echo $row->Rendered_Hours; ?> </td>
+						<td><?php echo $row->Remaining_Hours; ?> </td>
 						
-						<td><?php echo $row->visit_date; ?> </td>
-						<?php if ($row->visit == "No"){
+						<?php if ($row->Visit_Date == null){
 							?>
-						<td style="color: red"> <?php echo $row->visit; ?> </td>
-						<?php } ?>
-						
-						<?php if($row->visit == "Yes")
+              <td style="color: red"> null </td>
+						  <td style="color: red"> null </td>
+						<?php } else
 						{?>
-						<td style="color: green"> <?php echo $row->visit; ?> </td>
-						
+              <td><?php echo $row->Visit_Date; ?> </td>
+						  <td style="color: green"> <?php echo $row->Visit_Date; ?> </td>
 						<?php } ?>
 						
-						<?php if ($row->status == "On-Going"){
+						<?php if ($row->Status == "On Going"){
 							?>
-						<td style="color: green"><strong><?php echo $row->status; ?> </strong></td>
+						<td style="color: green"><strong><?php echo $row->Status; ?> </strong></td>
 						<?php } ?>
 						
-						<?php if ($row->status == "Finished"){
+						<?php if ($row->Status == "Finish"){
 							?>
-						<td style="color: red"><strong><?php echo $row->status; ?> </strong></td>
-						<?php } ?>
-						
-						
-						
-						<!--<button id="<?php// echo $row->id; ?>" data-toggle="modal" data-target="#myModal" class="btn btn-info update_dep" role="button"><span class="glyphicon glyphicon-plus">  View</span></button> -->
-						<td><a href="<?php echo base_url("update_depinfo_cont/view_dep/".$row->id)?>" id="<?php echo $row->id; ?>" class="btn btn-warning update_btn" role="button"><span class="glyphicon glyphicon-pencil"></span> Update</a>						
-						<button type="submit" id="<?php echo $row->id; ?>" href="#"  class="btn btn-danger delete_data" role="button"><span class="glyphicon glyphicon-trash" style="padding-right: 4px"></span>Delete</button></td>
+						<td style="color: red"><strong><?php echo $row->Status; ?> </strong></td>
+						<?php } ?>																	
+
+						<td>
+              <a href="<?php echo base_url("depinfo/edit/".$row->Sit_No)?>" id="<?php echo $row->Sit_No; ?>" class="btn btn-warning update_btn" role="button"><span class="glyphicon glyphicon-pencil"></span> Update</a>						
+              <a href="<?php echo base_url("depinfo/delete/".$row->Sit_No)?>" id="<?php echo $row->Sit_No; ?>" class="btn btn-danger delete_data" role="button"><span class="glyphicon glyphicon-trash" style="padding-right: 4px"></span>Delete</a>   
+            </td>
 					</tr>
 					
 				<?php
@@ -135,7 +131,7 @@
                           <label>Company Name</label> &nbsp;&nbsp;
                           <!-- <label class="error" id="error_name"> field is required.</label>
                           <label class="error" id="error_name2"> industry already exists.</label> -->
-                          <input disabled class="form-control" placeholder="<?php echo $row->comp_name; ?>" id="comp_name" name="comp_name" type="text" autofocus>
+                          <input disabled class="form-control" placeholder="<?php echo $row->Company_Name; ?>" id="comp_name" name="comp_name" type="text" autofocus>
 						<br>
                      
                 
@@ -143,49 +139,44 @@
                           <label>Supervisor</label> &nbsp;&nbsp;
                           <!-- <label class="error" id="error_name"> field is required.</label>
                           <label class="error" id="error_name2"> industry already exists.</label> -->
-                          <input disabled class="form-control" placeholder="<?php echo $row->supervisor; ?>" id="supervisor" name="supervisor" type="text" >
+                          <input disabled class="form-control" placeholder="<?php echo $row->Faculty_Lastname; ?>" id="supervisor" name="supervisor" type="text" >
 						<br>
                 
                           <label>Date Deployed</label> &nbsp;&nbsp;
                           <!-- <label class="error" id="error_name"> field is required.</label>
                           <label class="error" id="error_name2"> industry already exists.</label> -->
-                          <input disabled class="form-control" placeholder="<?php echo $row->date_deployed; ?>" id="date_dep" name="date_dep" type="text" >
+                          <input disabled class="form-control" placeholder="<?php echo $row->Date_Deployed; ?>" id="date_dep" name="date_dep" type="text" >
                       <br>
 					  <label>End of Training</label> &nbsp;&nbsp;
                           <!-- <label class="error" id="error_name"> field is required.</label>
                           <label class="error" id="error_name2"> industry already exists.</label> -->
-                          <input disabled class="form-control" placeholder="<?php echo $row->end_train; ?>" id="end_train" name="end_train" type="text" >
+                          <input disabled class="form-control" placeholder="<?php echo $row->Date_Ending; ?>" id="end_train" name="end_train" type="text" >
                       <br>
 					  
 					  <label>Required Hours</label> &nbsp;&nbsp;
                           <!-- <label class="error" id="error_name"> field is required.</label>
                           <label class="error" id="error_name2"> industry already exists.</label> -->
-                          <input disabled class="form-control" placeholder="<?php echo $row->required_hrs; ?>" id="req_hrs" name="req_hrs" type="text" >
+                          <input disabled class="form-control" placeholder="<?php echo (int)$row->Rendered_Hours+(int)$row->Remaining_Hours; ?>" id="req_hrs" name="req_hrs" type="text" >
                       <br>
 					   <label>Rendered Hours</label> &nbsp;&nbsp;
                           <!-- <label class="error" id="error_name"> field is required.</label>
                           <label class="error" id="error_name2"> industry already exists.</label> -->
-                          <input disabled class="form-control" placeholder="<?php echo $row->rendered_hrs; ?>" id="rend_hrs" name="rend_hrs" type="text" >
+                          <input disabled class="form-control" placeholder="<?php echo $row->Rendered_Hours; ?>" id="rend_hrs" name="rend_hrs" type="text" >
                       <br>
 					   <label>Remaining Hours</label> &nbsp;&nbsp;
                           <!-- <label class="error" id="error_name"> field is required.</label>
                           <label class="error" id="error_name2"> industry already exists.</label> -->
-                          <input disabled class="form-control" placeholder="<?php echo $row->remaining_hrs; ?>" id="remain_hrs" name="remain_hrs" type="text" >
+                          <input disabled class="form-control" placeholder="<?php echo $row->Remaining_Hours; ?>" id="remain_hrs" name="remain_hrs" type="text" >
                       <br>
 					   <label>On-site Visitation</label> &nbsp;&nbsp;
                           <!-- <label class="error" id="error_name"> field is required.</label>
                           <label class="error" id="error_name2"> industry already exists.</label> -->
-                          <input disabled class="form-control" placeholder="<?php echo $row->visit_date; ?>" id="date_visit" name="date_visit" type="text" >
-                      <br>
-					   <label>Visited</label> &nbsp;&nbsp;
-                          <!-- <label class="error" id="error_name"> field is required.</label>
-                          <label class="error" id="error_name2"> industry already exists.</label> -->
-                          <input disabled class="form-control" placeholder="<?php echo $row->visit; ?>" id="visit" name="visit" type="text" >
+                          <input disabled class="form-control" placeholder="<?php echo $row->Visit_Date; ?>" id="date_visit" name="date_visit" type="text" >
                       <br>
 					   <label>Status of SIT</label> &nbsp;&nbsp;
                           <!-- <label class="error" id="error_name"> field is required.</label>
                           <label class="error" id="error_name2"> industry already exists.</label> -->
-                          <input disabled class="form-control" placeholder="<?php echo $row->status; ?>" id="status" name="status" type="text" >
+                          <input disabled class="form-control" placeholder="<?php echo $row->Status; ?>" id="status" name="status" type="text" >
                       <br>
 				<?php }
 
