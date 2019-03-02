@@ -18,9 +18,9 @@
   	  
      
       <br>
-      <h4><b>Pre-Deployment Stage</b></h4>
+      <h4 class="header4"><b>Pre-Deployment Stage</b></h4>
       	<hr style="background-color: #800000">
-      	<p><b>NOTE: All forms/documents in this section must be submitted to the Faculty-in-Charge before deployment to training station.</b></p><br>
+      	<p class="supporting"><b>NOTE: All forms/documents in this section must be submitted to the Faculty-in-Charge before deployment to training station.</b></p><br>
         <button class="accordion">Guidelines for Student-Trainees</button>
 			<div class="panel">
 				<div class="col-md-6" style="padding: 20px">
@@ -37,7 +37,6 @@
 				    </div>
 				</div>
 			</div>
-
 		<button class="accordion">Waiver</button>
 			<div class="panel">
 				<div class="col-md-6" style="padding: 20px">
