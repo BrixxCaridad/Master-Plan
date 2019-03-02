@@ -1,7 +1,6 @@
 <?php
 class company_model extends CI_Model {
 
-	
 
 	function add_company($company_info)
 	{
@@ -10,24 +9,28 @@ class company_model extends CI_Model {
 
 	function display_company()
 	{
-		$this->db->select("*");
+		$this->db->select('company.Company_Code, company.Company_Name, company.Company_Address, company.Company_Phone, GROUP_CONCAT(type.Type SEPARATOR ",") AS Type');
 		$this->db->from("company");
-		$this->db->join('classification', 'company.Company_Code = classification.Company_Code', 'left');
-        $this->db->join('type', 'classification.Type_No = type.Type_No', 'left');
+		$this->db->join('classification', 'company.Company_Code = classification.Company_Code', 'inner');
+        $this->db->join('type', 'classification.Type_No = type.Type_No', 'inner');
+        $this->db->group_by('classification.Company_Code'); 
 		$query = $this->db->get();
 		return $query;							
 	}
 	
 	function search_company($q)
 	{
-		$this->db->select("*");
+		$this->db->select('company.Company_Code, company.Company_Name, company.Company_Address, company.Company_Phone, GROUP_CONCAT(type.Type SEPARATOR ",") AS Type');
 		$this->db->from("company");
-		$this->db->join('classification', 'company.Company_Code = classification.Company_Code', 'left');
-        $this->db->join('type', 'classification.Type_No = type.Type_No', 'left');
+		$this->db->join('classification', 'company.Company_Code = classification.Company_Code', 'inner');
+        $this->db->join('type', 'classification.Type_No = type.Type_No', 'inner');
+        $this->db->group_by('classification.Company_Code');
+
         $this->db->like("Company_Name",$q);
         $this->db->or_like("Company_Address",$q);
         $this->db->or_like("Type",$q);
         $this->db->or_like("company.Company_Code",$q);
+ 
 		$query = $this->db->get();
 		return $query;							
 	}
