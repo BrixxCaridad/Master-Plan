@@ -15,7 +15,7 @@
         <div class="col-md-7">
           <div class="search">
             <form class="search-form">
-              <input id="myInput" type="text" name="comp_query" placeholder="Search for companies, job specifications, or location" onkeyup="companies()">
+              <input type="text" name="comp_query" placeholder="Search for companies, job specifications, or location">
               <input type="submit" value="Search">
             </form>
           </div>

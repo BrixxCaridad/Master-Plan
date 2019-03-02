@@ -1,8 +1,7 @@
-<?php $this->load->view('include/navbar2'); ?>
 
+<div class="col-md-8">
 <title>SITA | Requirements</title>
 
-<div class="content">
   
       
      <center>
@@ -31,8 +30,8 @@
 						  <p><b>DESCRIPTION:</b> Contains guidelines that need to be observed and followed by the student-trainee.</p><br>
 						  <p><b>MUST BE SUBMITTED TO:</b> Faculty-in-Charge</p><br>
 						  <p><b>MUST BE SIGNED BY:</b> Student-Trainee</p><br>
-						  <div class="col-md-12">
-				    		  <a href="editor_guidelines" class="btn btn-maroon btn-md pull-right" role="button"><span class="glyphicon glyphicon-pencil" style="padding-right: 4px"></span>View Form</a>
+						  <div class="col-md-5">
+				    		  <a href ="" class="btn btn-maroon btn-md pull-right" role="button"><span class="glyphicon glyphicon-print" style="padding-right: 4px"></span>Print</a>
 				    	  </div>
 				    </div>
 				</div>
@@ -56,7 +55,7 @@
 		    	</div>
 			</div>
 
-		<button class="accordion">Application for SIT Form</button>
+		<button type ="button" class="accordion">Application for SIT Form</button>
 			<div class="panel">
 				<div class="col-md-6" style="padding: 20px">
 			  		<img src="assets/img/appsit.png" alt="Application for SIT (FORM)" style="height: 500px; width: 350px">
@@ -70,9 +69,10 @@
 			    	</div>
 			    </div>
 			</div>
-
-		<button class="accordion">NBI Clearance</button>
+       <?=form_open_multipart('Requirements/uploadReq', 'id="SubmitReq"');?>
+		<button class="accordion" type ="button" >NBI Clearance</button>
 			<div class="panel">
+			 
 				<div class="col-md-6" style="padding: 20px">
 			  		<img src="assets/img/nbi.jpg" alt="NBI Clearance" style="height: 500px; width: 350px">
 			  	</div>
@@ -82,14 +82,15 @@
 					  <p><b>MUST BE SUBMITTED TO:</b> Faculty-in-Charge</p><br>
 					  <p><b>MUST BE SIGNED BY:</b> Student-Trainee</p><br>
 					  <p><i><b>*NOTE:</b> You must submit a scanned copy of this document.</i></p><br>
-					  
-			    		  <input style="margin:auto;" class="uploadfile btn-md pull-right" type="file"> 
-			    	  
+					
+			    		  <input name="nbi" style="margin:auto;" class="uploadfile btn-md pull-right" id="myNBI" type="file"> 
+			    	 
+
 			    	</div>
 			    </div>
 			</div>
 
-		<button class="accordion">Medical Clearance</button>
+		<button type ="button" class="accordion">Medical Clearance</button>
 			<div class="panel">
 				<div class="col-md-6" style="padding: 20px">
 			  		<img src="assets/img/med.png" alt="Medical Certificate" style="height: 500px; width: 350px">
@@ -100,12 +101,13 @@
 					  <p><b>MUST BE SUBMITTED TO:</b> Faculty-in-Charge</p><br>
 					  <p><b>MUST BE SIGNED BY:</b> Clinic Representative</p><br>
 					  <p><i><b>*NOTE:</b> You must submit a scanned copy of this document.</i></p><br>
-			    		  <input style="margin:auto;" class="uploadfile btn-md pull-right" type="file"> 
+			    		  <input name="medCert" style="margin:auto;" class="uploadfile btn-md pull-right" type="file"> 
+						    
 			    		  </div>
 			    </div>
 			</div>
-
-		<button class="accordion">Personal Community Tax Certificate</button>
+ 
+		<button type="button" class="accordion">Personal Community Tax Certificate</button>
 			<div class="panel">
 				<div class="col-md-6" style="padding: 20px">
 			  		<img src="assets/img/personalctc.jpg" alt="Personal CTC" style="height: 250px; width: 350px">
@@ -116,12 +118,12 @@
 					  <p><b>MUST BE SUBMITTED TO:</b> Faculty-in-Charge</p><br>
 					  <p><b>MUST BE SIGNED BY:</b> Student-Trainee</p><br>
 					  <p><i><b>*NOTE:</b> Make sure that your CTC has been signed by the Municipal/City Treasurer. Thumbmarks should be affixed on your CTC. You must submit a scanned copy of this document.</i></p><br>
-			    		  <input style="margin:auto;" class="uploadfile btn-md pull-right" type="file"> 
+			    		  <input name="CTax" style="margin:auto;" class="uploadfile btn-md pull-right" type="file"> 
 			    	</div>
 			    </div>
 			</div>
 
-		<button class="accordion">Community Tax Certificate of Parent OR Guardian</button>
+		<button type="button" class="accordion">Community Tax Certificate of Parent OR Guardian</button>
 			<div class="panel">
 				<div class="col-md-6" style="padding: 20px">
 			  		<img src="assets/img/pgctc.jpg" alt="CTC of Parent/Guardian" style="height: 250px; width: 350px">
@@ -132,12 +134,12 @@
 					  <p><b>MUST BE SUBMITTED TO:</b> Faculty-in-Charge</p><br>
 					  <p><b>MUST BE SIGNED BY:</b> Student-Trainee</p><br>
 					  <p><i><b>*NOTE:</b> CTC of Guardian must only be submitted if CTC of parent is unavailable. Make sure that the CTC has been signed by the Municipal/City Treasurer. Thumbmarks should be affixed on the CTC. You must submit a scanned copy of this document.</i></p><br>
-			    		  <input style="margin:auto;" class="uploadfile btn-md pull-right" type="file"> 
+			    		  <input name="GuardianTax" style="margin:auto;" class="uploadfile btn-md pull-right" type="file"> 
 			    	</div>
 			    </div>
 			</div>
 
-		<button class="accordion">TUP Evaluation Sheet</button>
+		<button type="button" class="accordion">TUP Evaluation Sheet</button>
 			<div class="panel">
 				<div class="col-md-6" style="padding: 20px">
 			  		<img src="assets/img/tupeval.jpg" alt="TUP Evaluation Sheet" style="height: 500px; width: 350px">
@@ -148,12 +150,12 @@
 					  <p><b>MUST BE SUBMITTED TO:</b> Faculty-in-Charge</p><br>
 					  <p><b>MUST BE SIGNED BY:</b> University Registrar/Evaluator</p><br>
 					  <p><i><b>*NOTE:</b> You must submit a scanned copy of this document.</i></p><br>
-			    		  <input style="margin:auto;" class="uploadfile btn-md pull-right" type="file"> 
+			    		  <input name="Evaluation" style="margin:auto;" class="uploadfile btn-md pull-right" type="file"> 
 			    	</div>
 			    </div>
 			</div>
 
-		<button class="accordion">Resume</button>
+		<button type ="button" class="accordion">Resume</button>
 			<div class="panel">
 				<div class="col-md-6" style="padding: 20px">
 			  		<img src="assets/img/resume.png" alt="resume" style="height: 500px; width: 450px">
@@ -163,11 +165,11 @@
 					  <p><b>DESCRIPTION:</b> Your resume should contain your picture, educational background, contact details, qualifications. You must sign this document.</p><br>
 					  <p><b>MUST BE SUBMITTED TO:</b> Faculty-in-Charge</p><br>
 					  <p><b>MUST BE SIGNED BY:</b> Student-Trainee</p><br>
-			    		  <input style="margin:auto;" class="uploadfile btn-md pull-right" type="file"> </div>
+			    		  <input name ="resume" style="margin:auto;" class="uploadfile btn-md pull-right" type="file"> </div>
 			    </div>
 			</div>
 
-		<button class="accordion">Registration Form</button>
+		<button type ="button" class="accordion">Registration Form</button>
 			<div class="panel">
 				<div class="col-md-6" style="padding: 20px">
 			  		<img src="assets/img/regform.jpg" alt="Registration Form" style="height: 400px; width: 500px">
@@ -178,12 +180,12 @@
 					  <p><b>MUST BE SUBMITTED TO:</b> Faculty-in-Charge</p><br>
 					  <p><b>MUST BE SIGNED BY:</b> Student-Trainee, University Registrar/Evaluator</p><br>
 					  <p><i><b>*NOTE:</b> You must submit a scanned copy of this document.</i></p><br>
-			    		  <input style="margin:auto;" class="uploadfile btn-md pull-right" type="file"> 
+			    		  <input name="RForm" style="margin:auto;" class="uploadfile btn-md pull-right" type="file"> 
 			    	</div>
 			    </div>
 			</div>
-
-		<button class="accordion">Request for Placement Letter</button>
+</form>
+		<button type ="button" class="accordion">Request for Placement Letter</button>
 			<div class="panel">
 				<div class="col-md-6" style="padding: 20px">
 			  		<img src="assets/img/rqplacement.png" alt="Request for Placement Letter" style="height: 500px; width: 350px">
@@ -197,8 +199,8 @@
 			    	</div>
 			    </div>
 			</div>
-
-		<button class="accordion">Placement Letter</button>
+		      
+		<button type ="button" class="accordion">Placement Letter</button>
 			<div class="panel">
 				<div class="col-md-6" style="padding: 20px">
 			  		<img src="assets/img/appsit.jpg" alt="Placement Letter" style="height: 500px; width: 350px">
@@ -214,6 +216,9 @@
 			    	</div>
 			    </div>
 			</div>
+			  
+			<button class ="col-md-12 btn btn-success"	type="submit" form="SubmitReq" value="Submit">Submit</button>
+			</div>
 		
   	<script type="text/javascript">
   		var acc = document.getElementsByClassName("accordion");
@@ -222,9 +227,13 @@
 			for (i = 0; i < acc.length; i++) {
     			acc[i].onclick = function(){
         			this.classList.toggle("active");
+					
         			this.nextElementSibling.classList.toggle("show");
+					
     			}
 			}
+		  
+		  
+		 
   	</script>
 
-</div>
