@@ -11,7 +11,8 @@ class requirements extends CI_Controller {
         }
 	public function index()
 	{
-		$this->load->view('include/header');
+		$headerdata['title'] = "SITA | Requirements";
+		$this->load->view('include/header',$headerdata);
 		$this->load->view('include/navbar2');
 		$this->load->view('sita/requirements');
 		
@@ -21,13 +22,17 @@ class requirements extends CI_Controller {
 
 	public function guidelines()
 	{
-		$this->load->view('include/header');
+		// $this->load->view('include/header');
+		$headerdata['title'] = "SITA | Guidelines";
+		$this->load->view('include/header',$headerdata);
 		$this->load->view('sita/postdep', $data);
 	}
 
 	public function waiver()
 	{
-		$this->load->view('include/header');
+		// $this->load->view('include/header');
+		$headerdata['title'] = "SITA | Waiver";
+		$this->load->view('include/header',$headerdata);
 		$this->load->view('sita/editor');
 	}
 	public function uploadReq()

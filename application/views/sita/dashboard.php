@@ -1,31 +1,23 @@
-
-
-<title>SITA | Student Dashboard</title>
-<div class="content">
-  
-      
-      <center>
-          <!-- <h4 style="color: black"><img src="assets/img/TUPlogo.png" alt="TUP Logo" style="height:45px; width: 45px">Technological University of the Philippines - Manila</h4> -->
-          <!-- <p style="color: black; font-size: 20px"><b>SITA : SIT ASSISTANT</b></p> -->
-          <img src="assets/img/sita2.png" alt="TUP Logo" style="height:11%; width: 11%">
-      </center>
-
-      
-      <hr style="background-color: #800000">
-    
-      <div class="dashboard">
-            <h3 style="color: #800000">Welcome to your <?php echo $_SESSION['account_type']; ?> Dashboard, <?php echo $_SESSION['account_name']; ?>!</h3>
-            <p id="demo"></p>
-        <script>
-          document.getElementById("demo").innerHTML = Date();
-        </script>
-      </div>
-      
-      <div class="dashboard">
-          <div class="col-md-8">
-              <div class="dashtitle">
-                  <h4><b>ANNOUNCEMENTS!</b></h4>
-              </div>
+<section class="main-main-container">
+	<div class="page-title">
+        <h4 class="text-bold"><b><span class="fa fa-dashboard"></span> DASHBOARD<small></small></b></h4>
+    </div>
+    <div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="dashboard">
+            		<h3 style="color: #800000">Welcome to your <?php echo $_SESSION['account_type']; ?> Dashboard, <?php echo $_SESSION['account_name']; ?>!</h3>
+            		<p id="demo"></p>
+        			<script>document.getElementById("demo").innerHTML = Date();</script>
+      			</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<div class="dashtitle">
+                  <h4><b><span class="fa fa-bullhorn"></span> ANNOUNCEMENTS!</b></h4>
+			  </div>
+			  <br/>
               <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
                   <ol class="carousel-indicators">
@@ -70,21 +62,19 @@
                       <span class="glyphicon glyphicon-chevron-right"></span>
                       <span class="sr-only">Next</span>
                   </a>
-              </div>
-          </div>
-          <div class="col-md-4">
+			  </div>
+		  
+			</div>
+			<div class="col-md-4">
               <div class="dashtitle">
-                  <h4><b>IMPORTANT LINKS</b></h4>
+                  <h4><span class="fa  fa-external-link"></span><b> Important Links</b></h4>
               </div>
               <div class="list-group list-group-flush list-group-implinks">
                   <a href="http://tup.edu.ph/" class="list-group-implinks list-group-item">TUP Website</a>
                   <a href="https://www.google.com/intl/fil/gmail/about/#" class="list-group-implinks list-group-item">Google Mail</a>
                   <a href="http://api.ched.ph/api/v1/download/4729" class="list-group-implinks list-group-item">CHED Memo Order No. 63 Series of 2017</a>
               </div>
-          </div>
-      </div>
-      
-      <center>
-      <br>
-
-</div>
+		  	</div>
+		</div>
+	</div>
+</section>

@@ -5,10 +5,11 @@ class dashboard extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('include/header');
+		$headerdata['title'] = "SITA | Dashboard";
+		$this->load->view('include/header',$headerdata);
 		$this->load->view('include/navbar2');  
 		$this->load->view('sita/dashboard');
-		//$this->load->view('include/footer');
+		$this->load->view('include/footer');
 	}
 
 	public function calendar()

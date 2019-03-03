@@ -20,10 +20,12 @@ class editor_placement extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('include/header');
+		// $this->load->view('include/header');
+		$headerdata['title'] = "SITA | Placement";
+		$this->load->view('include/header',$headerdata);
 		$this->load->view('sita/editor_placement');
 		// $data['page_title'] = 'title';
-		//$this->load->view('include/footer');
+		$this->load->view('include/footer');
 	}
 
 
