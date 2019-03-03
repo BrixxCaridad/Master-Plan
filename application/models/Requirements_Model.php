@@ -77,10 +77,19 @@ class Requirements_Model extends CI_Model {
 
 
 
-	public function read($data){
+	public function read($data = null){
+		if(isset($data))
 		$this->db->where('userID',$data);
 		$this->db->order_by('coverID','DESC');
 		$this->db->limit(1);
+		$query=$this->db->get($this->table);
+	  return $query->result_array();
+	
+		
+	 
+	}
+	
+	public function read_req($data = null){
 		$query=$this->db->get($this->table);
 	  return $query->result_array();
 	
