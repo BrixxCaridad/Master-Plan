@@ -29,6 +29,26 @@ class  faculty_model extends CI_Model {
         return $query->result_array();
     }
 
+    function get_info_by_id($id){
+        $this->db->select('*');
+        $this->db->from('faculty');
+        $this->db->where('Faculty_ID', $id);
+        $query=$this->db->get();
+        return $query;  
+    }
+
+    function get_college(){
+        $this->db->select('*');
+        $this->db->from('college');
+        $query=$this->db->get();
+        return $query;  
+    }
+
+    function update_info_by_id($id,$data){
+        $this->db->where('Faculty_ID', $id);
+        $this->db->update('faculty', $data);        
+    }
+
 
     function add_student($postData){
 

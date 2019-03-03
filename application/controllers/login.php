@@ -11,7 +11,7 @@ class login extends CI_Controller {
 	{
 		if($this->session->userdata('logged_in')==TRUE)
 		{
-			redirect(base_url('dashboard'), 'refresh');			
+			redirect(base_url(''), 'refresh');			
 		}
 		$uname = $this->input->post('uname');
 		$password = $this->input->post('password');
@@ -40,7 +40,7 @@ class login extends CI_Controller {
                     $this->session->set_userdata('account_type','Faculty');
                     $this->session->set_userdata('logged_in',TRUE);
 				}	
-				redirect(base_url('dashboard'), 'refresh');	
+				redirect(base_url('fic'), 'refresh');	
 			}
 		}	
 		else

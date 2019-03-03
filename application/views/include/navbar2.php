@@ -29,24 +29,23 @@
  
   
   <a href="<?php echo base_url('dashboard')?>">Dashboard</a>
-  <a href="requirements">Requirements</a>
+
+  <a href="<?php echo base_url('depinfo')?>">Deployment</a>
+
+  <a href="<?php echo base_url('requirements')?>">Requirements</a>
   <a href="<?php echo base_url('companies')?>">Companies</a>
-  <a href="messages2">Messages<span class="badge">2</span></a>
   <a href="<?php echo base_url('accountsettings')?>">Account Settings</a>
   <a href="<?php echo base_url('login/logout');?>">Logout</a>
  
 
 </div>
 
-<!-- <style type="text/css">
-    .badge{
-      margin-left: 5px;
-      background-color: #808080;
-      border-style: solid;
-      border-width: 2px;
-      border-radius: 50px;
-    }
-</style> -->
+<style type="text/css">
+  a.disabled {
+    cursor: not-allowed; 
+    pointer-events: none;
+  }
+</style>
 
 
 </body>

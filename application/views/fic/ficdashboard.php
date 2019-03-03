@@ -4,7 +4,7 @@
 
 <title>SITA | Faculty Dashboard</title> 
 <div class="content">
-      <center><h2 style="color: black"><img src="assets/img/TUPlogo.png" alt="TUP Logo" style="height:45px; width: 45px">Technological University of the Philippines - Manila</h2></center>
+      <center><h2 style="color: black"><img src="<?php echo base_url()?>assets/img/TUPlogo.png" alt="TUP Logo" style="height:45px; width: 45px">Technological University of the Philippines - Manila</h2></center>
       
 
       <center><p style="color: black; font-size: 28px"><b>SITA : SIT ASSISTANT</b></p></h1></center>
@@ -19,7 +19,7 @@
           document.getElementById("demo").innerHTML = Date();
         </script>
       
-          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addStudent">Open Modal</button>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addStudent">Add Student</button>
 
        <span data-toggle="tooltip" data-placement="top" title="Add Student">  
                     
@@ -63,9 +63,6 @@
   </div>
 </center>
 </div>
-
-
-
 
 
 <div  id="addStudent" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >

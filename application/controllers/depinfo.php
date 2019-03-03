@@ -6,7 +6,14 @@ class depinfo extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('sita_model');
-		$data["display_dep"] = $this->sita_model->display_dep();		
+		if(isset($_SESSION['account_type'])){
+			if($_SESSION['account_type']=='Student'){
+				$data["display_dep"] = $this->sita_model->display_dep_bystud($_SESSION['account_id']);	
+			}
+		}	
+		else{
+			$data["display_dep"] = $this->sita_model->display_dep();	
+		}
 		$this->load->view('include/header');
 		$this->load->view('include/navbar2');
 		$this->load->view('sita/depinfo',$data);

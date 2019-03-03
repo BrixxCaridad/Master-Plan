@@ -1,4 +1,5 @@
 
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/ficmain.css">
 <div class="ficsidebar">
 
   <br>
@@ -8,7 +9,7 @@
       
       <div class="col-md-2">
           <center>
-            <img class="img-responsive img-circle" src="assets/img/panpan.jpg" alt="May Garcia" style="border-radius: 50% width= 50% height=50%"> 
+            <img class="img-responsive img-circle" src="<?php echo base_url()?>assets/img/panpan.jpg" alt="May Garcia" style="border-radius: 50% width= 50% height=50%"> 
           </center>
 
           <center>
@@ -25,7 +26,7 @@
   <a href="<?php echo base_url();?>ficemailcon">Messages</a>
   <a href="<?php echo base_url();?>ficgpscon">Company Lists</a>
   <a href="<?php echo base_url();?>ficaccountcon">Account Settings</a>
-  <a href="<?php echo base_url();?>welcomepage">Logout</a>
+  <a href="<?php echo base_url();?>login/logout">Logout</a>
 
  
 
