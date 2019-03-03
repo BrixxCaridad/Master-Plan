@@ -11,7 +11,7 @@ class Requirements_Model extends CI_Model {
 	
 	public function uploadNBI($data){
 
-		
+	
 			$this->db->set('NBI',$data['NBI']);
 			$this->db->where('Student_ID',$data['Student_ID']);
             $this->db->update($this->table);
