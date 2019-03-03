@@ -38,19 +38,25 @@
 		
         <td><?php echo $row['Course_Code']; ?></td>
 		<?php 
+		$y=0;
 		foreach($req as $r){
 			if($row['Student_ID'] == $r['Student_ID']){
-				if($r['Waiver'] == "" || $r['Application_Form'] == "" || $r['Placement_Letter'] == "" || $r['NBI'] == "" || 
-				$r['Medical_Certificate'] == "" || $r['Tax_Certificate_Student'] == "" || $r['Tax_Certificate_Parent'] == "" || $r['Resume'] == ""
-				|| $r['Registration_Form'] == "" )
+				if($r['Waiver'] == "Incomplete" || $r['Application_Form'] == "Incomplete" || $r['Placement_Letter'] == "Incomplete" || $r['NBI'] == "Incomplete" || 
+				$r['Medical_Certificate'] == "Incomplete" || $r['Tax_Certificate_Student'] == "Incomplete" || $r['Tax_Certificate_Parent'] == "Incomplete" || $r['Resume'] == "Incomplete"
+				|| $r['Registration_Form'] == "Incomplete" )
 				
 				echo "<td>Incomplete Submission</td>" ;   
 
 				else
 					echo "<td>Complete Submission</td>";
+				$y++;
 				
 			}
+		
 		}
+		if($y ==0)
+			echo "<td>No requirement submitted</td>";
+			
 		?>
         <td style="text-align: center";> <span data-toggle="tooltip" data-placement="top" title="Submission Details">
 		<?php foreach($req as $r){
@@ -58,9 +64,8 @@
 			echo '<a  class="openModal" href="#viewRequirements" data-toggle="modal" data-id='.$row['Student_ID'].'" data-surname="'.$row['Student_Lastname'].'"
            data-firstname="'.$row['Student_Firstname'].'" data-middle="'.$row['Student_Middlename'].'" data-waiver="'.
 		   $r['Waiver'].'" data-appform="'.$r['Application_Form'].'" data-placement="'.$r['Placement_Letter'].'" 
-		   data-nbi="'.$r['NBI'].'" data-medcert"'.$r['Medical_Certificate'].'" data-taxcerts="'.$r['Tax_Certificate_Student'].'"
+		   data-nbi="'.$r['NBI'].'" data-medcert="'.$r['Medical_Certificate'].'" data-taxcerts="'.$r['Tax_Certificate_Student'].'"
 		   data-taxcertp="'.$r['Tax_Certificate_Parent'].'" data-resume="'.$r['Resume'].'" data-regform="'.$r['Registration_Form'].'">View submitted requirements</a></td>';
-			
 			}
 		}
 		?>
@@ -131,20 +136,20 @@
 <!--                           <label class="error" id="edit-error_email"> field is required.</label>
                               <label class="error" id="edit-error_email2"> email has already exist.</label>
                               <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
-                              <img id="view-nbi" name="view-nbi"/>
+                              <a id="view-nbi" name="view-nbi"> view </a>
                             </div> 
                           </div> <!-- col-lg-6 -->
 
+                          <div class="row">
                           <div class="col-lg-6">
-                              <div class="form-group">
-                                <label>TELEPHONE NUMBER</label> &nbsp;&nbsp;
-<!--                            <label class="error" id="edit-error_email"> field is required.</label>
-                                <label class="error" id="edit-error_email2"> email has already exist.</label>
-                                <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
-                                <input class="form-control" id="view-telephone" placeholder="Contact No" name="view-telephone"  disabled>
-                              </div> 
+                            <div class="form-group">
+                              <label>Medical Certificate</label> &nbsp;&nbsp;
+<!--                           <label class="error" id="edit-error_email"> field is required.</label>
+                              <label class="error" id="edit-error_email2"> email has already exist.</label>
+                              <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
+                              <a id="view-medcert" name="view-medcert"> view </a>
+                            </div> 
                           </div> <!-- col-lg-6 -->
-                        </div> <!-- row -->
                 
                     </div> <!-- Mode-body -->
                   </div> <!-- Model-dialog -->
@@ -158,14 +163,16 @@ $(document).on("click", ".openModal", function () {
      var fname = $(this).data('firstname');
     var middle = $(this).data('middle');
     var nbi = $(this).data('nbi');
-    var tnum = $(this).data('tnum');
+    var medcert = $(this).data('medcert');
      $(".modal-body #view-id-num").val( myId );
      $(".modal-body #view-s-name").val( sname );
      $(".modal-body #view-f-name").val( fname );
      $(".modal-body #view-m-name").val( middle );
-	 var nbiurl = "<?php echo base_url('NBI/'); ?>";
-	 a = document.getElementById('view-nbi');
-     a.setAttribute("src",nbiurl.concat(nbi) + ".jpg" );
+	 var url = "<?php echo base_url(); ?>";
+	 nbi1 = document.getElementById('view-nbi');
+     nbi1.setAttribute("href",url.concat(nbi) + ".jpg" );
+	 med = document.getElementById('view-medcert');
+     med.setAttribute("href",url.concat(medcert) + ".jpg" );
      $(".modal-body #view-telephone").val( tnum );
 });
 
