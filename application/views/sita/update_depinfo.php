@@ -14,7 +14,14 @@
 	  <div class="container">
   <h2>Edit Deployment</h2>
   
-  <?php echo form_open_multipart("depinfo/update"); 
+  <?php 
+  if($_SESSION['account_type']=='Students'){
+    echo form_open_multipart("depinfo/update"); 
+  }
+  else{
+    echo form_open_multipart("ficdepinfo/update"); 
+  }
+
   if ($display_dep->num_rows() > 0)
        {
         foreach ($display_dep->result() as $row)
@@ -27,15 +34,15 @@
       <label class="control-label col-sm-2" for="email">Company:</label>
       <div class="col-sm-10">
         <input type="hidden" class="form-control" id="id" value="<?php echo $row->Sit_No; ?>" name="id" >
-        <input type="text" class="form-control" id="add_depcomp" value="<?php echo $row->Company_Name; ?>" name="add_depcomp">
+        <select style="margin-top: 0px; height: 35px;" name="com"  id="coll" class="form-control"  >
+                <?php foreach ($display_company->result() as $com)
+              {?>
+          <option type="text" value="<?php echo $com->Company_Code?>" <?php if ($row->Company_Code == $com->Company_Code ) echo 'selected' ; ?>><?php echo $com->Company_Name?></option>
+        <?php }?>
+        </select>
       </div>
     </div>
-    <!--<div class="form-group col-md-6">
-      <label class="control-label col-sm-2" for="pwd">Supervisor:</label>
-      <div class="col-sm-10">          
-        <input type="text" class="form-control" id="add_depsup" value="" name="add_depsup">
-      </div>
-    </div>-->
+
 	 <div class="form-group col-md-6">
       <label class="control-label col-sm-2" for="pwd">Date Deployed:</label>
       <div class="col-sm-10">          

@@ -5,6 +5,14 @@ class sita_model extends CI_Model {
 	// {
 	// 	$this->load->database();
 	// }
+	function display_company()
+    {
+        $this->db->select("*");
+        $this->db->from("company");
+        $query = $this->db->get();
+        return $query;      
+    }
+    
 	public function display_dep()
 	{
 		$this->db->select("*");
