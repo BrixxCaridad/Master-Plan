@@ -21,6 +21,7 @@ class  faculty_model extends CI_Model {
 
     }
 
+
     function get_stud_by_id($id){
         $this->db->select('*');
         $this->db->from('student');
@@ -50,13 +51,13 @@ class  faculty_model extends CI_Model {
     }
 
 
-    function add_student($postData){
-
-        //$validate = $this->validate_company($postData);
-        $this->db->insert('id_num', 's_lname', 'f_name', 'm_name');
-        $this->db->to('student');
-        $query=$this->db->get();
-        return $query->result_array();
+    function add_student($data){
+            
+         $this->db->insert('student',$data);
+         $deployment = array('Student_ID'=>$data['Student_ID']);
+         $this->db->insert('pre_deployment',$deployment);
+         return $insert_id = $this->db->insert_id();
+      
     }
     
 
