@@ -35,7 +35,6 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/util.css')?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/main.css')?>">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/ficmain.css">
 	<!-- <link rel="stylesheet" type="text/css" href="assets/css/supervisormain.css"> -->
 	<!-- <link rel="stylesheet" type="text/css" href="assets/css/ficmain.css">  -->
 <!--===============================================================================================
