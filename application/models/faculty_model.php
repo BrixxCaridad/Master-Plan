@@ -11,6 +11,49 @@ class  faculty_model extends CI_Model {
         $this->load->model('sita_model','sita');
     }
 
+    function update_dep_byid($id,$data)
+    {
+        $this->db->where('Sit_No', $id);
+        $this->db->update("sit",$data);
+    }
+    
+    function delete_dep_byid($id)
+    {
+        $this->db->where('Sit_No', $id);
+        $this->db->delete("sit");
+    }
+
+    function display_company()
+    {
+        $this->db->select("*");
+        $this->db->from("company");
+        $query = $this->db->get();
+        return $query;      
+    }
+
+    function display_dep_byid($id)
+    {
+        $this->db->select("*");
+        $this->db->from("sit");
+        $this->db->join('company', 'sit.Company_Code = company.Company_Code', 'inner');
+        $this->db->join('faculty', 'sit.Faculty_ID = faculty.Faculty_ID', 'inner');
+        $this->db->where('Sit_No', $id);
+        $query = $this->db->get();
+        
+        return $query;      
+    }
+
+    function display_dep_byfic($id){
+        $this->db->select('*');
+        $this->db->from('sit');
+        $this->db->where('Faculty_ID', $id);
+        $this->db->join('student', 'sit.Student_ID = student.Student_ID', 'left');
+        $this->db->join('company', 'sit.Company_Code = company.Company_Code', 'left');
+        $query = $this->db->get();
+        return $query;
+    }
+
+
     function get_student_list($id){
          $this->db->select('*');
         $this->db->from('sit');
@@ -18,7 +61,6 @@ class  faculty_model extends CI_Model {
         $query = $this->db->get();
         
         return $query->result_array();
-
     }
 
     function get_stud_by_id($id){
