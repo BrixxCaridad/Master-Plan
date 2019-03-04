@@ -12,7 +12,7 @@
 
 	<!-- Latest compiled JavaScript -->
 	<script src="<?php echo base_url()?>assets/js/jquery.min.js"></script>
-	<!--<script src="<?php echo base_url()?>assets/js/jquery.js"></script>--!>
+	<!--<script src="<?php echo base_url()?>assets/js/jquery.js"></script>-->
 	
 
 <!--===============================================================================================-->	
@@ -54,7 +54,6 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
-<title><?php echo $title ?></title>
 
 </head>
 <body class="s-layout">
