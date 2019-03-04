@@ -1,10 +1,10 @@
 
 
 
-
+  
 <title>SITA | Faculty Dashboard</title> 
 <div class="content">
-      <center><h2 style="color: black"><img src="assets/img/TUPlogo.png" alt="TUP Logo" style="height:45px; width: 45px">Technological University of the Philippines - Manila</h2></center>
+      <center><h2 style="color: black"><img src="<?php echo base_url()?>assets/img/TUPlogo.png" alt="TUP Logo" style="height:45px; width: 45px">Technological University of the Philippines - Manila</h2></center>
       
 
       <center><p style="color: black; font-size: 28px"><b>SITA : SIT ASSISTANT</b></p></h1></center>
@@ -19,7 +19,9 @@
           document.getElementById("demo").innerHTML = Date();
         </script>
       
-          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addStudent">Open Modal</button>
+
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addStudent">Add Student</button>
+
 
        <span data-toggle="tooltip" data-placement="top" title="Add Student">  
                     
@@ -40,7 +42,7 @@
         <th>STATUS</th>
         <th>ACTION</th>
       </tr>
-    </thead>
+    </thead>        
     <tbody>
       <?php
           foreach($data as $row):
@@ -63,9 +65,6 @@
   </div>
 </center>
 </div>
-
-
-
 
 
 <div  id="addStudent" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
@@ -120,7 +119,19 @@
                       </div> 
                     </div>  
                 </div>
-                  
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>Course</label> &nbsp;&nbsp;
+                  <select style="height:40px;" class="form-control" id="course" name="course"  value="<?php echo set_value('course');?>">
+                  <?php
+                  foreach($courses as $s){ 
+                  echo '<option value="'.$s['Course_Code'].'">'.$s['Course_Code'].'</option>';
+                  }
+                  ?>
+                  </select>
+                    </div>
+
+              </div>
               </div>
             </form>
        <div class="modal-footer">
@@ -290,4 +301,33 @@ $(document).on("click", ".openModal", function () {
      $(".modal-body #view-cp-num").val( cnum );
      $(".modal-body #view-telephone").val( tnum );
 });
+
+
+document.getElementById("newStudentSubmit").addEventListener("click", function(event){
+  event.preventDefault()
+});
+
+$(document).ready(function(){
+   $("#newStudentSubmit").click(function(event){
+    event.preventDefault();
+
+    $.ajax({
+   type: "POST",
+   url: "<?php echo base_url();?>fic/check_user",
+   data: "name="+$("#id_num").val(),
+   success: function(msg){
+          if(msg!="true")
+          { 
+              alert(msg);
+          }
+          else{
+             $("#StudentAdd").submit();
+             }
+     }
+   
+    });
+
+
+  });
+   });
 </script>

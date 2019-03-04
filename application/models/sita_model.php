@@ -5,12 +5,32 @@ class sita_model extends CI_Model {
 	// {
 	// 	$this->load->database();
 	// }
+	function display_company()
+    {
+        $this->db->select("*");
+        $this->db->from("company");
+        $query = $this->db->get();
+        return $query;      
+    }
+    
 	public function display_dep()
 	{
 		$this->db->select("*");
 		$this->db->from("sit");
 		$this->db->join('company', 'sit.Company_Code = company.Company_Code', 'inner');
 		$this->db->join('faculty', 'sit.Faculty_ID = faculty.Faculty_ID', 'inner');
+		$query = $this->db->get();
+		
+		return $query;		
+	}
+
+	public function display_dep_bystud($id)
+	{
+		$this->db->select("*");
+		$this->db->from("sit");
+		$this->db->join('company', 'sit.Company_Code = company.Company_Code', 'inner');
+		$this->db->join('faculty', 'sit.Faculty_ID = faculty.Faculty_ID', 'inner');
+		$this->db->where('Student_ID', $id);
 		$query = $this->db->get();
 		
 		return $query;		

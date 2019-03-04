@@ -58,3 +58,10 @@
      </ul>
   </nav>
 </div>
+
+<style type="text/css">
+  a.disabled {
+    cursor: not-allowed; 
+    pointer-events: none;
+  }
+</style>

@@ -1,19 +1,25 @@
-<div class="main-main-container">
-	<div class="page-title">
-    <h4 class="text-bold"><b><span class="fa fa-building"></span> DEPLOYMENT INFORMATION<small></small></b></h4>
-  </div>
-	<div class="container-fluid">
-		<div class="row mt-4">
-			<div class="col-md-12">
-				<a href="add_deployment_cont" class="btn btn-maroon btn-md" role="button"><span class="glyphicon glyphicon-plus" style="padding-right: 4px"></span>Add Deployment</a>
-			</div>
-		</div>
-		<div class="row mt-4">
-			<div class="col-md-12">
+
+
+<title>SITA | Deployment Information</title>
+<div class="content">
+  
+      
+     <center>
+          <!-- <h4 style="color: black"><img src="assets/img/TUPlogo.png" alt="TUP Logo" style="height:45px; width: 45px">Technological University of the Philippines - Manila</h4> -->
+          <!-- <p style="color: black; font-size: 20px"><b>SITA : SIT ASSISTANT</b></p> -->
+          <img src="assets/img/sita2.png" alt="TUP Logo" style="height:11%; width: 11%">
+      </center>
+      <hr style="background-color: #800000">
+      
+      <br>
+      
+      
+      <center>
+      <br>
   <div class="table-responsive" style="font-size: 14px">          
   <table id="myTable"  class="table">
-    <thead style="background-color: #e4e4e4">
-      <!-- <th colspan="11" style="background-color: #ffe8e8; color: #800000; font-size: 20px; text-align: center">DEPLOYMENT INFORMATION</th> -->
+    <thead style="color: #800000">
+      <th colspan="11" style="background-color: #ffe8e8; color: #800000; font-size: 20px; text-align: center">DEPLOYMENT INFORMATION</th>
       <tr>
         <th>Company</th>
         <th>Supervisor</th>
@@ -43,7 +49,7 @@
 					
 					<tr>				
 						<td><?php echo $row->Company_Name; ?> </td>
-						<td><?php echo $row->Faculty_Lastname ; ?> </td>
+						<td><?php echo $row->Student_Firstname.' '.$row->Student_Middlename.' '.$row->Student_Lastname ; ?> </td>
 						<td><?php echo $row->Date_Deployed; ?> </td>
 						<td><?php echo $row->Date_Ending; ?> </td>
 						<td><?php echo (int)$row->Rendered_Hours+(int)$row->Remaining_Hours; ?> </td>
@@ -73,8 +79,8 @@
             if(isset($_SESSION['account_type'])){
             if($_SESSION['account_type']!='Student'){?>
 						<td>
-              <a href="<?php echo base_url("depinfo/edit/".$row->Sit_No)?>" id="<?php echo $row->Sit_No; ?>" class="btn btn-warning update_btn" role="button"><span class="glyphicon glyphicon-pencil"></span> Update</a>						
-              <a href="<?php echo base_url("depinfo/delete/".$row->Sit_No)?>" id="<?php echo $row->Sit_No; ?>" class="btn btn-danger delete_data" role="button"><span class="glyphicon glyphicon-trash" style="padding-right: 4px"></span>Delete</a>   
+              <a href="<?php echo base_url("ficdepinfo/edit/".$row->Sit_No)?>" id="<?php echo $row->Sit_No; ?>" class="btn btn-warning update_btn" role="button"><span class="glyphicon glyphicon-pencil"></span> Update</a>						
+              <a href="<?php echo base_url("ficdepinfo/delete/".$row->Sit_No)?>" id="<?php echo $row->Sit_No; ?>" class="btn btn-danger delete_data" role="button"><span class="glyphicon glyphicon-trash" style="padding-right: 4px"></span>Delete</a>   
             </td>
           <?php }}?>
 					</tr>
@@ -97,18 +103,10 @@
 		    
     </tbody>
   </table>
-	</div>
-	
-	</div>
-	</div>
-	</div>
+  </div>
   
     <!--<button data-toggle="modal" data-target="#myModal" class="btn btn-maroon btn-md pull-right" role="button"><span class="glyphicon glyphicon-pencil" style="padding-right: 4px"></span>Fill Out Forms</button> -->
-    <?php 
-        if(isset($_SESSION['account_type'])){
-        if($_SESSION['account_type']!='Student'){?>
-    <a href="add_deployment_cont" class="btn btn-maroon btn-md pull-right" role="button"><span class="glyphicon glyphicon-plus" style="padding-right: 4px"></span>Add Deployment</a>
-    <?php }}?>
+
   
   
   

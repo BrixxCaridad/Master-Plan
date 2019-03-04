@@ -2,24 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class fic extends CI_Controller {
-
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
 	
-
 	public function __Construct() {
         parent::__Construct();     
         /*if(!$this->session->userdata('logged_in')) {
@@ -31,26 +14,47 @@ class fic extends CI_Controller {
         }*/
 
         $this->load->model('faculty_model','ficm');
-      
+       $this->load->model('course_model','course');
     } 
 
     public function index()
 	{
      
        $data['data'] = $this->ficm->get_student_list($_SESSION['account_id']);
-
-        $this->load->view('include/ficnavbar2'); 
-		$this->load->view('include/header');
-		$this->load->view('fic/ficdashboard',$data);
+     $data['courses'] = $this->course->get_course();
+        $this->load->view('include/header');
   
+        $this->load->view('include/ficnavbar2'); 
+		$this->load->view('fic/ficdashboard',$data);
 		$this->load->view('include/footer');
 	}
+    function check_user(){
+    $data=array(
+        array('field'=>'name','label'=>'ID number','rules'=>'trim|required|is_unique[student.Student_ID]'));
+        $this->form_validation->set_rules($data);
+        $this->form_validation->set_message('is_unique', 'Username already exist');
+        if ($this->form_validation->run()===FALSE){
+                    $error=validation_errors();
+                    echo $error;
+                
+        }
+        else{
+           echo  'true';
+        }
 
+
+
+    }
 	function add_student(){
        // Array ( [id_num] => aaaaaaa [s_lname] => bbbb [f_fname] => cccc [m_mname] => dddddd )
-      
-        $data = array('id' =>$_POST['id_num'],'lname'=>$_POST['s_lname'],'fname'=>'f_fname','mname'=>$_POST['m_lname']);
+        $data = array('Student_ID' =>$_POST['id_num'],'Student_Lastname'=>$_POST['s_lname'],'Student_Firstname'=>$_POST['f_fname'],'Student_Middlename'=>$_POST['m_mname'],'Course_Code' => $_POST['course'],'Access_Level_Code'=>'STUD','Password'=>'12345678');
         $this->ficm->add_student($data);
+
+        
+
+
+        
+        redirect('/fic');
     }
 
 

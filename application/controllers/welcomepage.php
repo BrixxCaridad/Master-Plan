@@ -12,7 +12,13 @@ class Welcomepage extends CI_Controller {
 	{
 		if($this->session->userdata('logged_in')==TRUE)
 		{
-			redirect(base_url('dashboard'), 'refresh');			
+			if($this->session->userdata('account_type')=='Faculty')
+			{
+				redirect(base_url('fic'), 'refresh');			
+			}
+			else{
+				redirect(base_url('dashboard'), 'refresh');			
+			}
 		}
 		$this->load->view('include/header');
 		$this->load->view('sita/login');

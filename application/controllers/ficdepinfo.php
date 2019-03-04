@@ -1,47 +1,48 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class depinfo extends CI_Controller {
+class ficdepinfo extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->model('sita_model');
+		$this->load->model('faculty_model');
 		if(isset($_SESSION['account_type'])){
 			if($_SESSION['account_type']=='Student'){
-				$data["display_dep"] = $this->sita_model->display_dep_bystud($_SESSION['account_id']);	
+				$data["display_dep"] = $this->faculty_model->display_dep_byfic($_SESSION['account_id']);	
+			}
+			elseif($_SESSION['account_type']=='Faculty'){
+				$data["display_dep"] = $this->faculty_model->display_dep_byfic($_SESSION['account_id']);	
 			}
 		}	
 		else{
-			$data["display_dep"] = $this->sita_model->display_dep();	
+			$data["display_dep"] = $this->faculty_model->display_dep_byfic();	
 		}
-		$headerdata['title'] = "SITA | Deployment Information";
-		$this->load->view('include/header',$headerdata);		
-		$this->load->view('include/navbar2');
-		$this->load->view('sita/depinfo',$data);
+		$this->load->view('include/header');
+        $this->load->view('include/ficnavbar2'); 
+		$this->load->view('fic/ficdepinfo',$data);
 	}
 	
 	public function delete($id)
 	{
-		$this->load->model('sita_model');
-		$this->sita_model->delete_dep_byid($id);	
-		redirect(base_url() . "depinfo");
+		$this->load->model('faculty_model');
+		$this->faculty_model->delete_dep_byid($id);	
+		redirect(base_url() . "ficdepinfo");
 	}
 	
 	public function edit($id)
 	{
-		$this->load->model('sita_model');
-
+		$this->load->model('faculty_model');
+		
 		$data["display_company"] = $this->faculty_model->display_company();
-		$data["display_dep"] = $this->sita_model->display_dep_byid($id);				
-		$headerdata['title'] = "SITA | Deployment Info Update";
-		$this->load->view('include/header',$headerdata);
-		$this->load->view('include/navbar2');
+		$data["display_dep"] = $this->faculty_model->display_dep_byid($id);				
+		$this->load->view('include/header');
+        $this->load->view('include/ficnavbar2'); 
 		$this->load->view('sita/update_depinfo',$data);
 	}
 	
 	public function update()
 	{
-		$this->load->model('sita_model');
+		$this->load->model('faculty_model');
 		//find company code
 		$dep_info=array(
 			'Company_Code' => $_POST['com'],
@@ -50,8 +51,8 @@ class depinfo extends CI_Controller {
 			'Visit_Date' => $_POST['add_datevisit'],
 			'Status' => $_POST['add_status']
 		);
-		$this->sita_model->update_dep_byid($_POST['id'],$dep_info);	
-		redirect(base_url() . "depinfo");
+		$this->faculty_model->update_dep_byid($_POST['id'],$dep_info);	
+		redirect(base_url() . "ficdepinfo");
 	}
 	
 	
