@@ -36,6 +36,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/util.css')?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/main.css')?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/mycss.css')?>">
 	<!-- <link rel="stylesheet" type="text/css" href="assets/css/supervisormain.css"> -->
 	<!-- <link rel="stylesheet" type="text/css" href="assets/css/ficmain.css">  -->
 <!--===============================================================================================
@@ -45,7 +46,7 @@
 	<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" charset="utf8" src="<?php echo base_url('assets/js/search.js')?>"></script>
 	<script type="text/javascript" charset="utf8" src="<?php echo base_url('assets/js/tablesorter.js')?>"></script> <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  -->
 
 <!-- jQuery library  --> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -53,7 +54,8 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
-
+<title><?php echo $title ?></title>
 
 </head>
+<body class="s-layout">
 

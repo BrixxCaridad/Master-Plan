@@ -1,0 +1,319 @@
+/* Primary Styles */
+*, *::before, *::after {
+	box-sizing: border-box;
+ }
+ 
+ body {
+	font-family: sans-serif;
+	font-size: 1em;
+	color: #333;
+ }
+ 
+ h1 {
+   font-size: 1.4em;
+ }
+ 
+ em {
+	font-style: normal;
+ }
+ 
+ a {
+	text-decoration: none;
+	color: inherit;
+ } 
+ 
+ /* Layout */
+ .s-layout {
+	/* display: flex; */
+	width: 100vw;
+	min-height: 100vh;
+	max-width: 100vw;
+	overflow-x: hidden;
+ }
+ 
+ .s-layout__content {
+	/* display: flex; */
+	/* justify-content: center;
+	align-items: center;
+	flex: 1; */
+ }
+ 
+ /* Sidebar */
+ .s-sidebar__trigger {
+	z-index: 2;
+	position: sticky;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 6em;
+	/* background: #192b3c; */
+	background-color: #660000;
+	z-index: 2000000;
+ }
+ 
+ .s-sidebar__trigger > i {
+	display: inline-block;
+	margin: 2.5em 2.5em 0 2em;
+	/* color: #f07ab0; */
+	color:white;
+ }
+ 
+ .s-sidebar__nav {
+	position: fixed;
+	top: 0;
+	left: -20em;
+	overflow: hidden;
+	transition: all .3s ease-in;
+	width: 20em;
+	min-height: 100vh;
+	background-color: #660000;
+	/* color: rgba(255, 255, 255, 0.7); */
+	color: white;
+	z-index: 2000000;
+ }
+ 
+ .s-sidebar__nav:hover,
+ .s-sidebar__nav:focus,
+ .s-sidebar__trigger:focus + .s-sidebar__nav,
+ .s-sidebar__trigger:hover + .s-sidebar__nav {
+	left: 0;
+ }
+ 
+ .s-sidebar__nav ul {
+	position: absolute;
+	/* top: 6em; */
+	left: 0;
+	margin: 0;
+	padding: 0;
+	width: 20em;
+	z-index: 20000005;
+ }
+ 
+ .s-sidebar__nav ul li {
+	width: 100%;
+ }
+ 
+ .s-sidebar__nav-link {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	height: 4em;
+ }
+ 
+ .s-sidebar__nav-link > a{
+	color: white;
+ }
+ .s-sidebar__nav-link em {
+	position: absolute;
+	top: 50%;
+	left: 4em;
+	transform: translateY(-50%);
+	color: white;
+ }
+ 
+ .s-sidebar__nav-link:hover {
+	background: #4d6276;
+ }
+ 
+ .s-sidebar__nav-link > i {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	width: 4em;
+	height: 4em;
+	
+ }
+ 
+ .s-sidebar__nav-link > i::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+ }
+ 
+ /* Mobile First */
+ @media (max-height: 67em) {
+	
+	.main-main-container {
+	   /* margin-left: 6em; */
+	   /* margin-top: 6em; */
+	}
+	
+	/* Sidebar */
+	.s-sidebar__trigger {
+	   width: 100vw;
+	}
+	
+	.s-sidebar__nav {
+	   width: 0;
+	   left: 0;
+	}
+	
+	.s-sidebar__nav:hover,
+	.s-sidebar__nav:focus,
+	.s-sidebar__trigger:hover + .s-sidebar__nav,
+	.s-sidebar__trigger:focus + .s-sidebar__nav {
+	   width: 20em;
+	}
+ }
+ 
+ @media (min-width: 68em) {
+	.main-main-container {
+	   margin-left: 20em;
+	   margin-top: 0;
+	}
+	
+	/* Sidebar */
+	.s-sidebar__trigger {
+	   display: none
+	}
+	
+	.s-sidebar__nav {
+	   width: 20em;
+	}
+	
+	.s-sidebar__nav ul {
+	   /* top: 1.3em; */
+	}
+ }
+ 
+ .large-avatar{
+	height: 40px;
+	width: 40px;
+	border-radius: 0;
+  }
+
+  .profile-link{
+	  height: auto;
+	  text-align: center;
+	  padding: 1em;
+	  display: flex;
+  }
+  .profile-link-div{
+	display:block;
+	justify-content: center;
+	width: 100%;
+  }
+  .profile-link-div > .profile-img{
+	display:flex;
+	position: relative;
+  }
+  .profile-link-div > .profile-img > img{
+	margin: 0 auto;
+  }
+  .profile-link-div > .profile-info{
+	display:block;
+  }
+  .profile-link-div > .profile-info > p{
+	color: white;
+  }
+  .brand {
+    background-color: #3a0000;
+    height: 6em;
+    display: block;
+	text-align: center;
+    /* font-size: 14px; */
+  }
+  .brand > img {
+	   height: 50px;
+	   margin-top: 5px;
+  }
+
+  .page-title{
+	padding: 2em 2em !important;
+	  width: 100%;
+	  height: 6em;
+	  background-color: #ffe8e8;
+	  color: rgb(131, 42, 42);
+	  position: sticky;
+	  top: 0;
+	  z-index: 50;
+	  font-weight: 900;
+  }
+
+  .mt-4{
+	  margin-top: 1.5em;
+  }
+
+  .no-lh{
+	line-height: 1.3 !important;
+  }
+
+
+
+  .upload-toggle {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s ease-in-out;
+    font-size: 15px;
+	/* margin-top: -10px; */
+	margin-bottom: 10px;
+	/* margin-left: 10%; */
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.upload-toggle.active, .upload-toggle:hover, .upload-toggle.active, .upload-toggle:hover {
+    border-left: 4px solid #e43c3c;
+    /* color: white; */
+}
+.upload-toggle:after,.upload-toggle:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.upload-toggle.active:after , .upload-toggle.active:after{
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    background-color: rgb(250, 250, 250);
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+    opacity: 0;
+	position: relative;
+	width: 100% !important;
+	display:none;
+	margin-left: 0 !important;
+	margin-top: -10px;
+	padding: 10px 15px;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	border: 1px solid #eaeaea;
+	border-top: none;
+	border-radius: 0;
+	font-size: 12px;
+	
+}
+
+.fillandprint{
+	width: 100%;
+}
+.fillandprint > li a {
+	display: block;
+	padding: 7px 10px;
+}
+.fillandprint > li a:hover {
+	color: #660000;
+}
+
+.text-maroon{
+	color: #660000;
+}
+
+.text-gray{
+	color:gray;
+}

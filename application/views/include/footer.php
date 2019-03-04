@@ -1,6 +1,2 @@
-	
-	
-		</center>
-	</div>
-	
+	</body>	
 </html>

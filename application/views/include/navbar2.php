@@ -1,43 +1,62 @@
 
-<!DOCTYPE html>
-<html>
+<!-- Sidebar -->
+<div class="s-layout__sidebar">
+  <div class="s-sidebar__trigger" style="cursor:pointer">
+		 <i class="fa fa-bars"></i>	
+		 <img src="<?php echo base_url('assets/img/sita2reverse.png')?>"" alt="TUP Logo" style="height:50px;">
+</div>
 
-
-
-</head>
-<body>
-
-<div class="sidebar">
-
-  <br>
-  <br>
-  
-  <div class="container">
-        <!-- <img src="" alt="Meredith Grey" style="height: 50%; width: 50%; border-radius: 50%"> -->
-        <div class="col-md-2">
-          <center>
-            <img class="img-responsive img-circle" src="<?php echo base_url('assets/img/Grey.jpeg')?>" alt="Meredith Grey" width="50%" height="50%" style="border-radius: 50%"> 
-        
-            <a href="depinfo"> <?php echo $_SESSION['account_name']; ?></a>
-            <p style="color: white"><?php echo $_SESSION['account_id']; ?></p>
-            <p style="color: white">BSIT - 4B</p>
-            <p style="color: white">College of Science</p>
-          </center>
+  <nav class="s-sidebar__nav">
+	<div class="brand">
+            <img src="<?php echo base_url('assets/img/sita2reverse.png')?>"/>
         </div>
-
-  </div>
- 
-  
-  <a href="<?php echo base_url('dashboard')?>">Dashboard</a>
-
-  <a href="<?php echo base_url('depinfo')?>">Deployment</a>
-
-  <a href="<?php echo base_url('requirements')?>">Requirements</a>
-  <a href="<?php echo base_url('companies')?>">Companies</a>
-  <a href="<?php echo base_url('accountsettings')?>">Account Settings</a>
-  <a href="<?php echo base_url('login/logout');?>">Logout</a>
- 
-
+     <ul>
+		 		<li>
+					<a href="<?php echo base_url('depinfo')?>" class="s-sidebar__nav-link profile-link">
+					<div class="profile-link-div">
+						<div class="profile-img">
+							<img class="img-responsive img-circle large-avatar" src="<?php echo base_url('assets/img/default.png')?>" alt="Meredith Grey" width="50%" height="50%" style="border-radius: 50%"> 
+						</div>
+						<div class="profile-info">
+							<p class="no-margin"><?php echo $_SESSION['account_name']; ?></p>
+						</div>
+						<div class="profile-info">
+							<p class="no-margin"><small><?php echo $_SESSION['account_id']; ?></small></p>
+						</div>
+						<div class="profile-info">
+							<p class="no-margin"><small>BSIT-4B , COS</small></p>
+						</div>
+					</div>
+					</a>
+        </li>
+				<li>
+				<a href="<?php echo base_url('dashboard')?>" class="s-sidebar__nav-link">
+              <i class="fa fa-dashboard"></i><em>Dashboard</em>
+           </a>
+        </li>
+        <li>
+				<a href="requirements" class="s-sidebar__nav-link">
+             <i class="fa fa-copy"></i><em>Requirements</em>
+           </a>
+        </li>
+        <li>
+					<a href="<?php echo base_url('companies')?>" class="s-sidebar__nav-link">
+              <i class="fa fa-briefcase"></i><em>Companies</em>
+           </a>
+				</li>
+				<li>
+				<a href="<?php echo base_url('accountsettings')?>" class="s-sidebar__nav-link">
+              <i class="fa fa-gear"></i><em>Account Settings</em>
+           </a>
+				</li>
+				<li>
+				<a href="<?php echo base_url('login/logout');?>" class="s-sidebar__nav-link">
+              <i class="fa fa-sign-out"></i><em>Logout</em>
+           </a>
+				</li>
+				
+     </ul>
+  </nav>
 </div>
 
 <style type="text/css">
@@ -46,7 +65,3 @@
     pointer-events: none;
   }
 </style>
-
-
-</body>
-</html>

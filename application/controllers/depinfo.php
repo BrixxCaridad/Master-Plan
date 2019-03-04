@@ -14,7 +14,8 @@ class depinfo extends CI_Controller {
 		else{
 			$data["display_dep"] = $this->sita_model->display_dep();	
 		}
-		$this->load->view('include/header');
+		$headerdata['title'] = "SITA | Deployment Information";
+		$this->load->view('include/header',$headerdata);		
 		$this->load->view('include/navbar2');
 		$this->load->view('sita/depinfo',$data);
 	}
@@ -32,7 +33,8 @@ class depinfo extends CI_Controller {
 
 		$data["display_company"] = $this->faculty_model->display_company();
 		$data["display_dep"] = $this->sita_model->display_dep_byid($id);				
-		$this->load->view('include/header');
+		$headerdata['title'] = "SITA | Deployment Info Update";
+		$this->load->view('include/header',$headerdata);
 		$this->load->view('include/navbar2');
 		$this->load->view('sita/update_depinfo',$data);
 	}

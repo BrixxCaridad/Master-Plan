@@ -1,18 +1,10 @@
+<div class="main-main-container">
+	<div class="page-title">
+    <h4 class="text-bold"><b><span class="fa fa-building"></span> EDIT DEPLOYMENT<small></small></b></h4>
+  </div>
+	<div class="container-fluid">
+		<div class="row mt-4">
 
-<title>SITA | Deployment Information</title>
-<div class="content">
-  
-      
-     <center>
-          <!-- <h4 style="color: black"><img src="assets/img/TUPlogo.png" alt="TUP Logo" style="height:45px; width: 45px">Technological University of the Philippines - Manila</h4> -->
-          <!-- <p style="color: black; font-size: 20px"><b>SITA : SIT ASSISTANT</b></p> -->
-          <img src="<?php echo base_url('assets/img/sita2.png')?>" alt="TUP Logo" style="height:11%; width: 11%">
-      </center>
-      <hr style="background-color: #800000">
-      
-      <br>
-	  <div class="container">
-  <h2>Edit Deployment</h2>
   
   <?php 
   if($_SESSION['account_type']=='Students'){
@@ -94,9 +86,9 @@
       </div>
     </div>
    
-	<div class="form-group col-md-6">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" id="add_depbutton" name="add_deployment" class="btn btn-info add_depbutton">Update</button>
+	<div class="form-group col-md-12">        
+      <div class="col-sm-offset-3 col-sm-6">
+        <button type="submit" id="add_depbutton" name="add_deployment" class="btn btn-success btn-block btn-lg add_depbutton">Update</button>
       </div>
     </div>
 	</div>
@@ -109,8 +101,7 @@
 </div>
       
       
-      <center>
-      <br>
+</div>
 </div>
 
 <script>

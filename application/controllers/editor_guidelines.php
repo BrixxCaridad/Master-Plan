@@ -20,10 +20,12 @@ class editor_guidelines extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('include/header');
+		// $this->load->view('include/header');
+		$headerdata['title'] = "SITA | Guidelines";
+		$this->load->view('include/header',$headerdata);
 		$this->load->view('sita/editor_guidelines');
 		// $data['page_title'] = 'title';
-		//$this->load->view('include/footer');
+		$this->load->view('include/footer');
 	}
 
 
