@@ -21,7 +21,7 @@ class fic extends CI_Controller {
 	{
      
        $data['data'] = $this->ficm->get_student_list($_SESSION['account_id']);
-     $data['courses'] = $this->course->get_course();
+		$data['courses'] = $this->course->get_course();
         $this->load->view('include/header');
   
         $this->load->view('include/ficnavbar2'); 

@@ -18,10 +18,28 @@ class ficemailcon extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	 
+	 public function __Construct() {
+        parent::__Construct();     
+        /*if(!$this->session->userdata('logged_in')) {
+            redirect(base_url());
+        }
+
+        if($this->session->userdata('role') != 'admin' && ('role') == 'admin' ){
+            redirect(base_url());
+        }*/
+		$this->load->model('faculty_model','ficm');
+        $this->load->model('Requirements_model','requirements');
+       $this->load->model('course_model','course');
+    } 
+	
 	public function index()
 	{
+		$data['data'] = $this->ficm->get_student_list($_SESSION['account_id']);
+		$data['req'] = $this->requirements->read_req();
+		$data['courses'] = $this->course->get_course();
 		$this->load->view('include/header');
-		$this->load->view('fic/ficemail');
+		$this->load->view('fic/ficemail',$data);
 		
 		//$this->load->view('include/footer');
 	}
