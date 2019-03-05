@@ -20,11 +20,11 @@
       </div>
 
   </div>
-
+<!-- <?=($menu!=0?'<span class="badge">5</span>':'')?> -->
   
   <a href="<?php echo base_url();?>fic">Dashboard</a>
   <a href="<?php echo base_url();?>ficdepinfo">Deployments</a>
-  <a href="<?php echo base_url();?>ficemailcon">Student Requirements</a>
+  <a href="<?php echo base_url();?>ficemailcon">Requirements &nbsp; &nbsp;<?=($menu!=0?'<span class="badge">'.$menu.'</span>':'')?></a>
   <a href="<?php echo base_url();?>ficgpscon">Company Lists</a>
   <a href="<?php echo base_url();?>ficaccountcon">Account Settings</a>
   <a href="<?php echo base_url();?>login/logout">Logout</a>

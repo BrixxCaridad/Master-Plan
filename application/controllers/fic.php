@@ -12,19 +12,23 @@ class fic extends CI_Controller {
         if($this->session->userdata('role') != 'admin' && ('role') == 'admin' ){
             redirect(base_url());
         }*/
-
+$this->load->model('Requirements_model','requirements');
         $this->load->model('faculty_model','ficm');
        $this->load->model('course_model','course');
+       $this->load->model('Requirement_status','status');
     } 
 
     public function index()
 	{
      
        $data['data'] = $this->ficm->get_student_list($_SESSION['account_id']);
-		$data['courses'] = $this->course->get_course();
+       $data['requirements'] = $this->requirements->withReq($_SESSION['account_id']);
+	  $data['courses'] = $this->course->get_course();
+      $data['menu'] =count($data['requirements']);
+        
         $this->load->view('include/header');
   
-        $this->load->view('include/ficnavbar2'); 
+        $this->load->view('include/ficnavbar2',$data); 
 		$this->load->view('fic/ficdashboard',$data);
 		$this->load->view('include/footer');
 	}
@@ -56,8 +60,39 @@ class fic extends CI_Controller {
         
         redirect('/fic');
     }
+    function check_myNBI(){
+            $this->status->check_NBI($_POST);
+           echo 'true'; 
+    }
 
 
+     function check_myMED(){
+     
+               $this->status->check_MED($_POST);
+               echo 'true'; 
+    }
+       function check_mySTAX(){
+     
+               $this->status->check_STAX($_POST);
+               echo 'true'; 
+    }
+       function check_myPTAX(){
+     
+               $this->status->check_PTAX($_POST);
+               echo 'true'; 
+    }
+
+     function check_myESHEET(){
+     
+               $this->status->check_ESHEET($_POST);
+               echo 'true'; 
+    }
+
+       function check_myResume(){
+     
+               $this->status->check_Resume($_POST);
+               echo 'true'; 
+    }
     function update_student_details(){
         $this->ajax_checking();
 

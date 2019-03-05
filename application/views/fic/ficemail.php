@@ -1,4 +1,4 @@
-<?php $this->load->view('include/ficnavbar2'); ?>
+
 <head>
   <link rel="stylesheet" type="text/css" href="assets/css/ficmain.css">
 </head>
@@ -43,7 +43,7 @@
 			if($row['Student_ID'] == $r['Student_ID']){
 				if($r['Waiver'] == "Incomplete" || $r['Application_Form'] == "Incomplete" || $r['Placement_Letter'] == "Incomplete" || $r['NBI'] == "Incomplete" || 
 				$r['Medical_Certificate'] == "Incomplete" || $r['Tax_Certificate_Student'] == "Incomplete" || $r['Tax_Certificate_Parent'] == "Incomplete" || $r['Resume'] == "Incomplete"
-				|| $r['Registration_Form'] == "Incomplete" )
+				|| $r['Registration_Form'] == "Incomplete" || $r['TUP_Evaluation_Sheet'] == "Incomplete" )
 				
 				echo "<td>Incomplete Submission</td>" ;   
 
@@ -54,6 +54,7 @@
 			}
 		
 		}
+  
 		if($y ==0)
 			echo "<td>No requirement submitted</td>";
 			
@@ -61,9 +62,9 @@
         <td style="text-align: center";> <span data-toggle="tooltip" data-placement="top" title="Submission Details">
 		<?php foreach($req as $r){
 			if($row['Student_ID'] == $r['Student_ID']){
-			echo '<a  class="openModal" href="#viewRequirements" data-toggle="modal" data-id='.$row['Student_ID'].'" data-surname="'.$row['Student_Lastname'].'"
+			echo '<a  class="openModal" href="#viewRequirements" data-toggle="modal" data-id='.$row['Student_ID'].' data-surname="'.$row['Student_Lastname'].'"
            data-firstname="'.$row['Student_Firstname'].'" data-middle="'.$row['Student_Middlename'].'" data-waiver="'.
-		   $r['Waiver'].'" data-appform="'.$r['Application_Form'].'" data-placement="'.$r['Placement_Letter'].'" 
+		   $r['Waiver'].'" data-appform="'.$r['Application_Form'].'" data-placement="'.$r['TUP_Evaluation_Sheet'].'" 
 		   data-nbi="'.$r['NBI'].'" data-medcert="'.$r['Medical_Certificate'].'" data-taxcerts="'.$r['Tax_Certificate_Student'].'"
 		   data-taxcertp="'.$r['Tax_Certificate_Parent'].'" data-resume="'.$r['Resume'].'" data-regform="'.$r['Registration_Form'].'">View submitted requirements</a></td>';
 			}
@@ -129,30 +130,89 @@
                           </div> <!-- col-lg-6 -->
                         </div> <!-- row -->
 
-                        <div class="row">
+                       <div class="row">
                           <div class="col-lg-6">
+                             
                             <div class="form-group">
                               <label>NBI</label> &nbsp;&nbsp;
 <!--                           <label class="error" id="edit-error_email"> field is required.</label>
                               <label class="error" id="edit-error_email2"> email has already exist.</label>
                               <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
-                              <a id="view-nbi" name="view-nbi"> view </a>
-                            </div> 
+                              <a id="view-nbi" name="view-nbi" target="_blank" > view </a> <button id= "vNBI" type="button" class="btn btn-danger">Verify</button>                            </div> 
                           </div> <!-- col-lg-6 -->
 
-                          <div class="row">
+                          
                           <div class="col-lg-6">
+
                             <div class="form-group">
                               <label>Medical Certificate</label> &nbsp;&nbsp;
 <!--                           <label class="error" id="edit-error_email"> field is required.</label>
                               <label class="error" id="edit-error_email2"> email has already exist.</label>
                               <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
-                              <a id="view-medcert" name="view-medcert"> view </a>
+                              <a id="view-medcert" name="view-medcert" target="_blank"> view </a>
+                              <button id= "vMED" type="button" class="btn btn-danger">Verify</button> 
+                            </div> 
+                         
+                    </div> <!-- Mode-body -->
+
+                        <div class="col-lg-6">
+                             
+                            <div class="form-group">
+                              <label>Student Tax Certificate</label> &nbsp;&nbsp;
+<!--                           <label class="error" id="edit-error_email"> field is required.</label>
+                              <label class="error" id="edit-error_email2"> email has already exist.</label>
+                              <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
+                              <a id= "view-taxcerts" name="view-tax" target="_blank" > view </a> 
+                              <button id="vSTAX"  type="button"  class="btn btn-danger">Verify</button>                            
                             </div> 
                           </div> <!-- col-lg-6 -->
-                
-                    </div> <!-- Mode-body -->
+
+                          
+                          <div class="col-lg-6">
+
+                            <div class="form-group">
+                              <label>Parent Tax Certificate</label> &nbsp;&nbsp;
+<!--                           <label class="error" id="edit-error_email"> field is required.</label>
+                              <label class="error" id="edit-error_email2"> email has already exist.</label>
+                              <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
+                              <a id="view-PTax" name="view-PTax" target="_blank"> view </a>
+                               <button id="vPTAX"  type="button"  class="btn btn-danger">Verify</button>  
+                            </div> 
+
+
+
                   </div> <!-- Model-dialog -->
+
+
+
+                       <div class="col-lg-6">
+                             
+                            <div class="form-group">
+                              <label>TUP Evaluation Sheet</label> &nbsp;&nbsp;
+<!--                           <label class="error" id="edit-error_email"> field is required.</label>
+                              <label class="error" id="edit-error_email2"> email has already exist.</label>
+                              <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
+                              <a id= "view-eSHEET" name="view-esheet" target="_blank" > view </a> 
+                              <button id="vESHEET"  type="button"  class="btn btn-danger">Verify</button>                            
+                            </div> 
+                          </div> <!-- col-lg-6 -->
+
+                          
+                          <div class="col-lg-6">
+
+                            <div class="form-group">
+                              <label>Resume</label> &nbsp;&nbsp;
+<!--                           <label class="error" id="edit-error_email"> field is required.</label>
+                              <label class="error" id="edit-error_email2"> email has already exist.</label>
+                              <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
+                              <a id="view-viewResume" name="view-medcert" target="_blank"> view </a>
+                               <button id="vRESUME"  type="button"  class="btn btn-danger">Verify</button>  
+                            </div> 
+
+
+
+                  </div> <!-- Model-dialog -->
+
                 </div> <!-- Model-content -->
               </div> <!-- viewClient -->
 			  
@@ -164,6 +224,10 @@ $(document).on("click", ".openModal", function () {
     var middle = $(this).data('middle');
     var nbi = $(this).data('nbi');
     var medcert = $(this).data('medcert');
+    var taxcerts = $(this).data('taxcerts');
+    var parentTax = $(this).data('taxcertp');
+    var Evaluate = $(this).data('placement');
+    var Resume = $(this).data('resume');
      $(".modal-body #view-id-num").val( myId );
      $(".modal-body #view-s-name").val( sname );
      $(".modal-body #view-f-name").val( fname );
@@ -173,13 +237,84 @@ $(document).on("click", ".openModal", function () {
      nbi1.setAttribute("href",url.concat(nbi) + ".jpg" );
 	 med = document.getElementById('view-medcert');
      med.setAttribute("href",url.concat(medcert) + ".jpg" );
-     $(".modal-body #view-telephone").val( tnum );
+
+    Stax = document.getElementById('view-taxcerts');
+    Stax.setAttribute("href",url.concat(taxcerts) + ".jpg" );
+   
+    Ptax = document.getElementById('view-PTax');
+    Ptax.setAttribute("href",url.concat(parentTax) + ".jpg" );
+
+    Eval = document.getElementById('view-eSHEET');
+    Eval.setAttribute("href",url.concat(Evaluate) + ".jpg" );
+
+
+    Resume1 = document.getElementById('view-viewResume');
+    Resume1.setAttribute("href",url.concat(Resume) + ".pdf" );
+
+   $.ajax({
+   type: "POST",
+   url: "<?php echo base_url();?>ficemailcon/Student_Status",
+   data: "idnum="+$("#view-id-num").val(),
+   success: function(msg){
+     
+         var data=JSON.parse(msg);
+         //alert(data[0]['Guidelines']);
+         if(data[0]['NBI'] == 'Approved'){
+         $("#vNBI").html('Approved');
+         $("#vNBI").removeClass("btn-danger");
+         $("#vNBI").addClass("btn-success");
+         $("#vNBI").addClass("btn-success");
+          $("#vNBI").attr("disabled", "disabled");
+         }
+        if(data[0]['Medical_Certificate'] == 'Approved'){
+         $("#vMED").html('Approved');
+         $("#vMED").removeClass("btn-danger");
+         $("#vMED").addClass("btn-success");
+         $("#vMED").addClass("btn-success");
+          $("#vMED").attr("disabled", "disabled");
+         }
+
+           if(data[0]['Tax_Certificate_Student'] == 'Approved'){
+         $("#vSTAX").html('Approved');
+         $("#vSTAX").removeClass("btn-danger");
+         $("#vSTAX").addClass("btn-success");
+         $("#vSTAX").addClass("btn-success");
+          $("#vSTAX").attr("disabled", "disabled");
+         }
+
+        if(data[0]['Tax_Certificate_Parent'] == 'Approved'){
+         $("#vPTAX").html('Approved');
+         $("#vPTAX").removeClass("btn-danger");
+         $("#vPTAX").addClass("btn-success");
+         $("#vPTAX").addClass("btn-success");
+          $("#vPTAX").attr("disabled", "disabled");
+         }
+
+         if(data[0]['TUP_Evaluation_Sheet'] == 'Approved'){
+         $("#vESHEET").html('Approved');
+         $("#vESHEET").removeClass("btn-danger");
+         $("#vESHEET").addClass("btn-success");
+         $("#vESHEET").addClass("btn-success");
+          $("#vESHEET").attr("disabled", "disabled");
+         }
+          
+
+        if(data[0]['Resume'] == 'Approved'){
+         $("#vRESUME").html('Approved');
+         $("#vRESUME").removeClass("btn-danger");
+         $("#vRESUME").addClass("btn-success");
+         $("#vRESUME").addClass("btn-success");
+          $("#vRESUME").attr("disabled", "disabled");
+         }
+
+
+     }
+   
+    });
+    
 });
 
 
-document.getElementById("newStudentSubmit").addEventListener("click", function(event){
-  event.preventDefault()
-});
 
 $(document).ready(function(){
    $("#newStudentSubmit").click(function(event){
@@ -198,10 +333,130 @@ $(document).ready(function(){
              $("#StudentAdd").submit();
              }
      }
-   
     });
-
 
   });
    });
+
+
+$(document).ready(function(){
+   $("#vNBI").click(function(){
+   $.ajax({
+   type: "POST",
+   url: "<?php echo base_url();?>fic/check_myNBI",
+   data: "idnum="+$("#view-id-num").val(),
+   success: function(msg){
+          if(msg=="true")
+          { 
+              alert($("#view-s-name").val()+' NBI approved!');
+          }
+          else{
+            alert(msg);
+          }
+     }
+    });
+    });
+  });
+
+//med
+
+$(document).ready(function(){
+   $("#vMED").click(function(){
+   $.ajax({
+   type: "POST",
+   url: "<?php echo base_url();?>fic/check_myMED",
+   data: "idnum="+$("#view-id-num").val(),
+   success: function(msg){
+          if(msg=="true")
+          { 
+              alert($("#view-s-name").val()+' Medical Certificate approved!');
+          }
+          else{
+            alert(msg);
+          }
+     }
+    });
+    });
+  });
+// student tax
+
+$(document).ready(function(){
+   $("#vSTAX").click(function(){
+   $.ajax({
+   type: "POST",
+   url: "<?php echo base_url();?>fic/check_mySTAX",
+   data: "idnum="+$("#view-id-num").val(),
+   success: function(msg){
+          if(msg=="true")
+          { 
+              alert($("#view-s-name").val()+' Student Tax Certificate approved!');
+          }
+          else{
+            alert(msg);
+          }
+     }
+    });
+    });
+  });
+// parent tax
+
+$(document).ready(function(){
+   $("#vPTAX").click(function(){
+   $.ajax({
+   type: "POST",
+   url: "<?php echo base_url();?>fic/check_myPTAX",
+   data: "idnum="+$("#view-id-num").val(),
+   success: function(msg){
+          if(msg=="true")
+          { 
+              alert($("#view-s-name").val()+' Parent Tax Certificate approved!');
+          }
+          else{
+            alert(msg);
+          }
+     }
+    });
+    });
+  });
+
+// Evaluation sheet
+$(document).ready(function(){
+   $("#vESHEET").click(function(){
+   $.ajax({
+   type: "POST",
+   url: "<?php echo base_url();?>fic/check_myESHEET",
+   data: "idnum="+$("#view-id-num").val(),
+   success: function(msg){
+          if(msg=="true")
+          { 
+              alert($("#view-s-name").val()+' Evaluation Sheet approved!');
+          }
+          else{
+            alert(msg);
+          }
+     }
+    });
+    });
+  });
+//resume
+$(document).ready(function(){
+   $("#vRESUME").click(function(){
+   $.ajax({
+   type: "POST",
+   url: "<?php echo base_url();?>fic/check_myResume",
+   data: "idnum="+$("#view-id-num").val(),
+   success: function(msg){
+          if(msg=="true")
+          { 
+              alert($("#view-s-name").val()+' Resume approved!');
+          }
+          else{
+            alert(msg);
+          }
+     }
+    });
+    });
+  });
+
+
 </script>
