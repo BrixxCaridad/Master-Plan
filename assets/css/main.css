@@ -761,7 +761,7 @@ div.panel.show, div.panelM.show {
     /* font-size: 15px; */
 /* } */
 
-Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover)
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 /* button.accordionM.active, button.accordionM:hover { */
     /* background-color: #660000; */
     /* color: white; */
@@ -780,7 +780,7 @@ Add a background color to the button if it is clicked on (add the .active class 
     /* color: #fff; */
 /* } */
 
-Style the accordion panel. Note: hidden by default
+/* Style the accordion panel. Note: hidden by default */
 /* div.panelM { */
     /* padding: 0 18px; */
     /* background-color: #eee; */
@@ -790,7 +790,7 @@ Style the accordion panel. Note: hidden by default
     /* opacity: 0; */
 /* } */
 
-The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
 /* div.panelM.show { */
     /* opacity: 1; */
     /* max-height: 1500px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */ */
@@ -879,11 +879,11 @@ The "show" class is added to the accordion panel when the user clicks on one of 
   font-size: 20px;
 }
 
-.modal-footer {
+/* .modal-footer {
     padding: 0px;
     background-color: #730000;
     color: white;
-}
+} */
 
 /*COMPANY TABLE*/
 
@@ -913,23 +913,24 @@ The "show" class is added to the accordion panel when the user clicks on one of 
 
 }
 
-.modal {
+/* .modal {
   text-align: center;
-}
+} */
 
 @media screen and (min-width: 768px) { 
   .modal:before {
     display: inline-block;
     vertical-align: middle;
     content: " ";
-    height: 100%;
+    height: 25%;
   }
 }
 
 .modal-dialog {
-  display: inline-block;
+  display: flex;
   text-align: left;
-  vertical-align: middle;
+	vertical-align: middle;
+	margin: 0 auto;
 }
 
 .item{
@@ -1051,10 +1052,10 @@ The "show" class is added to the accordion panel when the user clicks on one of 
   color: #fff;
   float: right;
   padding: 10px;
-  border-radius-top-right: 5px;
+  border-top-right-radius: 5px;
   -moz-border-radius-top-right: 5px;
   -webkit-border-radius-top-right: 5px;
-  border-radius-bottom-right: 5px;
+  border-bottom-right-radius: 5px;
   -moz-border-radius-bottom-right: 5px;
   -webkit-border-radius-bottom-right: 5px;
 				cursor:pointer;
@@ -1067,7 +1068,6 @@ The "show" class is added to the accordion panel when the user clicks on one of 
 
 @media only screen and (min-width : 150px) and (max-width : 780px)
 {
-  {}
   .search
   {
     width: 95%;

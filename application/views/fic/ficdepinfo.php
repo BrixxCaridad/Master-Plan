@@ -1,25 +1,14 @@
+<div class="main-main-container">
+	<div class="page-title fic-dash">
+		<h4 class="text-bold"><b><span class="fa fa-building"></span> DEPLOYMENTS<small></small></b></h4>
+	</div>
+	<div class="container-fluid">
+		<div class="row mt-4">
+			<div class="col-md-12">
 
-
-<title>SITA | Deployment Information</title>
-<div class="content">
-  
-      
-     <center>
-          <!-- <h4 style="color: black"><img src="assets/img/TUPlogo.png" alt="TUP Logo" style="height:45px; width: 45px">Technological University of the Philippines - Manila</h4> -->
-          <!-- <p style="color: black; font-size: 20px"><b>SITA : SIT ASSISTANT</b></p> -->
-          <img src="assets/img/sita2.png" alt="TUP Logo" style="height:11%; width: 11%">
-      </center>
-      <hr style="background-color: #800000">
-      
-      <br>
-      
-      
-      <center>
-      <br>
-  <div class="table-responsive" style="font-size: 14px">          
-  <table id="myTable"  class="table">
+				  <div class="table-responsive" style="font-size: 14px">          
+  <table id="myTable"  class="table table-hover">
     <thead style="color: #800000">
-      <th colspan="11" style="background-color: #ffe8e8; color: #800000; font-size: 20px; text-align: center">DEPLOYMENT INFORMATION</th>
       <tr>
         <th>Company</th>
         <th>Supervisor</th>
@@ -104,6 +93,12 @@
     </tbody>
   </table>
   </div>
+
+
+			</div>
+		</div>
+	</div>
+
   
     <!--<button data-toggle="modal" data-target="#myModal" class="btn btn-maroon btn-md pull-right" role="button"><span class="glyphicon glyphicon-pencil" style="padding-right: 4px"></span>Fill Out Forms</button> -->
 

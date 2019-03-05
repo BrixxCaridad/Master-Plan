@@ -1,25 +1,15 @@
 
-<head>
-  <link rel="stylesheet" type="text/css" href="assets/css/ficmain.css">
-</head>
-<div class="content">
-<head>
-<title>SITA | Company Tracker</title>
-</head>  
-      
-      <center>
-          <h4 style="color: black"><img src="assets/img/TUPlogo.png" alt="TUP Logo" style="height:45px; width: 45px">Technological University of the Philippines - Manila</h4>
-          <p style="color: black; font-size: 20px"><b>SITA: SIT ASSISTANT</b></p></h1></
-      </center>
-      <hr style="background-color: #004000">
-      
-     
-		<div class="ficdashtitle">
-          <center><h3 style="color: #004000"><b>Company Location</b></h3></center>
-    </div>
+<div class="main-main-container">
+	<div class="page-title fic-dash">
+		<h4 class="text-bold"><b><span class="fa fa-street-view"></span> COMPANY LOCATION<small></small></b></h4>
+	</div>
 		
-    <div class="container">
-		    <div id="map" style="width:1000px;height:400px;background:#66ff66"></div>
+    <div class="container-fluid">
+		<div class="row mt-4">
+			<div class="col-md-12">
+		    	<div id="map" style="width:100%;height:400px; background-color: #e4e4e4"></div>
+			</div>
+		</div>
     </div>
 
 <script>
