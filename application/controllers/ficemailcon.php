@@ -31,17 +31,24 @@ class ficemailcon extends CI_Controller {
 		$this->load->model('faculty_model','ficm');
         $this->load->model('Requirements_model','requirements');
        $this->load->model('course_model','course');
+       $this->load->model('Requirement_status','status');
     } 
 	
 	public function index()
 	{
-		$data['data'] = $this->ficm->get_student_list($_SESSION['account_id']);
+		$data['data'] = $this->requirements->withReq($_SESSION['account_id']);
+		$data['menu'] =count($data['data']);
 		$data['req'] = $this->requirements->read_req();
 		$data['courses'] = $this->course->get_course();
 		$this->load->view('include/header');
+	    $this->load->view('include/ficnavbar2',$data); 
 		$this->load->view('fic/ficemail',$data);
 		
 		//$this->load->view('include/footer');
+	}
+	function Student_Status(){
+
+			echo json_encode($this->status->read_status($_POST));
 	}
 	
 	

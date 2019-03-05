@@ -86,16 +86,18 @@ class Requirements_Model extends CI_Model {
 		$query=$this->db->get($this->table);
 	  return $query->result_array();
 	
-		
-	 
+	
+	}
+   public function withReq(){
+   		$this->db->where('Overall_status',1);
+   		$this->db->join('student', 'student.Student_ID = pre_deployment_path.Student_ID');
+ 		$query=$this->db->get($this->table);
+	  return $query->result_array();
 	}
 	
 	public function read_req($data = null){
 		$query=$this->db->get($this->table);
 	  return $query->result_array();
-	
-		
-	 
 	}
 	
 
