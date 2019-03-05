@@ -42,19 +42,21 @@
 <!--===============================================================================================
 	<link rel="stylesheet" type="text/css" href="assets/DataTables/datatables.css">
 	<script type="text/javascript" charset="utf8" src="/DataTables/user_list.js"></script>-->
-	<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
-	<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+	<!-- <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script> -->
+	<!-- <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script> -->
 	<script type="text/javascript" charset="utf8" src="<?php echo base_url('assets/js/search.js')?>"></script>
 	<script type="text/javascript" charset="utf8" src="<?php echo base_url('assets/js/tablesorter.js')?>"></script> <!-- Latest compiled and minified CSS -->
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  -->
 
 <!-- jQuery library  --> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
 <!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  -->
+<script src="<?php echo base_url()?>assets/js/bootstrap.min.js">
+</script>
 
-
+<title><?php echo $title ?></title>
 </head>
 <body class="s-layout">
 

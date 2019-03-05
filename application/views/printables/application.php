@@ -2,7 +2,7 @@
 <head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
 <TITLE>Application for SIT</TITLE>
 <style type="text/css">
-<!--
+
 span.cls_003{font-family:Times,serif;font-size:10.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
 div.cls_003{font-family:Times,serif;font-size:10.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
 span.cls_004{font-family:Times,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
@@ -11,7 +11,12 @@ span.cls_002{font-family:Times,serif;font-size:12.1px;color:rgb(0,0,0);font-weig
 div.cls_002{font-family:Times,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
 span.cls_007{font-family:Times,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: underline}
 div.cls_007{font-family:Times,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
--->
+.bd-bot{
+	border-bottom: 1px solid black;
+}
+body{
+	background-color: lightgray;
+}
 </style>
 <script type="text/javascript" src="20f76d68-3e98-11e9-9d71-0cc47a792c0a_id_20f76d68-3e98-11e9-9d71-0cc47a792c0a_files/wz_jsgraphics.js"></script>
 </head>
@@ -29,7 +34,18 @@ div.cls_007{font-family:Times,serif;font-size:12.1px;color:rgb(0,0,0);font-weigh
 <div style="position:absolute;left:118.94px;top:131.18px" class="cls_004"><span class="cls_004">INDUSTRIAL RELATIONS AND JOB PLACEMENT</span></div>
 <div style="position:absolute;left:180.86px;top:144.98px" class="cls_002"><span class="cls_002">Ayala Boulevard, Ermita, Manila</span></div>
 <div style="position:absolute;left:114.62px;top:186.38px" class="cls_007"><span class="cls_007">APPLICATION FORM FOR SUPERVISED INDUSTRIAL TRAINING</span></div>
-<div style="position:absolute;left:366.07px;top:227.78px" class="cls_002"><span class="cls_002">Date:  ______________, 20___</span></div>
+
+
+<div style="position:absolute;left:366.07px;top:227.78px" class="cls_002"><span class="cls_002">Date:</span></div>
+<div class="bd-bot cls_003" style="position:absolute;left:400.07px;top:227.78px; font-size: 11px">
+	<input type="text" style="width: 100px; padding-left: 2px; text-align:center" class="cls_003" placeholder="month and day"/>
+</div>
+<div style="position:absolute;left:502.07px;top:227.78px;" class="cls_002"><span class="cls_002">, 20</span></div>
+<div class="bd-bot cls_003" style="position:absolute;left:520.07px;top:227.78px; font-size: 11px">
+	<input type="text" style="width: 20px; padding-left: 2px; text-align:center" class="cls_003" placeholder="yy"/>
+</div>
+
+
 <div style="position:absolute;left:72.02px;top:255.41px" class="cls_002"><span class="cls_002">The Director</span></div>
 <div style="position:absolute;left:72.02px;top:269.21px" class="cls_002"><span class="cls_002">Industrial Relations and Job Placement</span></div>
 <div style="position:absolute;left:72.02px;top:283.01px" class="cls_002"><span class="cls_002">This University</span></div>
@@ -37,35 +53,125 @@ div.cls_007{font-family:Times,serif;font-size:12.1px;color:rgb(0,0,0);font-weigh
 <div style="position:absolute;left:111.02px;top:342.77px" class="cls_002"><span class="cls_002">May I apply for placement in the Supervised Industrial Training I/ II. The following are my</span></div>
 <div style="position:absolute;left:81.02px;top:356.57px" class="cls_002"><span class="cls_002">particulars and preferences for your information and guidance.</span></div>
 <div style="position:absolute;left:72.02px;top:384.17px" class="cls_004"><span class="cls_004">I. PERSONAL DATA</span></div>
-<div style="position:absolute;left:90.02px;top:411.77px" class="cls_002"><span class="cls_002">Name: ________________________________________</span></div>
-<div style="position:absolute;left:432.07px;top:411.77px" class="cls_002"><span class="cls_002">ID # ______________</span></div>
-<div style="position:absolute;left:90.02px;top:425.59px" class="cls_002"><span class="cls_002">Sex</span></div>
-<div style="position:absolute;left:120.14px;top:425.59px" class="cls_002"><span class="cls_002">: _________</span></div>
-<div style="position:absolute;left:252.05px;top:425.59px" class="cls_002"><span class="cls_002">Civil Status: ________</span></div>
-<div style="position:absolute;left:432.07px;top:425.59px" class="cls_002"><span class="cls_002">Religion: __________</span></div>
-<div style="position:absolute;left:90.02px;top:439.39px" class="cls_002"><span class="cls_002">Home Address: ______________________________________________________________</span></div>
-<div style="position:absolute;left:168.02px;top:453.19px" class="cls_002"><span class="cls_002">______________________________________________________________</span></div>
-<div style="position:absolute;left:90.02px;top:466.99px" class="cls_002"><span class="cls_002">Telephone no. : __________________</span></div>
-<div style="position:absolute;left:324.05px;top:466.99px" class="cls_002"><span class="cls_002">Cell phone no.: _______________________</span></div>
+
+
+<div style="position:absolute;left:90.02px;top:406.77px" class="cls_002"><span class="cls_002">Name:</span></div>
+<div class="bd-bot cls_003" style="position:absolute;left:130.07px;top:406.77px; font-size: 11px">
+	<input type="text" style="width: 250px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+</div>
+
+
+<div style="position:absolute;left:432.07px;top:406.77px" class="cls_002"><span class="cls_002">ID #:</span></div>
+<div class="bd-bot cls_003" style="position:absolute;left:460.07px;top:406.77px; font-size: 11px">
+	<input type="text" style="width: 80px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+</div>
+
+<div style="position:absolute;left:90.02px;top:423.59px" class="cls_002"><span class="cls_002">Sex:</span></div>
+<div class="bd-bot cls_003" style="position:absolute;left:120.14px;top:423.59px; font-size: 11px">
+	<input type="text" style="width: 100px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+</div>
+
+<div style="position:absolute;left:252.05px;top:423.59px" class="cls_002"><span class="cls_002">Civil Status:</span></div>
+<div class="bd-bot cls_003" style="position:absolute;left:322.05px;top:423.59px; font-size: 11px">
+	<input type="text" style="width: 100px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+</div>
+
+<div style="position:absolute;left:432.07px;top:423.59px" class="cls_002"><span class="cls_002">Religion:</span></div>
+<div class="bd-bot cls_003" style="position:absolute;left:482.07px;top:423.59px; font-size: 11px">
+	<input type="text" style="width: 58px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+</div>
+
+
+
+
+
+<div style="position:absolute;left:90.02px;top:443.39px" class="cls_002"><span class="cls_002">Home Address:</span></div>
+<div class="bd-bot cls_003" style="position:absolute;left:170.02px;top:443.39px; font-size: 11px">
+	<input type="text" style="width: 370px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+</div>
+
+
+<div style="position:absolute;left:90.02px;top:461.99px" class="cls_002"><span class="cls_002">Telephone no. :</span></div>
+<div class="bd-bot cls_003" style="position:absolute;left:160.02px;top:461.99px; font-size: 11px">
+	<input type="text" style="width: 130px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+</div>
+
+<div style="position:absolute;left:324.05px;top:461.99px" class="cls_002"><span class="cls_002">Cellphone no.:</span></div>
+<div class="bd-bot cls_003" style="position:absolute;left:400.05px;top:461.99px; font-size: 11px">
+	<input type="text" style="width: 140px;; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+</div>
+
 <div style="position:absolute;left:72.02px;top:494.59px" class="cls_004"><span class="cls_004">II. ACADEMIC DATA</span></div>
-<div style="position:absolute;left:90.02px;top:522.19px" class="cls_002"><span class="cls_002">Course: _____________________</span></div>
-<div style="position:absolute;left:357.07px;top:522.19px" class="cls_002"><span class="cls_002">Major  : _______________________</span></div>
-<div style="position:absolute;left:90.02px;top:535.99px" class="cls_002"><span class="cls_002">Year & Section: ______________</span></div>
-<div style="position:absolute;left:357.07px;top:535.99px" class="cls_002"><span class="cls_002">Session: _______Day</span></div>
-<div style="position:absolute;left:482.91px;top:535.99px" class="cls_002"><span class="cls_002">_______Eve</span></div>
+<div style="position:absolute;left:90.02px;top:517.19px" class="cls_002"><span class="cls_002">Course:</span></div>
+<div class="bd-bot cls_003" style="position:absolute;left:130.05px;top:517.19px; font-size: 11px">
+	<input type="text" style="width: 160px;; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+</div>
+<div style="position:absolute;left:324.05px;top:517.19px" class="cls_002"><span class="cls_002">Major:</span></div>
+<div class="bd-bot cls_003" style="position:absolute;left: 361.05px;top:517.19px; font-size: 11px">
+	<input type="text" style="width: 180px;; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+</div>
+
+<div style="position:absolute;left:90.02px;top:535.99px" class="cls_002"><span class="cls_002">Year & Section:</span></div>
+<div class="bd-bot cls_003" style="position:absolute;left:180.02px;top:535.99px; font-size: 11px">
+	<input type="text" style="width: 111px;; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+</div>
+
+<div style="position:absolute;left:324.05px;top:535.99px" class="cls_002"><span class="cls_002">Session:</span></div>
+
+<div class="bd-bot cls_003" style="position:absolute;left:390.05px;top:535.99px; font-size: 11px">
+	<input type="text" style="width: 30px;; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+</div>
+
+<div style="position:absolute;left:425.05px;top:535.99px" class="cls_002"><span class="cls_002">Day</span></div>
+<div class="bd-bot cls_003" style="position:absolute;left:468.05px;top:535.99px; font-size: 11px">
+	<input type="text" style="width: 30px;; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+</div>
+
+<div style="position:absolute;left:500.05px;top:535.99px" class="cls_002"><span class="cls_002">Eve</span></div>
+<!-- <div class="bd-bot cls_003" style="position:absolute;left:460.05px;top:535.99px; font-size: 11px">
+	<input type="text" style="width: 111px;; padding-left: 2px; text-align:center" class="cls_003" placeholder="yy"/>
+</div> -->
+
 <div style="position:absolute;left:72.02px;top:563.59px" class="cls_004"><span class="cls_004">III. PREFERENCE FOR PLACEMENT</span></div>
-<div style="position:absolute;left:93.02px;top:591.22px" class="cls_002"><span class="cls_002">Company:</span></div>
-<div style="position:absolute;left:151.90px;top:591.22px" class="cls_002"><span class="cls_002">________________________________________________________________</span></div>
-<div style="position:absolute;left:93.02px;top:605.02px" class="cls_002"><span class="cls_002">Address</span></div>
-<div style="position:absolute;left:141.24px;top:605.02px" class="cls_002"><span class="cls_002">:</span></div>
-<div style="position:absolute;left:153.61px;top:605.02px" class="cls_002"><span class="cls_002">________________________________________________________________</span></div>
-<div style="position:absolute;left:93.02px;top:618.82px" class="cls_002"><span class="cls_002">Contact Person: _____________________________________________________________</span></div>
-<div style="position:absolute;left:93.02px;top:632.62px" class="cls_002"><span class="cls_002">Position</span></div>
-<div style="position:absolute;left:165.46px;top:632.62px" class="cls_002"><span class="cls_002">:</span></div>
-<div style="position:absolute;left:174.83px;top:632.62px" class="cls_002"><span class="cls_002">_____________________________</span></div>
-<div style="position:absolute;left:381.71px;top:632.62px" class="cls_002"><span class="cls_002">Tel. # .: ___________________</span></div>
-<div style="position:absolute;left:336.05px;top:674.02px" class="cls_002"><span class="cls_002">__________________________________</span></div>
-<div style="position:absolute;left:339.29px;top:688.54px" class="cls_002"><span class="cls_002">(Signature of student over Printed Name)</span></div>
+<div style="position:absolute;left:93.02px;top:587.22px" class="cls_002"><span class="cls_002">Company:</span></div>
+<div class="bd-bot cls_003" style="position:absolute;left:151.90px;top:587.22px; font-size: 11px">
+	<input type="text" style="width: 390px;; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+</div>
+
+<div style="position:absolute;left:93.02px;top:605.02px" class="cls_002"><span class="cls_002">Address:</span></div>
+<!-- <div style="position:absolute;left:153.61px;top:605.02px" class="cls_002"><span class="cls_002">________________________________________________________________</span></div> -->
+<div class="bd-bot cls_003" style="position:absolute;left:153.61px;top:605.02px; font-size: 11px">
+	<input type="text" style="width: 390px;; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+</div>
+
+<div style="position:absolute;left:93.02px;top:622.82px" class="cls_002"><span class="cls_002">Contact Person:</span></div>
+<div class="bd-bot cls_003" style="position:absolute;left:173.61px;top:622.82px; font-size: 11px">
+	<input type="text" style="width: 370px;; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+</div>
+
+
+<!-- <div style="position:absolute;left:93.02px;top:640.62px" class="cls_002"><span class="cls_002">Position</span></div>
+<div style="position:absolute;left:165.46px;top:640.62px" class="cls_002"><span class="cls_002">:</span></div>
+<div style="position:absolute;left:174.83px;top:640.62px" class="cls_002"><span class="cls_002">_____________________________</span></div>
+<div style="position:absolute;left:381.71px;top:640.62px" class="cls_002"><span class="cls_002">Tel. # .: ___________________</span></div> -->
+
+
+<div style="position:absolute;left:93.02px;top:640.62px" class="cls_002"><span class="cls_002">Position:</span></div>
+<div class="bd-bot cls_003" style="position:absolute;left:138.02px;top:640.62px; font-size: 11px">
+	<input type="text" style="width: 215px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+</div>
+
+<div style="position:absolute;left:364.05px;top:640.62px" class="cls_002"><span class="cls_002">Tel.#:</span></div>
+<div class="bd-bot cls_003" style="position:absolute;left:400.05px;top:640.62px; font-size: 11px">
+	<input type="text" style="width: 140px;; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+</div>
+
+
+<!-- <div style="position:absolute;left:336.05px;top:674.02px" class="cls_002"><span class="cls_002">__________________________________</span></div> -->
+<div class="bd-bot cls_003" style="position:absolute;left:336.05px;top:678.02px">
+	<input type="text" style="width: 200px; text-transform: uppercase; padding-left: 2px; text-align:center; font-weight: bold; font-size: 13" class="cls_003" placeholder="TYPE YOUR NAME HERE"/>
+</div>
+<div style="position:absolute;left:339.29px;top:692.54px" class="cls_002"><span class="cls_002">(Signature of student over Printed Name)</span></div>
 <div style="position:absolute;left:72.02px;top:715.42px" class="cls_002"><span class="cls_002">Recommending Approval:</span></div>
 <div style="position:absolute;left:72.02px;top:743.02px" class="cls_004"><span class="cls_004">CARLOS ANGELITO DUFOURT MORALES</span></div>
 <div style="position:absolute;left:140.18px;top:761.88px" class="cls_002"><span class="cls_002">Faculty In-Charge</span></div>
