@@ -22,14 +22,15 @@
 				</div>
 				<br/>
 				<br/>
-				<form>
+		 <?=form_open_multipart('Requirements/uploadReq', 'id="SubmitReq"');?>
 				<div class="row">
 					<div class="col-md-12">
 						<button class="upload-toggle" type="button">NBI Clearance</button>
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
-									<input type="file" name="" id="nbi" class="btn-block">
+									
+								 <input name="nbi" style="margin:auto;" class="btn-block" id="myNBI" type="file">
 									<hr/>
 								</div>
 							</div>
@@ -54,7 +55,8 @@
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
-									<input type="file" name="" id="medical" class="btn-block">
+									<input name="medCert" style="margin:auto;" class="btn-block" type="file"> 
+								<!-- 	<input type="file" name="" id="medical" class="btn-block"> -->
 									<hr/>
 								</div>
 							</div>
@@ -79,7 +81,8 @@
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
-									<input type="file" name="" id="ctc" class="btn-block">
+									<!-- <input  style="margin:auto;" class="uploadfile btn-md pull-right" type="file"> --> 
+									<input type="file" name="CTax" id="ctc" class="btn-block">
 									<hr/>
 								</div>
 							</div>
@@ -104,7 +107,8 @@
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
-									<input type="file" name="" id="ctcparent" class="btn-block">
+									<!-- <input name="GuardianTax" style="margin:auto;" class="uploadfile btn-md pull-right" type="file"> --> 
+									<input type="file" name="GuardianTax" id="ctcparent" class="btn-block">
 									<hr/>
 								</div>
 							</div>
@@ -129,7 +133,8 @@
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
-									<input type="file" name="" id="resume" class="btn-block">
+									<!-- <input name ="resume" style="margin:auto;" class="uploadfile btn-md pull-right" type="file"> -->
+									<input type="file" name ="resume" id="resume" class="btn-block">
 									<hr/>
 								</div>
 							</div>
@@ -153,7 +158,8 @@
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
-									<input type="file" name="" id="regform" class="btn-block">
+								<!-- 	<input name="RForm" style="margin:auto;" class="uploadfile btn-md pull-right" type="file">  -->
+									<input type="file" name="RForm" id="regform" class="btn-block">
 									<hr/>
 								</div>
 							</div>
@@ -172,9 +178,38 @@
 						</div>
 					</div>
 				</div>
+
+
+					<div class="row">
+					<div class="col-md-12">
+						<button class="upload-toggle" type="button">Evaluation Form</button>
+						<div class="panel">
+							<div class="row">
+								<div class="col-md-12">
+							<!-- 	<input name="Evaluation" style="margin:auto;" class="uploadfile btn-md pull-right" type="file"> --> 
+									<input type="file" name="Evaluation" id="regform" class="btn-block">
+									<hr/>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<img src="assets/img/tupeval.jpg" alt="TUP Evaluation Sheet" style="height: 500px; width: 350px">
+								</div>
+								<div class="col-md-6">
+									 <p><b>DESCRIPTION:</b> The TUP Evaluation Sheet contains the list of subjects that you have undertaken during your stay in the university and your corresponding grades for each subject.</p><br>
+								 		<p><b>MUST BE SUBMITTED TO:</b> Faculty-in-Charge</p><br>
+								 		 <p><b>MUST BE SIGNED BY:</b> University Registrar/Evaluator</p><br>
+								  		<p><i><b>*NOTE:</b> You must submit a scanned copy of this document.</i></p><br>
+								</div>
+							</div>
+							<br>
+						</div>
+					</div>
+				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<button type="submit" class="btn btn-block btn-lg btn-success" id="submitreq">Submit All</button>
+					<!-- 	<button class ="col-md-12 btn btn-success"	type="submit" form="SubmitReq" value="Submit">Submit</button> -->
+						<button type="submit" class="btn btn-block btn-lg btn-success" form="SubmitReq" value="Submit" id="submitreq">Submit All</button>
 					</div>
 				</div>
 				<br/>
@@ -195,16 +230,16 @@
 						<br/><br/>
 						<ul class="fillandprint">
 							<li class="">
-								<a href="<?php echo base_url('forms/guideline');?>" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Guidelines for Student-Trainees</a>
+								<a href="" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Guidelines for Student-Trainees</a>
 							</li>
 							<li class="">
-								<a href="<?php echo base_url('forms/waiver');?>" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Waiver</a>
+								<a href="" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Waiver</a>
 							</li>
 							<li class="">
-								<a href="<?php echo base_url('forms/application');?>" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Application for SIT</a>
+								<a href="" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Application for SIT</a>
 							</li>
 							<li class="">
-								<a href="<?php echo base_url('forms/reqplacement');?>" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Request for Placement Letter</a>
+								<a href="" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Request for Placement Letter</a>
 							</li>
 							<li class="">
 								<a href="" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Placement Letter</a>

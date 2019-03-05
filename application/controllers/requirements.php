@@ -69,7 +69,7 @@ class requirements extends CI_Controller {
                         // $error = array('error' =>);
                         $this->session->set_flashdata('error',  $this->upload->display_errors());
 						//print_r($this->upload->display_errors());
-                       redirect('/requirements');
+                      // redirect('/requirements');
                    
                 }
                 else

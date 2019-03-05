@@ -7,7 +7,7 @@ class Requirements_Model extends CI_Model {
 		parent:: __construct();
 		
 	}
-	private $table = "pre_deployment";
+	private $table = "pre_deployment_path";
 	
 	public function uploadNBI($data){
 
@@ -68,9 +68,10 @@ class Requirements_Model extends CI_Model {
  public function uploadRegform($data)
 	{
 			$this->db->set('Registration_Form',$data['RegistrationForm']);
+			$this->db->set('Overall_status',1);
 			$this->db->where('Student_ID',$data['Student_ID']);
             $this->db->update($this->table);
-	    return $insert_id = $this->db->insert_id();
+	    	return $insert_id = $this->db->insert_id();
 	}
 
 
