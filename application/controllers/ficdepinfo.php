@@ -2,7 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class ficdepinfo extends CI_Controller {
-
+public function __Construct() {
+        parent::__Construct();     
+      
+$this->load->model('Requirements_model','requirements');
+    
+    } 
 	public function index()
 	{
 		$this->load->model('faculty_model');
@@ -17,8 +22,10 @@ class ficdepinfo extends CI_Controller {
 		else{
 			$data["display_dep"] = $this->faculty_model->display_dep_byfic();	
 		}
+		  $data['requirements'] = $this->requirements->withReq($_SESSION['account_id']);
+           $data['menu'] =count($data['requirements']);
 		$this->load->view('include/header');
-        $this->load->view('include/ficnavbar2'); 
+        $this->load->view('include/ficnavbar2',$data); 
 		$this->load->view('fic/ficdepinfo',$data);
 	}
 	

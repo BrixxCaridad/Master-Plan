@@ -2,29 +2,21 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class ficaccountcon extends CI_Controller {
-
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+public function __Construct() {
+        parent::__Construct();     
+      
+$this->load->model('Requirements_model','requirements');
+    
+    } 
 	public function index()
 	{
 		$this->load->model('faculty_model');
 		$data["display_info"] = $this->faculty_model->get_info_by_id($_SESSION['account_id']);
 		$data["display_college"] = $this->faculty_model->get_college($_SESSION['account_id']);
+		 $data['requirements'] = $this->requirements->withReq($_SESSION['account_id']);
+           $data['menu'] =count($data['requirements']);
 		$this->load->view('include/header');
-		$this->load->view('include/ficnavbar2');
+		$this->load->view('include/ficnavbar2',$data);
 		$this->load->view('fic/ficaccount',$data);	
 		//$this->load->view('include/footer');
 	}
