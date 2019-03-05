@@ -230,19 +230,20 @@
 						<br/><br/>
 						<ul class="fillandprint">
 							<li class="">
-								<a href="" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Guidelines for Student-Trainees</a>
+								<a href="<?php echo base_url('forms/guideline');?>" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Guidelines for Student-Trainees</a>
 							</li>
 							<li class="">
-								<a href="" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Waiver</a>
+								<a href="<?php echo base_url('forms/waiver');?>" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Waiver</a>
 							</li>
 							<li class="">
-								<a href="" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Application for SIT</a>
+								<a href="<?php echo base_url('forms/application');?>" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Application for SIT</a>
 							</li>
 							<li class="">
-								<a href="" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Request for Placement Letter</a>
+								<a href="<?php echo base_url('forms/reqplacement');?>" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Request for Placement Letter</a>
 							</li>
 							<li class="">
 								<a href="" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Placement Letter</a>
+							</li>
 							</li>
 						</ul>
 					</div>
