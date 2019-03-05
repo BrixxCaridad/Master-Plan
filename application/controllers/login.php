@@ -11,7 +11,7 @@ class login extends CI_Controller {
 	{
 		if($this->session->userdata('logged_in')==TRUE)
 		{
-			redirect(base_url(''), 'refresh');			
+			redirect(base_url(''), 'refresh');
 		}
 		$uname = $this->input->post('uname');
 		$password = $this->input->post('password');
@@ -21,28 +21,47 @@ class login extends CI_Controller {
 			if($account=='student')
 			{
 				$q=$this->sita->getstudentfrom_cred($uname,$password);
-				foreach ($q as $s) 
+				foreach ($q as $s)
 				{
 			        $this->session->set_userdata('account_id',$s['Student_ID']);
                     $this->session->set_userdata('account_name',$s['Student_Firstname'].' '.$s['Student_Middlename'].'. '.$s['Student_Lastname']);
                     $this->session->set_userdata('account_type','Student');
                     $this->session->set_userdata('logged_in',TRUE);
 				}
-				redirect(base_url('dashboard'), 'refresh');	
+				redirect(base_url('dashboard'), 'refresh');
 			}
 			elseif($account=='faculty')
 			{
-				$q=$this->sita->getficfrom_cred($uname,$password);	
-				foreach ($q as $f) 
+				$q=$this->sita->getficfrom_cred($uname,$password);
+				foreach ($q as $f)
 				{
-			        $this->session->set_userdata('account_id',$f['Faculty_ID']);
-                    $this->session->set_userdata('account_name',$f['Faculty_Firstname'].' '.$f['Faculty_Middlename'].'. '.$f['Faculty_Lastname']);
-                    $this->session->set_userdata('account_type','Faculty');
-                    $this->session->set_userdata('logged_in',TRUE);
-				}	
-				redirect(base_url('fic'), 'refresh');	
+											if($f['Access_Level_Code'] == "IRJP"){
+												$this->session->set_userdata('account_id',$f['Faculty_ID']);
+												$this->session->set_userdata('account_name',$f['Faculty_Firstname'].' '.$f['Faculty_Middlename'].'. '.$f['Faculty_Lastname']);
+												$this->session->set_userdata('account_type',$f['Access_Level_Code']);
+												$this->session->set_userdata('college',$f['College_Name']);
+												$this->session->set_userdata('access_level',$f['Access_Level']);
+												$this->session->set_userdata('logged_in',TRUE);
+											} else{
+												$this->session->set_userdata('account_id',$f['Faculty_ID']);
+												$this->session->set_userdata('account_name',$f['Faculty_Firstname'].' '.$f['Faculty_Middlename'].'. '.$f['Faculty_Lastname']);
+												$this->session->set_userdata('account_type','Faculty');
+												$this->session->set_userdata('college',$f['College_Name']);
+												$this->session->set_userdata('access_level',$f['Access_Level']);
+												$this->session->set_userdata('logged_in',TRUE);
+											}
+				}
+				//login for irjp user
+				if($q[0]['Access_Level_Code'] == "IRJP"){
+					redirect(base_url('irjp_controller'), 'refresh');
+					// redirect(base_url('dashboard'), 'refresh');
+					echo "assa";
+				} else{
+					redirect(base_url('fic'), 'refresh');
+				}
+				// redirect(base_url('fic'), 'refresh');
 			}
-		}	
+		}
 		else
 		{
 			echo 'null';
