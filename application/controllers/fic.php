@@ -22,8 +22,9 @@ $this->load->model('Requirements_model','requirements');
 	{
      
        $data['data'] = $this->ficm->get_student_list($_SESSION['account_id']);
-       $data['requirements'] = $this->requirements->withReq($_SESSION['account_id']);
+  
 	  $data['courses'] = $this->course->get_course();
+     $data['requirements'] = $this->requirements->withReq($_SESSION['account_id']);
       $data['menu'] =count($data['requirements']);
         
         $this->load->view('include/header');

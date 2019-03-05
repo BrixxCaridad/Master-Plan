@@ -1,4 +1,4 @@
-<?php $this->load->view('include/ficnavbar2'); ?>
+
 <head>
   <link rel="stylesheet" type="text/css" href="assets/css/ficmain.css">
 </head>
