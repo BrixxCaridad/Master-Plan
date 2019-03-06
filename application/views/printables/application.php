@@ -178,7 +178,13 @@ body{
 <div style="position:absolute;left:322.13px;top:793.56px" class="cls_002"><span class="cls_002">APPROVED:</span></div>
 <div style="position:absolute;left:323.69px;top:834.96px" class="cls_004"><span class="cls_004">ANTONIO M. ENRIQUEZ</span></div>
 <div style="position:absolute;left:375.07px;top:848.76px" class="cls_002"><span class="cls_002">Director</span></div>
-</div>
 
+</div>
+<button class="btn btn-primary" onclick="myFunction()">Print this page</button>
 </body>
 </html>
+<script>
+function myFunction() {
+  window.print();
+}
+</script>

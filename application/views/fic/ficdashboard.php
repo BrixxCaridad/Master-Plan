@@ -277,9 +277,7 @@ $(document).on("click", ".openModal", function () {
 });
 
 
-document.getElementById("newStudentSubmit").addEventListener("click", function(event){
-  event.preventDefault()
-});
+
 
 $(document).ready(function(){
    $("#newStudentSubmit").click(function(event){

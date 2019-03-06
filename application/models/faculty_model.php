@@ -97,7 +97,9 @@ class  faculty_model extends CI_Model {
             
          $this->db->insert('student',$data);
          $deployment = array('Student_ID'=>$data['Student_ID']);
-         $this->db->insert('pre_deployment',$deployment);
+         $this->db->insert('pre_deployment_path',$deployment);
+         $this->db->insert('pre_deployment_status',$deployment);
+
          return $insert_id = $this->db->insert_id();
       
     }

@@ -7,19 +7,26 @@ class requirements extends CI_Controller {
         {
                 parent::__construct();
                 $this->load->model('Requirements_Model','preDep');
-            
+                $this->load->model('Requirement_status','status');
         }
 	public function index()
 	{
 		$headerdata['title'] = "SITA | Requirements";
+    $req['idnum'] = $_SESSION['account_id'];
+    $data['MyReq'] = $this->status->read_Status($req);
 		$this->load->view('include/header',$headerdata);
-		$this->load->view('include/navbar2');
+		$this->load->view('include/navbar2',$data);
 		$this->load->view('sita/requirements');
 		
 		
 		//$this->load->view('include/footer');
 	}
+  function submitReport(){
+     
+   $this->preDep->submitReview($_GET['id']);
+   redirect('/requirements');
 
+  }
 	public function guidelines()
 	{
 		// $this->load->view('include/header');
@@ -200,4 +207,5 @@ class requirements extends CI_Controller {
 	         	redirect('/companies');
 		 
 	}
+
 }
