@@ -1,7 +1,7 @@
 <?php
 class sita_model extends CI_Model {
 
-	// public function __construct() 
+	// public function __construct()
 	// {
 	// 	$this->load->database();
 	// }
@@ -10,9 +10,9 @@ class sita_model extends CI_Model {
         $this->db->select("*");
         $this->db->from("company");
         $query = $this->db->get();
-        return $query;      
+        return $query;
     }
-    
+
 	public function display_dep()
 	{
 		$this->db->select("*");
@@ -20,8 +20,8 @@ class sita_model extends CI_Model {
 		$this->db->join('company', 'sit.Company_Code = company.Company_Code', 'inner');
 		$this->db->join('faculty', 'sit.Faculty_ID = faculty.Faculty_ID', 'inner');
 		$query = $this->db->get();
-		
-		return $query;		
+
+		return $query;
 	}
 
 	public function display_dep_bystud($id)
@@ -32,8 +32,8 @@ class sita_model extends CI_Model {
 		$this->db->join('faculty', 'sit.Faculty_ID = faculty.Faculty_ID', 'inner');
 		$this->db->where('Student_ID', $id);
 		$query = $this->db->get();
-		
-		return $query;		
+
+		return $query;
 	}
 
 	public function display_dep_byid($id)
@@ -44,8 +44,8 @@ class sita_model extends CI_Model {
 		$this->db->join('faculty', 'sit.Faculty_ID = faculty.Faculty_ID', 'inner');
 		$this->db->where('Sit_No', $id);
 		$query = $this->db->get();
-		
-		return $query;		
+
+		return $query;
 	}
 
 	public function update_dep_byid($id,$data)
@@ -101,8 +101,12 @@ class sita_model extends CI_Model {
 
 	function getficfrom_cred($uname, $password){
 		$this->db->where('Faculty_ID', $uname);
-		$this->db->where('Password', $password);
-		$query = $this->db->get('faculty');
+		$this->db->where('Password', $password);		
+		$this->db->from('faculty');
+		$this->db->join('college','college.College_Code = faculty.College_Code');
+		$this->db->join('access_level','access_level.Access_Level_Code = faculty.Access_Level_Code');
+		// $query = $this->db->get('faculty');
+		$query = $this->db->get();
 		if($query->num_rows() > 0)
 		{
 			return $query->result_array();
@@ -115,14 +119,14 @@ class sita_model extends CI_Model {
 
 	public function display_studentinfo_byid($id)
 	{
-		
+
 		$this->db->select("*");
 		$this->db->from("student");
 		$this->db->where("Student_ID", $id);
 		$this->db->join('course', 'student.Course_Code = course.Course_Code', 'left');
         $this->db->join('college', 'course.College_Code = college.College_Code', 'left');
 		$query = $this->db->get();
-		return $query;		
+		return $query;
 	}
 
 	public function update_studentinfo_byid($id,$info)

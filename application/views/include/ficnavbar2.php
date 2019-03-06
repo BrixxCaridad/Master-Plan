@@ -39,7 +39,7 @@
         </li>
         <li>
 					<a href="<?php echo base_url();?>ficemailcon" class="s-sidebar__nav-link">
-              <i class="fa fa-copy"></i><em>Requirements</em>
+              <i class="fa fa-copy"></i><em>Requirements<?=($menu!=0?'<span class="badge">'.$menu.'</span>':'')?></em>
            </a>
 				</li>
 				<li>
@@ -100,14 +100,14 @@ $(document).ready(function(){
    data: "name="+$("#id_num").val(),
    success: function(msg){
           if(msg!="true")
-          { 
+          {
               alert(msg);
           }
           else{
              $("#StudentAdd").submit();
              }
      }
-   
+
     });
 
 
