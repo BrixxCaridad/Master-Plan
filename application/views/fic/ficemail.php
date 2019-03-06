@@ -1,220 +1,284 @@
-
-<head>
-  <link rel="stylesheet" type="text/css" href="assets/css/ficmain.css">
-</head>
-<title>Student Requirements</title>
-
-<div class="content">
-      <center><h2 style="color: black"><img src="<?php echo base_url()?>assets/img/TUPlogo.png" alt="TUP Logo" style="height:45px; width: 45px">Technological University of the Philippines - Manila</h2></center>
-      
-
-      <center><p style="color: black; font-size: 28px"><b>SITA : SIT ASSISTANT</b></p></h1></center>
-      <hr style="background-color: #800000">
-      
-
-     
-
-      <center>
-  <div class="table-responsive" style="font-size: 14px">          
-  <table class="table">
-    <thead style="color: #800000">
-      <th colspan="10" style="background-color: #ffe8e8; color: #800000; font-size: 20px; text-align: center">STUDENT REQUIREMENTS</th>
-      <table class="table table-hover" id="dataTables-user-list">
-      <tr>
-        <th>ID NUMBER</th>
-        <th>SURNAME</th>
-        <th>COURSE</th>
-        <th>STATUS</th>
-        <th>ACTION</th>
-      </tr>
-    </thead>        
-    <tbody>
-      <?php
-          foreach($data as $row):
-         ?>             
-        <tr>
-        <td><?php echo $row['Student_ID']; ?></td>
-        <td><?php echo $row['Student_Lastname']; ?></td>
-		
-        <td><?php echo $row['Course_Code']; ?></td>
-		<?php 
-		$y=0;
-		foreach($req as $r){
-			if($row['Student_ID'] == $r['Student_ID']){
-				if($r['Waiver'] == "Incomplete" || $r['Application_Form'] == "Incomplete" || $r['Placement_Letter'] == "Incomplete" || $r['NBI'] == "Incomplete" || 
-				$r['Medical_Certificate'] == "Incomplete" || $r['Tax_Certificate_Student'] == "Incomplete" || $r['Tax_Certificate_Parent'] == "Incomplete" || $r['Resume'] == "Incomplete"
-				|| $r['Registration_Form'] == "Incomplete" || $r['TUP_Evaluation_Sheet'] == "Incomplete" )
+<div class="main-main-container">
+	<div class="page-title fic-dash">
+		<h4 class="text-bold"><b><span class="fa fa-copy"></span> REVIEW REQUIREMENTS<small></small></b></h4>
+	</div>
+	<div class="container-fluid">
+		<div class="row mt-4">
+			<div class="col-md-12">
+				<div class="table-responsive" style="font-size: 14px">          
+  				<table class="table table-hover" id="dataTables-user-list">
+    				<thead style="color: #800000">
+      				<tr>
+        				<th>ID NUMBER</th>
+        				<th>SURNAME</th>
+        				<th>COURSE</th>
+        				<th>STATUS</th>
+        				<th>ACTION</th>
+      				</tr>
+    				</thead>        
+    				<tbody>
+      				<?php foreach($data as $row): ?>             
+        			<tr>
+        				<td><?php echo $row['Student_ID']; ?></td>
+        				<td><?php echo $row['Student_Lastname']; ?></td>
+        				<td><?php echo $row['Course_Code']; ?></td>
+									<?php 
+												$y=0;
+												foreach($req as $r){
+													if($row['Student_ID'] == $r['Student_ID']){
+														if($r['Waiver'] == "Incomplete" || $r['Application_Form'] == "Incomplete" || $r['Placement_Letter'] == "Incomplete" || $r['NBI'] == "Incomplete" || 
+														$r['Medical_Certificate'] == "Incomplete" || $r['Tax_Certificate_Student'] == "Incomplete" || $r['Tax_Certificate_Parent'] == "Incomplete" || $r['Resume'] == "Incomplete"
+														|| $r['Registration_Form'] == "Incomplete" || $r['TUP_Evaluation_Sheet'] == "Incomplete" )
 				
-				echo "<td>Incomplete Submission</td>" ;   
+														echo "<td>Incomplete Submission</td>" ;   
 
-				else
-					echo "<td>Complete Submission</td>";
-				$y++;
-				
-			}
-		
-		}
-  
-		if($y ==0)
-			echo "<td>No requirement submitted</td>";
-			
-		?>
-        <td style="text-align: center";> <span data-toggle="tooltip" data-placement="top" title="Submission Details">
-		<?php foreach($req as $r){
-			if($row['Student_ID'] == $r['Student_ID']){
-			echo '<a  class="openModal" href="#viewRequirements" data-toggle="modal" data-id='.$row['Student_ID'].' data-surname="'.$row['Student_Lastname'].'"
-           data-firstname="'.$row['Student_Firstname'].'" data-middle="'.$row['Student_Middlename'].'" data-waiver="'.
-		   $r['Waiver'].'" data-appform="'.$r['Application_Form'].'" data-placement="'.$r['TUP_Evaluation_Sheet'].'" 
-		   data-nbi="'.$r['NBI'].'" data-medcert="'.$r['Medical_Certificate'].'" data-taxcerts="'.$r['Tax_Certificate_Student'].'"
-		   data-taxcertp="'.$r['Tax_Certificate_Parent'].'" data-resume="'.$r['Resume'].'" data-regform="'.$r['Registration_Form'].'">View submitted requirements</a></td>';
-			}
-		}
-		?>
-      </tr>
-           <?php endforeach; ?> 
-
-    </tbody>
-  </table>
-  </div>
-</center>
+														else
+															echo "<td>Complete Submission</td>";
+														$y++;
+													}
+												}
+												if($y ==0)
+													echo "<td>No requirement submitted</td>"; ?>
+        				<td style="text-align: center";> <span data-toggle="tooltip" data-placement="top" title="Submission Details">
+												<?php foreach($req as $r){
+															if($row['Student_ID'] == $r['Student_ID']){
+															echo '<a  class="openModal" href="#viewRequirements" data-toggle="modal" data-id='.$row['Student_ID'].' data-surname="'.$row['Student_Lastname'].'"
+           												data-firstname="'.$row['Student_Firstname'].'" data-middle="'.$row['Student_Middlename'].'" data-waiver="'.
+		   												$r['Waiver'].'" data-appform="'.$r['Application_Form'].'" data-placement="'.$r['TUP_Evaluation_Sheet'].'" 
+		   												data-nbi="'.$r['NBI'].'" data-medcert="'.$r['Medical_Certificate'].'" data-taxcerts="'.$r['Tax_Certificate_Student'].'"
+		   												data-taxcertp="'.$r['Tax_Certificate_Parent'].'" data-resume="'.$r['Resume'].'" data-regform="'.$r['Registration_Form'].'">View submitted requirements</a></td>';
+															}
+														}?>
+      				</tr>
+           		<?php endforeach; ?> 
+    				</tbody>
+  				</table>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-
-
-</div>
+<!-- </div> -->
 
 <div  id="viewRequirements" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-              <div class="modal-dialog" style="width:2000px;">
-                <div class="modal-content">
-                    <div class="modal-header bg-dark">
-                      <h4 class="modal-title" id="myModalLabel"  style="color: #fff;">VIEW STUDENT DETAILS</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: #fff;">&times;</button>
-                    </div>     
-                    <div class="modal-body">
-                    <!-- <a id="linkexport" class="btn btn-secondary" href='' style="margin-bottom: 10px;">Export Client Data</a> -->
-                    <input type="hidden" id="hidden-id">
-               
-                     <input type="hidden"  id="view-s-id" value="">
-                        <div class="row">
-                          <div class="col-lg-6">
-                            <div class="form-group">
-                              <label>ID NUMBER</label> &nbsp;&nbsp;
-
-                              <input class="form-control" id="view-id-num" placeholder="id number" name="view-id-num" disabled>
-                            </div> 
-                          </div>
-
-                          <div class="col-lg-6">
-                            <div class="form-group">
-                              <label>SURNAME</label> &nbsp;&nbsp;
-
-                              <input class="form-control" id="view-s-name" placeholder="surname" name="view-s-name" disabled>
-                            </div> 
-                          </div> <!-- col-lg-6 -->
-                        </div> <!-- row -->
-
-                        <div class="row">
-                          <div class="col-lg-6">
-                            <div class="form-group">
-                              <label>FIRST NAME</label> &nbsp;&nbsp;
-
-                              <input class="form-control" id="view-f-name" placeholder="firstname" name="view-f-name" disabled>
-                            </div> 
-                          </div> <!-- col-lg-6 -->
-
-                          <div class="col-lg-6">
-                            <div class="form-group">
-                              <label>MIDDLE NAME</label> &nbsp;&nbsp;
-
-                              <input class="form-control" id="view-m-name" placeholder="MiddleName" name="view-m-name" disabled>
-                            </div> 
-                          </div> <!-- col-lg-6 -->
-                        </div> <!-- row -->
-
-                       <div class="row">
-                          <div class="col-lg-6">
-                             
-                            <div class="form-group">
-                              <label>NBI</label> &nbsp;&nbsp;
-<!--                           <label class="error" id="edit-error_email"> field is required.</label>
-                              <label class="error" id="edit-error_email2"> email has already exist.</label>
-                              <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
-                              <a id="view-nbi" name="view-nbi" target="_blank" > view </a> <button id= "vNBI" type="button" class="btn btn-danger">Verify</button>                            </div> 
-                          </div> <!-- col-lg-6 -->
-
-                          
-                          <div class="col-lg-6">
-
-                            <div class="form-group">
-                              <label>Medical Certificate</label> &nbsp;&nbsp;
-<!--                           <label class="error" id="edit-error_email"> field is required.</label>
-                              <label class="error" id="edit-error_email2"> email has already exist.</label>
-                              <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
-                              <a id="view-medcert" name="view-medcert" target="_blank"> view </a>
-                              <button id= "vMED" type="button" class="btn btn-danger">Verify</button> 
-                            </div> 
-                         
-                    </div> <!-- Mode-body -->
-
-                        <div class="col-lg-6">
-                             
-                            <div class="form-group">
-                              <label>Student Tax Certificate</label> &nbsp;&nbsp;
-<!--                           <label class="error" id="edit-error_email"> field is required.</label>
-                              <label class="error" id="edit-error_email2"> email has already exist.</label>
-                              <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
-                              <a id= "view-taxcerts" name="view-tax" target="_blank" > view </a> 
-                              <button id="vSTAX"  type="button"  class="btn btn-danger">Verify</button>                            
-                            </div> 
-                          </div> <!-- col-lg-6 -->
-
-                          
-                          <div class="col-lg-6">
-
-                            <div class="form-group">
-                              <label>Parent Tax Certificate</label> &nbsp;&nbsp;
-<!--                           <label class="error" id="edit-error_email"> field is required.</label>
-                              <label class="error" id="edit-error_email2"> email has already exist.</label>
-                              <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
-                              <a id="view-PTax" name="view-PTax" target="_blank"> view </a>
-                               <button id="vPTAX"  type="button"  class="btn btn-danger">Verify</button>  
-                            </div> 
-
-
-
-                  </div> <!-- Model-dialog -->
-
-
-
-                       <div class="col-lg-6">
-                             
-                            <div class="form-group">
-                              <label>TUP Evaluation Sheet</label> &nbsp;&nbsp;
-<!--                           <label class="error" id="edit-error_email"> field is required.</label>
-                              <label class="error" id="edit-error_email2"> email has already exist.</label>
-                              <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
-                              <a id= "view-eSHEET" name="view-esheet" target="_blank" > view </a> 
-                              <button id="vESHEET"  type="button"  class="btn btn-danger">Verify</button>                            
-                            </div> 
-                          </div> <!-- col-lg-6 -->
-
-                          
-                          <div class="col-lg-6">
-
-                            <div class="form-group">
-                              <label>Resume</label> &nbsp;&nbsp;
-<!--                           <label class="error" id="edit-error_email"> field is required.</label>
-                              <label class="error" id="edit-error_email2"> email has already exist.</label>
-                              <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
-                              <a id="view-viewResume" name="view-medcert" target="_blank"> view </a>
-                               <button id="vRESUME"  type="button"  class="btn btn-danger">Verify</button>  
-                            </div> 
-
-
-
-                  </div> <!-- Model-dialog -->
-
-                </div> <!-- Model-content -->
-              </div> <!-- viewClient -->
+  <div class="modal-dialog" style="width:2000px; top:50px">
+    <div class="modal-content">
+      <div class="modal-header bg-dark">
+        <h4 class="modal-title" id="myModalLabel"  style="color: #fff;">VIEW STUDENT DETAILS</h4>
+      </div>     
+      <div class="modal-body">
+        <input type="hidden" id="hidden-id">
+          <input type="hidden"  id="view-s-id" value="">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <p>ID NUMBER</p>
+                  <input class="form-control" id="view-id-num" placeholder="id number" name="view-id-num" disabled>
+                </div> 
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <p>SURNAME</p>
+									<input class="form-control" id="view-s-name" placeholder="surname" name="view-s-name" disabled>
+                </div> 
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                  <p>FIRST NAME</p>
+                  <input class="form-control" id="view-f-name" placeholder="firstname" name="view-f-name" disabled>
+                </div> 
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <p>MIDDLE NAME</p>
+                  <input class="form-control" id="view-m-name" placeholder="MiddleName" name="view-m-name" disabled>
+                </div> 
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <p>NBI (<span class="reqstatus text-success fa fa-check"></span>)</p>
+									<!--<label class="error" id="edit-error_email"> field is required.</label>
+                  <label class="error" id="edit-error_email2"> email has already exist.</label>
+									<label class="error" id="edit-error_email3"> invalid email adress.</label> -->
+									<div class="row">
+										<div class="col-md-6">
+											<a id="view-nbi" name="view-nbi" target="_blank" ><span class="fa fa-external-link"></span> View</a> 
+										</div>
+										<div class="col-md-6 text-right">
+											<a href="" class="btn btn-xs btn-info" title="Approve" target="_blank" ><span class="fa fa-thumbs-o-up"></span></a>
+											<a href="" class="btn btn-xs btn-danger" title="Disapprove" target="_blank" ><span class="fa fa-thumbs-o-down"></span></a> 
+										</div>
+									</div>
+									<div class="row mt-4">
+										<div class="col-md-12">
+											<textarea name="" id="" class="my-textarea btn-block" rows="2" placeholder="Comment or notes here..."></textarea>
+										</div>
+									</div>
+									<!-- <button id= "vNBI" type="button" class="btn btn-danger">Verify</button>                            -->
+								</div> 
+							</div>							
+							<div class="col-lg-6">
+								<div class="form-group">
+                  <p>Medical Certificate (<span class="reqstatus text-default fa fa-minus"></span>)</p>
+									<!-- <label class="error" id="edit-error_email"> field is required.</label>
+                  <label class="error" id="edit-error_email2"> email has already exist.</label>
+									<label class="error" id="edit-error_email3"> invalid email adress.</label> -->
+									<div class="row ">
+										<div class="col-md-6">
+											<a id="view-medcert" name="view-medcert" target="_blank" ><span class="fa fa-external-link"></span> View</a> 
+										</div>
+										<div class="col-md-6 text-right">
+											<a href="" class="btn btn-xs btn-info" title="Approve" target="_blank" ><span class="fa fa-thumbs-o-up"></span></a>
+											<a href="" class="btn btn-xs btn-danger" title="Disapprove" target="_blank" ><span class="fa fa-thumbs-o-down"></span></a> 
+										</div>
+									</div>
+									<div class="row mt-4">
+										<div class="col-md-12">
+											<textarea name="" id="" class="my-textarea btn-block" rows="2" placeholder="Comment or notes here..."></textarea>
+										</div>
+									</div>
+                  <!-- <button id= "vMED" type="button" class="btn btn-danger">Verify</button>  -->
+                </div> 
+              </div>
+						</div>
+						<div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <p>Student Tax Certificate (<span class="reqstatus text-success fa fa-minus"></span>)</p>
+                  <!--<label class="error" id="edit-error_email"> field is required.</label>
+                  <label class="error" id="edit-error_email2"> email has already exist.</label>
+                  <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
+                  <!-- <a id= "view-taxcerts" name="view-tax" target="_blank" ><small><span class="fa fa-external-link"></span> View</small></a> 
+                  <button id="vSTAX"  type="button"  class="btn btn-danger">Verify</button>                             -->
+									<div class="row">
+										<div class="col-md-6">
+											<a id= "view-taxcerts" name="view-tax" target="_blank" ><span class="fa fa-external-link"></span> View</a> 
+										</div>
+										<div class="col-md-6 text-right">
+											<a href="" class="btn btn-xs btn-info" title="Approve" target="_blank" ><span class="fa fa-thumbs-o-up"></span></a>
+											<a href="" class="btn btn-xs btn-danger" title="Disapprove" target="_blank" ><span class="fa fa-thumbs-o-down"></span></a> 
+										</div>
+									</div>
+									<div class="row mt-4">
+										<div class="col-md-12">
+											<textarea name="" id="" class="my-textarea btn-block" rows="2" placeholder="Comment or notes here..."></textarea>
+										</div>
+									</div>
+								</div> 
+              </div>  
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <p>Parent Tax Certificate (<span class="reqstatus text-success fa fa-check"></span>)</p>
+                  <!--<label class="error" id="edit-error_email"> field is required.</label>
+                  <label class="error" id="edit-error_email2"> email has already exist.</label>
+                  <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
+                  <!-- <a id="view-PTax" name="view-PTax" target="_blank"><small><span class="fa fa-external-link"></span> View</small></a> -->
+                  <!-- <button id="vPTAX"  type="button"  class="btn btn-danger">Verify</button>   -->
+									<div class="row">
+										<div class="col-md-6">
+											<a id="view-PTax" name="view-PTax" target="_blank" ><span class="fa fa-external-link"></span> View</a> 
+										</div>
+										<div class="col-md-6 text-right">
+											<a href="" class="btn btn-xs btn-info" title="Approve" target="_blank" ><span class="fa fa-thumbs-o-up"></span></a>
+											<a href="" class="btn btn-xs btn-danger" title="Disapprove" target="_blank" ><span class="fa fa-thumbs-o-down"></span></a> 
+										</div>
+									</div>
+									<div class="row mt-4">
+										<div class="col-md-12">
+											<textarea name="" id="" class="my-textarea btn-block" rows="2" placeholder="Comment or notes here..."></textarea>
+										</div>
+									</div>
+								</div> 
+							</div>
+						</div>
+						<div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <p>TUP Evaluation Sheet (<span class="reqstatus text-success fa fa-check"></span>)</p>
+                  <!--<label class="error" id="edit-error_email"> field is required.</label>
+                  <label class="error" id="edit-error_email2"> email has already exist.</label>
+                  <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
+                  <!-- <a id= "view-eSHEET" name="view-esheet" target="_blank" ><small><span class="fa fa-external-link"></span> View</small></a> 
+                  <button id="vESHEET"  type="button"  class="btn btn-danger">Verify</button>                             -->
+									<div class="row">
+										<div class="col-md-6">
+											<a id= "view-eSHEET" name="view-esheet" target="_blank" ><span class="fa fa-external-link"></span> View</a> 
+										</div>
+										<div class="col-md-6 text-right">
+											<a href="" class="btn btn-xs btn-info" title="Approve" target="_blank" ><span class="fa fa-thumbs-o-up"></span></a>
+											<a href="" class="btn btn-xs btn-danger" title="Disapprove" target="_blank" ><span class="fa fa-thumbs-o-down"></span></a> 
+										</div>
+									</div>
+									<div class="row mt-4">
+										<div class="col-md-12">
+											<textarea name="" id="" class="my-textarea btn-block" rows="2" placeholder="Comment or notes here..."></textarea>
+										</div>
+									</div>
+								</div> 
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <p>Resume (<span class="reqstatus text-default fa fa-minus"></span>)</p>
+									<!--<label class="error" id="edit-error_email"> field is required.</label>
+                  <label class="error" id="edit-error_email2"> email has already exist.</label>
+                  <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
+                  <!-- <a id="view-viewResume" name="view-medcert" target="_blank"><small><span class="fa fa-external-link"></span> View</small></a>
+										<button id="vRESUME"  type="button"  class="btn btn-danger">Verify</button>   -->
+									<div class="row">
+										<div class="col-md-6">
+											<a id="view-viewResume" name="view-medcert" target="_blank" ><span class="fa fa-external-link"></span> View</a> 
+										</div>
+										<div class="col-md-6 text-right">
+											<a href="" class="btn btn-xs btn-info" title="Approve" target="_blank" ><span class="fa fa-thumbs-o-up"></span></a>
+											<a href="" class="btn btn-xs btn-danger" title="Disapprove" target="_blank" ><span class="fa fa-thumbs-o-down"></span></a> 
+										</div>
+									</div>
+									<div class="row mt-4">
+										<div class="col-md-12">
+											<textarea name="" id="" class="my-textarea btn-block" rows="2" placeholder="Comment or notes here..."></textarea>
+										</div>
+									</div>
+                </div> 
+							</div> 
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+							<div class="form-group">
+								<p>Registration Form (<span class="reqstatus text-default fa fa-minus"></span>)</p>
+								<!--  <label class="error" id="edit-error_email"> field is required.</label>
+								<label class="error" id="edit-error_email2"> email has already exist.</label>
+								<label class="error" id="edit-error_email3"> invalid email adress.</label> -->
+								<!-- <a id="view-viewResume" name="view-medcert" target="_blank"><small><span class="fa fa-external-link"></span> View</small></a>
+	 							<button id="vRESUME"  type="button"  class="btn btn-danger">Verify</button>   -->
+								<div class="row">
+									<div class="col-md-6">
+										<a id="view-viewResume" name="view-medcert" target="_blank" ><span class="fa fa-external-link"></span> View</a> 
+									</div>
+									<div class="col-md-6 text-right">
+										<a href="" class="btn btn-xs btn-info" title="Approve" target="_blank" ><span class="fa fa-thumbs-o-up"></span></a>
+										<a href="" class="btn btn-xs btn-danger" title="Disapprove" target="_blank" ><span class="fa fa-thumbs-o-down"></span></a> 
+									</div>
+								</div>
+								<div class="row mt-4">
+									<div class="col-md-12">
+										<textarea name="" id="" class="my-textarea btn-block" rows="2" placeholder="Comment or notes here..."></textarea>
+									</div>
+								</div>
+							</div> 
+							</div> 
+							<div class="col-md-6">
+								<div class="form-group mt-4">
+									<button type="submit" class="btn btn-lg btn-block btn-success">Submit</button>
+									<button type="button" class="btn btn-lg btn-block btn-secondary" data-dismiss="modal" aria-hidden="true" >Cancel</button>
+								</div>
+							</div>
+						</div>
+      </div>
+    </div>
 			  
 <script>
 $(document).on("click", ".openModal", function () {

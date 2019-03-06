@@ -1,39 +1,73 @@
-
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/ficmain.css">
-<div class="ficsidebar">
-
-  <br>
-  <br>
-
-  <div class="container">
-
-      <div class="col-md-2">
-          <center>
-            <img class="img-responsive img-circle" src="<?php echo base_url()?>assets/img/panpan.jpg" alt="May Garcia" style="border-radius: 50% width= 50% height=50%">
-          </center>
-
-          <center>
-            <p style="color: white"><?php echo $this->session->userdata['account_name']?></p>
-            <p style="color: white"><?php echo $this->session->userdata['access_level']?></p>
-            <p style="color: white"><?php echo $this->session->userdata['college']?></p>
-          </center>
-      </div>
-
-  </div>
-<!-- <?=($menu!=0?'<span class="badge">5</span>':'')?> -->
-<a href="<?php echo base_url();?>fic">Dashboard</a>
-<?php if($this->session->userdata['access_level'] == "IRJP"){?>
-  <a href="<?php echo base_url();?>irjp_companies">Company Lists</a>
-<?php } else{?>
-  <a href="<?php echo base_url();?>ficdepinfo">Deployments</a>
-  <a href="<?php echo base_url();?>ficemailcon">Requirements &nbsp; &nbsp;<?=($menu!=0?'<span class="badge">'.$menu.'</span>':'')?></a>
-  <a href="<?php echo base_url();?>ficgpscon">Company Lists</a>
-<?php }?>
-  <a href="<?php echo base_url();?>ficaccountcon">Account Settings</a>
-  <a href="<?php echo base_url();?>login/logout">Logout</a>
-
-
+<div class="s-layout__sidebar">
+  <div class="s-sidebar__trigger fic-trigger" style="cursor:pointer">
+		 <i class="fa fa-bars"></i>	
+		 <img src="<?php echo base_url('assets/img/sita2reverse.png')?>" alt="TUP Logo" style="height:50px;">
 </div>
+
+  <nav class="s-sidebar__nav fic-snav">
+	<div class="brand fic-brand">
+            <img src="<?php echo base_url('assets/img/sita2reverse.png')?>"/>
+        </div>
+     <ul>
+		 		<li>
+					<a class="s-sidebar__nav-link profile-link">
+					<div class="profile-link-div">
+						<div class="profile-img">
+							<img class="img-responsive img-circle large-avatar" src="<?php echo base_url('assets/img/default.png')?>" alt="Meredith Grey" width="50%" height="50%" style="border-radius: 50%"> 
+						</div>
+						<div class="profile-info">
+							<p class="no-margin"><?php echo $_SESSION['account_name']; ?></p>
+						</div>
+						<div class="profile-info">
+							<p class="no-margin"><small><?php echo $_SESSION['account_id']; ?></small></p>
+						</div>
+						<div class="profile-info">
+							<p class="no-margin"><small><?php echo $_SESSION['account_type']; ?></small></p>
+						</div>
+					</div>
+					</a>
+        </li>
+				<li>
+				<a href="<?php echo base_url();?>fic" class="s-sidebar__nav-link">
+              <i class="fa fa-dashboard"></i><em>Dashboard</em>
+          </a>
+        </li>
+        <li>
+				<a href="<?php echo base_url();?>ficdepinfo" class="s-sidebar__nav-link">
+             <i class="fa fa-building"></i><em>Deployments</em>
+           </a>
+        </li>
+        <li>
+					<a href="<?php echo base_url();?>ficemailcon" class="s-sidebar__nav-link">
+              <i class="fa fa-copy"></i><em>Requirements<?=($menu!=0?'<span class="badge">'.$menu.'</span>':'')?></em>
+           </a>
+				</li>
+				<li>
+				<a href="<?php echo base_url();?>ficgpscon" class="s-sidebar__nav-link">
+              <i class="fa fa-briefcase"></i><em>Companies</em>
+           </a>
+				</li>
+				<li>
+				<a href="<?php echo base_url();?>ficaccountcon" class="s-sidebar__nav-link">
+              <i class="fa fa-gear"></i><em>Account Settings</em>
+           </a>
+				</li>
+				<li>
+				<a href="<?php echo base_url('login/logout');?>" class="s-sidebar__nav-link">
+              <i class="fa fa-sign-out"></i><em>Logout</em>
+           </a>
+				</li>
+				
+     </ul>
+  </nav>
+</div>
+
+<style type="text/css">
+  a.disabled {
+    cursor: not-allowed; 
+    pointer-events: none;
+  }
+</style>
 
 <script>
 $(document).on("click", ".openModal", function () {

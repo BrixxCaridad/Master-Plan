@@ -3,7 +3,7 @@
 
 <title>Guidelines</title>
 <style type="text/css">
-<!--
+body{ background-color: lightgray}
 span.cls_002{font-family:Times,serif;font-size:10.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
 div.cls_002{font-family:Times,serif;font-size:10.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
 span.cls_003{font-family:Times,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
@@ -18,7 +18,7 @@ span.cls_007{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weig
 div.cls_007{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
 span.cls_006{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
 div.cls_006{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
--->
+
 </style>
 </head>
 <body>
@@ -72,14 +72,55 @@ div.cls_006{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weigh
 <div style="position:absolute;left:72.02px;top:726.34px" class="cls_003"><span class="cls_003">repeat SIT in the succeeding semester.</span></div>
 <div style="position:absolute;left:360.07px;top:753.94px" class="cls_004"><span class="cls_004">The IRJP Office</span></div>
 <div style="position:absolute;left:36.00px;top:767.76px" class="cls_004"><span class="cls_004">CONFORME:</span></div>
-<div style="position:absolute;left:108.02px;top:781.56px" class="cls_003"><span class="cls_003">
+ <!-- <div style="position:absolute;left:108.02px;top:781.56px" class="cls_003"><span class="cls_003">
 	<u><?php if(isset($student_name)){ echo $student_name;}?></u></span>
+</div>  -->
+<div class="" style=" position: absolute;
+    left: 70.02px;
+    top: 800px;
+    font-family: Times,serif;
+    border-bottom: 1px solid black;
+    font-size: 14px;
+    text-align: center;
+    width: 270px;
+">
+    <input type="text" placeholder="type your full name here" style="
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    min-width: 100%;
+    overflow-y: visible;
+">
 </div>
-<div style="position:absolute;left:108.02px;top:795.36px" class="cls_003"><span class="cls_003">(Student Signature over Printed Name)</span></div>
-<div style="position:absolute;left:108.02px;top:822.96px" class="cls_003"><span class="cls_003">
+<div style="position:absolute;left: 70.02px;top:823.36px; text-align: center; width: 270px;" class="cls_003"><span class="cls_003">(Student Signature over Printed Name)</span></div>
+<!-- <div style="position:absolute;left:108.02px;top:822.96px" class="cls_003"><span class="cls_003">
 	<u><?php if(isset($course)){ echo $course;}?></u></span>
-</span></div>
-<div style="position:absolute;left:180.02px;top:836.76px" class="cls_003"><span class="cls_003">Course</span></div>
+</span></div> -->
+
+
+<div class="" style=" position: absolute;
+    left: 70.02px;
+    top: 850px;
+    font-family: Times,serif;
+    /* border-bottom: 1px solid black; */
+    font-size: 14px;
+    text-align: center;
+    width: 270px;
+	border-bottom: 1px solid black;
+">
+
+    <input type="text" placeholder="course (ex: BSIT)" style="
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 270px;
+    overflow-y: visible;
+">
+</div>
+
+<div style="position:absolute;left: 70.02px;text-align: center; top:870.76px; width: 270px;" class="cls_003"><span class="cls_003">Course</span></div>
 </div>
 
 

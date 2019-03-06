@@ -1,26 +1,18 @@
-
-
-<head>
-<title>SITA | Account Settings</title>
-</head>  
-<div class="content">
-
-      
-  	<center><h4 style="color: black"><img src="<?php echo base_url()?>assets/img/TUPlogo.png" alt="TUP Logo" style="height:45px; width: 45px"> Technological University of the Philippines - Manila</h4></center>
-  
-  	<center><p style="color: black; font-size: 20px"><b>SITA: SIT ASSISTANT</b></p></h1></center>
-  	<hr style="background-color: #800000">
-      
-	<div class="ficdashtitle">
-		<center><h3 style="color: #004000"><b>ACCOUNT SETTINGS</b></h3></center>
+<div class="main-main-container">
+	<div class="page-title fic-dash">
+		<h4 class="text-bold"><b><span class="fa fa-gear"></span> ACCOUNT SETTINGS<small></small></b></h4>
 	</div>
-	<?php 
-	if ($display_info->num_rows() > 0)
-       {
-        foreach ($display_info->result() as $row)
-        {?>
-    <form id="insert_form" action="<?php echo base_url('ficaccountcon/edit_personalinfo')?>" method="POST">
-	<div class="col-md-6">
+	<div class="container-fluid">
+		<div class="row mt-4">
+			<div class="col-md-6">
+				<?php 
+					if ($display_info->num_rows() > 0)
+      				 {
+        				foreach ($display_info->result() as $row)
+					{?>
+					
+					<form id="insert_form" action="<?php echo base_url('ficaccountcon/edit_personalinfo')?>" method="POST">
+	<div class="col-md-12">
 		<div class="col-md-12">
 			<form role="form">
 	            <fieldset>
@@ -70,14 +62,18 @@
 		<div id="pass_2"class="form-group col-md-12 has-feedback">
             <label style="font-size:15px;">Confirm password <small id="alert-text" class="text-danger hide"><i>Password didn't match</i></small></label>
             <input class="form-control" id="pass2" type="password" onkeyup="confirm_pass()"> 
-        </div>
-        <input class="btn btn-maroon btn-md pull-right" type="submit" value="Submit" role="button" id="edit_btn"/>
+		</div>
+		
+        <input class="btn btn-info btn-md pull-right" type="submit" value="Save Changes" role="button" id="edit_btn"/>
 	</div>
     
 	</form>
 	<?php }}?>
 
-	<div class="col-md-6">
+
+
+			</div>
+			<div class="col-md-6">
 		<div class="form-group">
             <label style="font-size:15px; text-align:center;">Profile Picture</label>
             <img src="<?php echo base_url();?>assets/img/panpan.jpg" style="display: block; margin-left: auto;margin-right: auto;height: 50%; width: 50%;">
@@ -87,6 +83,11 @@
             <input style="display: block; margin:auto;" type="file">
         </div>
 	</div>
+
+		</div>
+	</div>
+
+
 		
       
     
