@@ -8,6 +8,13 @@ class Requirements_Model extends CI_Model {
 		
 	}
 	private $table = "pre_deployment_path";
+
+	public function addmystudent($fid,$sid){
+		$data = array('Faculty_ID'=>$fid,'Student_ID'=>$sid,'Status'=>'On Going');
+		$this->db->insert('sit', $data);
+	    return 'success';
+	}
+
 	
 	public function uploadNBI($data){
 
@@ -99,11 +106,13 @@ class Requirements_Model extends CI_Model {
 	
 	
 	}
-   public function withReq(){
-   		$this->db->where('Overall_status',1);
+   public function withReq($fic_id){
+   		//$this->db->where('Overall_status',1);
+   		$this->db->join('sit', '(sit.Student_ID = pre_deployment_path.Student_ID)');
+   		$this->db->where('Faculty_ID',$fic_id);
    		$this->db->join('student', 'student.Student_ID = pre_deployment_path.Student_ID');
  		$query=$this->db->get($this->table);
-	  return $query->result_array();
+	  	return $query->result_array();
 	}
 	
 	public function read_req($data = null){

@@ -12,26 +12,30 @@ class fic extends CI_Controller {
         if($this->session->userdata('role') != 'admin' && ('role') == 'admin' ){
             redirect(base_url());
         }*/
-$this->load->model('Requirements_model','requirements');
-        $this->load->model('faculty_model','ficm');
-       $this->load->model('course_model','course');
-       $this->load->model('Requirement_status','status');
+      $this->load->model('Requirements_model','requirements');
+      $this->load->model('faculty_model','ficm');
+      $this->load->model('course_model','course');
+      $this->load->model('Requirement_status','status');
     } 
 
     public function index()
 	{
-     
        $data['data'] = $this->ficm->get_student_list($_SESSION['account_id']);
 	     $data['courses'] = $this->course->get_course();
        $data['requirements'] = $this->requirements->withReq($_SESSION['account_id']);
        $data['menu'] =count($data['requirements']);
         
-        $this->load->view('include/header');
-  
-        $this->load->view('include/ficnavbar2',$data); 
-		$this->load->view('fic/ficdashboard',$data);
-		$this->load->view('include/footer');
+      $this->load->view('include/header');
+      $this->load->view('include/ficnavbar2',$data); 
+		  $this->load->view('fic/ficdashboard',$data);
+		  $this->load->view('include/footer');
 	}
+
+    public function addmystudent()
+    {
+      $sid= $_GET['sid'];
+      return $this->requirements->addmystudent($_SESSION['account_id'],$sid);
+    }
     function check_user(){
     $data=array(
         array('field'=>'name','label'=>'ID number','rules'=>'trim|required|is_unique[student.Student_ID]'));
@@ -44,10 +48,7 @@ $this->load->model('Requirements_model','requirements');
         }
         else{
            echo  'true';
-        }
-
-
-
+        }        
     }
 	function add_student(){
        // Array ( [id_num] => aaaaaaa [s_lname] => bbbb [f_fname] => cccc [m_mname] => dddddd )

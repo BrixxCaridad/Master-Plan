@@ -40,6 +40,7 @@ class login extends CI_Controller {
 												$this->session->set_userdata('account_name',$f['Faculty_Firstname'].' '.$f['Faculty_Middlename'].'. '.$f['Faculty_Lastname']);
 												$this->session->set_userdata('account_type',$f['Access_Level_Code']);
 												$this->session->set_userdata('college',$f['College_Name']);
+												$this->session->set_userdata('college_code',$f['College_Code']);
 												$this->session->set_userdata('access_level',$f['Access_Level']);
 												$this->session->set_userdata('logged_in',TRUE);
 											} else{
@@ -47,6 +48,7 @@ class login extends CI_Controller {
 												$this->session->set_userdata('account_name',$f['Faculty_Firstname'].' '.$f['Faculty_Middlename'].'. '.$f['Faculty_Lastname']);
 												$this->session->set_userdata('account_type','Faculty');
 												$this->session->set_userdata('college',$f['College_Name']);
+												$this->session->set_userdata('college_code',$f['College_Code']);
 												$this->session->set_userdata('access_level',$f['Access_Level']);
 												$this->session->set_userdata('logged_in',TRUE);
 											}

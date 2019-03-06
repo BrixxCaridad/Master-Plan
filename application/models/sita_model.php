@@ -119,12 +119,12 @@ class sita_model extends CI_Model {
 
 	public function display_studentinfo_byid($id)
 	{
-
 		$this->db->select("*");
 		$this->db->from("student");
 		$this->db->where("Student_ID", $id);
 		$this->db->join('course', 'student.Course_Code = course.Course_Code', 'left');
-        $this->db->join('college', 'course.College_Code = college.College_Code', 'left');
+        $this->db->join('college', 'college.College_Code = college.College_Code', 'left');
+        $this->db->limit(1);
 		$query = $this->db->get();
 		return $query;
 	}

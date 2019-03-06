@@ -12,12 +12,10 @@ $this->load->model('Requirements_model','requirements');
 	{
 
  $data['requirements'] = $this->requirements->withReq($_SESSION['account_id']);
-           $data['menu'] =count($data['requirements']);
+        $data['menu'] =count($data['requirements']);
 		$this->load->view('include/header'); 
-		 $this->load->view('include/ficnavbar2',$data);
+		$this->load->view('include/ficnavbar2',$data);
 		$this->load->view('fic/ficgps');
-		
-		//$this->load->view('include/footer');
 	}
 	
 	

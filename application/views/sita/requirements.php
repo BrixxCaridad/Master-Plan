@@ -1,4 +1,3 @@
-<?php //print_r($MyReq); ?>
 <div class="main-main-container">
 	<div class="page-title">
         <h4 class="text-bold"><b><span class="fa fa-copy"></span> REQUIREMENTS FOR SIT APPLICATION<small></small></b></h4>

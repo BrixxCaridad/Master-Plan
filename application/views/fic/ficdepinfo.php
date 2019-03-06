@@ -34,7 +34,7 @@
        if ($display_dep->num_rows() > 0)
 		   {
 				foreach ($display_dep->result() as $row)
-				{ ?>
+				{ if($row->Company_Name!=null):?>
 					
 					<tr>				
 						<td><?php echo $row->Company_Name; ?> </td>
@@ -75,7 +75,7 @@
 					</tr>
 					
 				<?php
-				}
+				endif;}
 				
 		   }
 		   else
@@ -100,7 +100,7 @@
 	</div>
 
   
-    <!--<button data-toggle="modal" data-target="#myModal" class="btn btn-maroon btn-md pull-right" role="button"><span class="glyphicon glyphicon-pencil" style="padding-right: 4px"></span>Fill Out Forms</button> -->
+    <button data-toggle="modal" data-target="#myModal" class="btn btn-maroon btn-md pull-right" role="button"><span class="glyphicon glyphicon-pencil" style="padding-right: 4px"></span>Fill Out Forms</button>
 
   
   
