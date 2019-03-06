@@ -55,13 +55,10 @@ class login extends CI_Controller {
 				}
 				//login for irjp user
 				if($q[0]['Access_Level_Code'] == "IRJP"){
-					redirect(base_url('irjp_controller'), 'refresh');
-					// redirect(base_url('dashboard'), 'refresh');
-					echo "assa";
+					redirect(base_url('irjp_companies'), 'refresh');
 				} else{
 					redirect(base_url('fic'), 'refresh');
 				}
-				// redirect(base_url('fic'), 'refresh');
 			}
 		}
 		else

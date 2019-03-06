@@ -27,12 +27,13 @@
 					</div>
 					</a>
         </li>
-
-				<li>
-				<a href="<?php echo base_url();?>fic" class="s-sidebar__nav-link">
+        <?php if($_SESSION['access_level'] != 'IRJP'){?>
+          <li>
+            <a href="<?php echo base_url();?>fic" class="s-sidebar__nav-link">
               <i class="fa fa-dashboard"></i><em>Dashboard</em>
-          </a>
-        </li>
+            </a>
+          </li>          
+        <?php }?>
         <li>
           <a href="<?php echo base_url();?>irjp_companies" class="s-sidebar__nav-link">
             <i class="fa fa-briefcase"></i><em>Companies</em>

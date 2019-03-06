@@ -31,7 +31,7 @@ class irjp_companies extends CI_Controller {
 		$headerdata['title'] = "SITA | Companies";
 		$this->load->view('include/header', $headerdata);
 			$this->load->view('include/ficnavbar2');
-		$this->load->view('irjp/companies',$data);
+		$this->load->view('irjp/companies',$data);		
 		$this->load->view('include/footer');
 	}
 	function add_company(){
@@ -102,7 +102,7 @@ class irjp_companies extends CI_Controller {
 		$tel = $this->input->post('tel');
 		$new_type = $this->input->post('new_type');
 		$this->company_model->edit_company($code,$name,$address,$tel);
-		$this->company_model->delete_classification($code);	
+		$this->company_model->delete_classification($code);
 		for($a=0;$a<count($new_type);$a++){
 			$this->company_model->create_classification($code,$new_type[$a]);
 		}
