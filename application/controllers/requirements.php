@@ -27,6 +27,15 @@ class requirements extends CI_Controller {
    redirect('/ficemailcon');
 
   }
+
+  public function placement()
+  {
+    $data['detail'] = $this->student->get_student();
+    $headerdata['title'] = "SITA | Placement";
+    $this->load->view('include/header',$headerdata);
+    $this->load->view('prinatables/recommendation', $data);
+  }
+  
 	public function guidelines()
 	{
 		// $this->load->view('include/header');
