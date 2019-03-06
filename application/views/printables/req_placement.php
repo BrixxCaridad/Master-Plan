@@ -634,5 +634,11 @@ body {margin-top: 0px;margin-left: 0px; top: 0px;}
 </TR>
 </TABLE>
 </DIV>
+<button class="btn btn-primary" onclick="myFunction()">Print this page</button>
 </BODY>
 </HTML>
+<script>
+function myFunction() {
+  window.print();
+}
+</script>

@@ -22,10 +22,9 @@ $this->load->model('Requirements_model','requirements');
 	{
      
        $data['data'] = $this->ficm->get_student_list($_SESSION['account_id']);
-  
-	  $data['courses'] = $this->course->get_course();
-     $data['requirements'] = $this->requirements->withReq($_SESSION['account_id']);
-      $data['menu'] =count($data['requirements']);
+	     $data['courses'] = $this->course->get_course();
+       $data['requirements'] = $this->requirements->withReq($_SESSION['account_id']);
+       $data['menu'] =count($data['requirements']);
         
         $this->load->view('include/header');
   
@@ -63,37 +62,81 @@ $this->load->model('Requirements_model','requirements');
     }
     function check_myNBI(){
             $this->status->check_NBI($_POST);
-           echo 'true'; 
+            if($_POST['comment']!='Approved'){
+              echo 'false';
+            }
+            else{
+               echo 'true'; 
+            }
+          
+
     }
-
-
      function check_myMED(){
      
                $this->status->check_MED($_POST);
+                if($_POST['comment']!='Approved'){
+              echo 'false';
+            }
+            else{
                echo 'true'; 
+            }
     }
        function check_mySTAX(){
      
                $this->status->check_STAX($_POST);
+               if($_POST['comment']!='Approved'){
+              echo 'false';
+            }
+            else{
                echo 'true'; 
+            }
     }
        function check_myPTAX(){
      
                $this->status->check_PTAX($_POST);
+                if($_POST['comment']!='Approved'){
+              echo 'false';
+            }
+            else{
                echo 'true'; 
+            }
     }
 
      function check_myESHEET(){
      
                $this->status->check_ESHEET($_POST);
+               if($_POST['comment']!='Approved'){
+              echo 'false';
+            }
+            else{
                echo 'true'; 
+            }
     }
 
        function check_myResume(){
      
                $this->status->check_Resume($_POST);
+               if($_POST['comment']!='Approved'){
+              echo 'false';
+            }
+            else{
                echo 'true'; 
+            }
     }
+
+       function check_myRform(){
+     
+               $this->status->check_Rform($_POST);
+               if($_POST['comment']!='Approved'){
+              echo 'false';
+            }
+            else{
+               echo 'true'; 
+            }
+    }
+
+    
+
     function update_student_details(){
         $this->ajax_checking();
 

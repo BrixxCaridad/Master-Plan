@@ -13,6 +13,7 @@ class Requirements_Model extends CI_Model {
 
 	
 			$this->db->set('NBI',$data['NBI']);
+			$this->db->set('Overall_status',1);
 			$this->db->where('Student_ID',$data['Student_ID']);
             $this->db->update($this->table);
 
@@ -21,6 +22,7 @@ class Requirements_Model extends CI_Model {
     public function uploadMED($data)
 	{
 			$this->db->set('Medical_Certificate',$data['MCert']);
+			$this->db->set('Overall_status',1);
 			$this->db->where('Student_ID',$data['Student_ID']);
             $this->db->update($this->table);
 
@@ -31,6 +33,7 @@ class Requirements_Model extends CI_Model {
 	{
 
 			$this->db->set('Tax_Certificate_Student',$data['CTax']);
+			$this->db->set('Overall_status',1);
 			$this->db->where('Student_ID',$data['Student_ID']);
             $this->db->update($this->table);
 
@@ -40,6 +43,7 @@ class Requirements_Model extends CI_Model {
 	{
 
 			$this->db->set('Tax_Certificate_Parent',$data['GTax']);
+			$this->db->set('Overall_status',1);
 			$this->db->where('Student_ID',$data['Student_ID']);
             $this->db->update($this->table);
 
@@ -50,6 +54,7 @@ class Requirements_Model extends CI_Model {
 	{
 
 			$this->db->set('TUP_Evaluation_Sheet',$data['ESheet']);
+			$this->db->set('Overall_status',1);
 			$this->db->where('Student_ID',$data['Student_ID']);
             $this->db->update($this->table);
 
@@ -58,8 +63,8 @@ class Requirements_Model extends CI_Model {
 	
   public function uploadResume($data)
 	{
-
 			$this->db->set('Resume',$data['resume']);
+			$this->db->set('Overall_status',1);
 			$this->db->where('Student_ID',$data['Student_ID']);
             $this->db->update($this->table);
 
@@ -74,7 +79,13 @@ class Requirements_Model extends CI_Model {
 	    	return $insert_id = $this->db->insert_id();
 	}
 
+	function submitReview($data){
+			
 
+			 $this->db->set('Overall_status',0);
+			$this->db->where('Student_ID',$data);
+			$this->db->update($this->table);
+	}
 
 
 

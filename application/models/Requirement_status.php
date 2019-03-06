@@ -13,7 +13,7 @@ class  Requirement_status extends CI_Model {
    
     function check_NBI($data)
     {
-            $this->db->set('NBI','Approved');      
+            $this->db->set('NBI',$data['comment']);      
             $this->db->where('Student_ID',$data['idnum']);
             $this->db->update('pre_deployment_status');
             return $insert_id = $this->db->insert_id();
@@ -22,7 +22,7 @@ class  Requirement_status extends CI_Model {
     function check_MED($data)
     {
 
-            $this->db->set('Medical_Certificate','Approved');      
+            $this->db->set('Medical_Certificate',$data['comment']);      
             $this->db->where('Student_ID',$data['idnum']);
             $this->db->update('pre_deployment_status');
             return $insert_id = $this->db->insert_id();
@@ -30,7 +30,7 @@ class  Requirement_status extends CI_Model {
         function check_STAX($data)
     {
        
-            $this->db->set('Tax_Certificate_Student','Approved');      
+            $this->db->set('Tax_Certificate_Student',$data['comment']);      
             $this->db->where('Student_ID',$data['idnum']);
             $this->db->update('pre_deployment_status');
             return $insert_id = $this->db->insert_id();
@@ -38,7 +38,7 @@ class  Requirement_status extends CI_Model {
           function check_PTAX($data)
     {
        
-            $this->db->set('Tax_Certificate_Parent','Approved');      
+            $this->db->set('Tax_Certificate_Parent',$data['comment']);      
             $this->db->where('Student_ID',$data['idnum']);
             $this->db->update('pre_deployment_status');
             return $insert_id = $this->db->insert_id();
@@ -46,7 +46,7 @@ class  Requirement_status extends CI_Model {
              function check_ESHEET($data)
     {
        
-            $this->db->set('TUP_Evaluation_Sheet','Approved');      
+            $this->db->set('TUP_Evaluation_Sheet',$data['comment']);      
             $this->db->where('Student_ID',$data['idnum']);
             $this->db->update('pre_deployment_status');
             return $insert_id = $this->db->insert_id();
@@ -55,7 +55,15 @@ class  Requirement_status extends CI_Model {
     function check_Resume($data)
     {
        
-            $this->db->set('Resume','Approved');      
+            $this->db->set('Resume',$data['comment']);      
+            $this->db->where('Student_ID',$data['idnum']);
+            $this->db->update('pre_deployment_status');
+            return $insert_id = $this->db->insert_id();
+    }
+
+    function check_Rform($data)
+    {
+            $this->db->set('Registration_Form',$data['comment']);      
             $this->db->where('Student_ID',$data['idnum']);
             $this->db->update('pre_deployment_status');
             return $insert_id = $this->db->insert_id();

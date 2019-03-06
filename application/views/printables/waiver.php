@@ -180,6 +180,11 @@ and applied for Supervised
 <div style="position:absolute;left:81.02px;top:830.04px" class="cls_003"><span class="cls_003">Department Head</span></div>
 <div style="position:absolute;left:366.07px;top:830.04px" class="cls_003"><span class="cls_003">College Dean</span></div>
 </div>
-
+<button class="btn btn-primary" onclick="myFunction()">Print this page</button>
 </body>
 </html>
+<script>
+function myFunction() {
+  window.print();
+}
+</script>

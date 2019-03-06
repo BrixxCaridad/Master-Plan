@@ -122,7 +122,12 @@ div.cls_006{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weigh
 
 <div style="position:absolute;left: 70.02px;text-align: center; top:870.76px; width: 270px;" class="cls_003"><span class="cls_003">Course</span></div>
 </div>
-
+<button class="btn btn-primary" onclick="myFunction()">Print this page</button>
 
 </body>
 </html>
+<script>
+function myFunction() {
+  window.print();
+}
+</script>
