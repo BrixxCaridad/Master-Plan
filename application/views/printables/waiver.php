@@ -16,6 +16,21 @@ div.cls_007{font-family:Times,serif;font-size:12.1px;color:rgb(0,0,0);font-weigh
 body{
 	background-color: lightgray;
 }
+input[type="text"]:disabled,
+textarea:disabled
+{
+	background-color: transparent !important;
+}
+.print-btn{
+	position: fixed;
+	top: 20px;
+	right: 20px;
+}
+@media print {
+	.print-btn{
+		display: none;
+	}
+}
 </style>
 </head>
 <body>
@@ -44,11 +59,11 @@ body{
 
 <div style="position:absolute;left:108.02px;top:199.74px" class="cls_003">I</div>
 <div class="bd-bot cls_003" style="position:absolute;left:114.02px;top:199.74px; font-size: 11px">
-	<input type="text" style="width: 230px; padding-left: 2px; text-align:center" class="cls_003" placeholder="Your Name Here"/>
+	<input disabled type="text" style="width: 230px; padding-left: 2px; text-align:center" class="cls_003" "/>
 </div>
 <div style="position:absolute;left:355.02px;top:199.74px" class="cls_003">age</div>
 <div class="bd-bot cls_003" style="position:absolute;left:375.02px;top:199.74px; font-size: 11px" class="cls_003">
-	<input type="text" style="width: 50px; padding-left: 2px; text-align:center" class="cls_003" placeholder="Age"/>
+	<input disabled type="text" style="width: 50px; padding-left: 2px; text-align:center" class="cls_003" />
 </div>
 <div style="position:absolute;left:440.02px;top:199.74px" class="cls_003">and residing at</div>
 
@@ -60,7 +75,7 @@ ________________________________________________________
 
 and applied for Supervised</span></div> -->
 <div class="bd-bot cls_003" style="position:absolute;left:72.02px;top:216.54px; font-size: 11px" class="cls_003">
-	<input type="text" style="width: 320px; padding-left: 2px; text-align:center" class="cls_003" placeholder="Address"/>
+	<input disabled type="text" style="width: 320px; padding-left: 2px; text-align:center" class="cls_003"/>
 </div>
 <div class="cls_003" style="position:absolute;left:400.02px;top:216.54px;" class="cls_003">
 and applied for Supervised
@@ -85,15 +100,15 @@ and applied for Supervised
 <!-- <div style="position:absolute;left:108.02px;top:425.59px" class="cls_003"><span class="cls_003">Signed at Manila, Philippines, this ______ day of ______________20____.</span></div> -->
 <div style="position:absolute;left:108.02px;top:425.59px" class="cls_003"><span class="cls_003">Signed at Manila, Philippines, this</span></div>
 <div class="bd-bot" style="position:absolute;left:280.02px;top:425.59px; font-size: 11px" class="cls_003">
-	<input type="text" style="width: 30px; padding-left: 2px; text-align:center" class="cls_003" placeholder="dd"/>
+	<input disabled type="text" style="width: 30px; padding-left: 2px; text-align:center" class="cls_003" />
 </div>
 <div style="position:absolute;left:312.02px;top:425.59px" class="cls_003"><span class="cls_003">day of</span></div>
 <div class="bd-bot" style="position:absolute;left:350.02px;top:425.59px; font-size: 11px" class="cls_003">
-	<input type="text" style="width: 50px; padding-left: 2px; text-align:center" class="cls_003" placeholder="mm"/>
+	<input disabled type="text" style="width: 50px; padding-left: 2px; text-align:center" class="cls_003" />
 </div>
 <div style="position:absolute;left:410.02px;top:425.59px" class="cls_003"><span class="cls_003">20</span></div>
 <div class="bd-bot" style="position:absolute;left:424.02px;top:425.59px; font-size: 11px">
-	<input type="text" style="width: 20px; padding-left: 2px; text-align:center" class="cls_003" placeholder="yy"/>
+	<input disabled type="text" style="width: 20px; padding-left: 2px; text-align:center" class="cls_003" />
 </div>
 <div style="position:absolute;left:446.02px;top:425.59px" class="cls_003"><span class="cls_003">.</span></div>
 
@@ -116,7 +131,7 @@ and applied for Supervised
 
 <div style="position:absolute;left:300.68px;top:499.15px" class="cls_003"><span class="cls_003">Community Tax Certificate No:</span></div>
 <div class="bd-bot" style="position:absolute;left:460.68px;top:499.15px" class="cls_003">
-	<input type="text" style="width: 100px; padding-left: 2px; text-align:center" class="cls_003" placeholder="cert. no"/>
+	<input disabled type="text" style="width: 100px; padding-left: 2px; text-align:center" class="cls_003" />
 </div>
 
 <div style="position:absolute;left:72.02px;top:512.95px" class="cls_003"><span class="cls_003">Thumb mark</span></div>
@@ -125,13 +140,13 @@ and applied for Supervised
 
 <div style="position:absolute;left:300.05px;top:514.95px" class="cls_003"><span class="cls_003">Place of Issue: </span></div>
 <div class="bd-bot" style="position:absolute;left:378.05px;top:514.95px" class="cls_003">
-	<input type="text" style="width: 182px; padding-left: 2px; text-align:center" class="cls_003" placeholder="Place Issued"/>
+	<input disabled type="text" style="width: 182px; padding-left: 2px; text-align:center" class="cls_003"/>
 </div>
 
 <!-- <div style="position:absolute;left:300.05px;top:526.75px" class="cls_003"><span class="cls_003">Date of Issue ________________________</span></div> -->
 <div style="position:absolute;left:300.05px;top:530.75px" class="cls_003"><span class="cls_003">Date of Issue: </span></div>
 <div class="bd-bot" style="position:absolute;left:378.05px;top:530.75px" class="cls_003">
-	<input type="text" style="width: 182px; padding-left: 2px; text-align:center" class="cls_003" placeholder="Date Issued"/>
+	<input disabled type="text" style="width: 182px; padding-left: 2px; text-align:center" class="cls_003" />
 </div>
 
 <div style="position:absolute;left:72.02px;top:627.58px" class="cls_005"><span class="cls_005">WITNESS:</span></div>
@@ -140,12 +155,14 @@ and applied for Supervised
 
 <!-- <div style="position:absolute;left:72.02px;top:682.78px" class="cls_003"><span class="cls_003">_____________________________</span></div> -->
 <div class="bd-bot cls_003" style="position:absolute;left:72.02px;top:687.78px">
-	<input type="text" style="width: 200px; text-transform: uppercase; padding-left: 2px; text-align:center; font-weight: bold; font-size: 13" class="cls_003" placeholder="PARENT/GUARDIAN's Name"/>
+	<input disabled type="text" style="width: 200px; text-transform: uppercase; padding-left: 2px; text-align:center; font-weight: bold; font-size: 13" class="cls_003"/>
 </div>
 
 <div style="position:absolute;left:300.68px;top:682.78px" class="cls_003"><span class="cls_003">Address:</span></div>
 <div class="bd-bot" style="position:absolute;left:360.05px;top:682.78px">
-	<textarea max-row="3" style="resize: none; white-space: pre-wrap;width: 200px; text-transform: capitalize; padding-left: 2px; font-size: 10px" placeholder="Address of Parent/Guardian"></textarea>
+	<textarea disabled max-row="3" style="height: 45px; overflow-y: hidden; resize: none; white-space: pre-wrap;width: 200px; font-size: 11px; text-transform: capitalize; padding-left: 2px; font-size: 10px">
+	B4 L16 Lopez Compound, Tabon I, Brgy. D. Fajardo, Las Pinas City fysdnf fiudsjfids fiduhfids yfdgsufdn
+	</textarea>
 </div>
 
 <div style="position:absolute;left:100.02px;top:707.58px" class="cls_003"><span class="cls_003">Signature of Parent/ Guardian</span></div>
@@ -161,16 +178,16 @@ and applied for Supervised
 
 <div style="position:absolute;left:300.68px;top:737.98px" class="cls_003"><span class="cls_003">Community Tax Certificate No:</span></div>
 <div class="bd-bot" style="position:absolute;left:460.68px;top:737.98px" class="cls_003">
-	<input type="text" style="width: 100px; padding-left: 2px; text-align:center" class="cls_003" placeholder="cert. no"/>
+	<input disabled type="text" style="width: 100px; padding-left: 2px; text-align:center" class="cls_003" />
 </div>
 <div style="position:absolute;left:300.05px;top:755.78px" class="cls_003"><span class="cls_003">Place of Issue: </span></div>
 <div class="bd-bot" style="position:absolute;left:378.05px;top:755.78px" class="cls_003">
-	<input type="text" style="width: 182px; padding-left: 2px; text-align:center" class="cls_003" placeholder="Place Issued"/>
+	<input disabled type="text" style="width: 182px; padding-left: 2px; text-align:center" class="cls_003"/>
 </div>
 <!-- <div style="position:absolute;left:300.05px;top:526.75px" class="cls_003"><span class="cls_003">Date of Issue ________________________</span></div> -->
 <div style="position:absolute;left:300.05px;top:772.60px" class="cls_003"><span class="cls_003">Date of Issue: </span></div>
 <div class="bd-bot" style="position:absolute;left:378.05px;top:772.60px" class="cls_003">
-	<input type="text" style="width: 182px; padding-left: 2px; text-align:center" class="cls_003" placeholder="Date Issued"/>
+	<input disabled type="text" style="width: 182px; padding-left: 2px; text-align:center" class="cls_003"/>
 </div>
 
 
@@ -180,7 +197,7 @@ and applied for Supervised
 <div style="position:absolute;left:81.02px;top:830.04px" class="cls_003"><span class="cls_003">Department Head</span></div>
 <div style="position:absolute;left:366.07px;top:830.04px" class="cls_003"><span class="cls_003">College Dean</span></div>
 </div>
-<button class="btn btn-primary" onclick="myFunction()">Print this page</button>
+<button class="btn btn-primary btn-lg no-print print-btn" onclick="myFunction()"><span class="fa fa-print"></span> Print this page</button>
 </body>
 </html>
 <script>

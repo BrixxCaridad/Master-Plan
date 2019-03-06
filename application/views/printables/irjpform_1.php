@@ -18,7 +18,21 @@ span.cls_007{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weig
 div.cls_007{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
 span.cls_006{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
 div.cls_006{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
-
+input[type="text"]:disabled,
+textarea:disabled
+{
+	background-color: transparent !important;
+}
+.print-btn{
+	position: fixed;
+	top: 20px;
+	right: 20px;
+}
+@media print {
+	.print-btn{
+		display: none;
+	}
+}
 </style>
 </head>
 <body>
@@ -84,7 +98,7 @@ div.cls_006{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weigh
     text-align: center;
     width: 270px;
 ">
-    <input type="text" placeholder="type your full name here" style="
+    <input disabled type="text" style="
     width: 100%;
     text-align: center;
     font-weight: bold;
@@ -110,7 +124,7 @@ div.cls_006{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weigh
 	border-bottom: 1px solid black;
 ">
 
-    <input type="text" placeholder="course (ex: BSIT)" style="
+    <input disabled type="text" style="
     width: 100%;
     text-align: center;
     font-weight: bold;
@@ -122,7 +136,7 @@ div.cls_006{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weigh
 
 <div style="position:absolute;left: 70.02px;text-align: center; top:870.76px; width: 270px;" class="cls_003"><span class="cls_003">Course</span></div>
 </div>
-<button class="btn btn-primary" onclick="myFunction()">Print this page</button>
+<button class="btn btn-primary btn-lg no-print print-btn" onclick="myFunction()"><span class="fa fa-print"></span> Print this page</button>
 
 </body>
 </html>

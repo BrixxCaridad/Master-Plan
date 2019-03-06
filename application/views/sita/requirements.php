@@ -1,4 +1,4 @@
-<?php print_r($MyReq); ?>
+<?php //print_r($MyReq); ?>
 <div class="main-main-container">
 	<div class="page-title">
         <h4 class="text-bold"><b><span class="fa fa-copy"></span> REQUIREMENTS FOR SIT APPLICATION<small></small></b></h4>
@@ -27,7 +27,7 @@
 
 				<div class="row">
 					<div class="col-md-12">
-						<button class="upload-toggle" type="button" <?=($MyReq[0]['NBI']=='Approved'?'disabled':'')?>>NBI Clearance</button>
+						<button class="upload-toggle" type="button" <?=($MyReq[0]['NBI']=='Approved'?'disabled':'')?>>NBI Clearance&nbsp;<span class="text-danger small-text pull-right"><span class="fa fa-times"></span>&nbsp;Revision Needed</span></button>
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
@@ -55,7 +55,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<button class="upload-toggle" type="button" <?=($MyReq[0]['Medical_Certificate']=='Approved'?'disabled':'')?> >Medical Clearance</button>
+						<button class="upload-toggle" type="button" <?=($MyReq[0]['Medical_Certificate']=='Approved'?'disabled':'')?> >Medical Clearance&nbsp;<span class="text-success small-text pull-right"><span class="fa fa-check"></span>&nbsp;Approved</span></button>
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
@@ -83,7 +83,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<button class="upload-toggle" type="button" <?=($MyReq[0]['Tax_Certificate_Student']=='Approved'?'disabled':'')?>>Personal Community Task Certificate</button>
+						<button class="upload-toggle" type="button" <?=($MyReq[0]['Tax_Certificate_Student']=='Approved'?'disabled':'')?>>Personal Community Task Certificate&nbsp;<span class="text-gray small-text  pull-right"><span class="fa fa-chevron-down"></span></span></button>
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
@@ -112,7 +112,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<button class="upload-toggle" type="button" <?=($MyReq[0]['Tax_Certificate_Parent']=='Approved'?'disabled':'')?> >Community Task Certificate of Parent/Guardian</button>
+						<button class="upload-toggle" type="button" <?=($MyReq[0]['Tax_Certificate_Parent']=='Approved'?'disabled':'')?> >Community Task Certificate of Parent/Guardian&nbsp;<span class="text-success small-text pull-right"><span class="fa fa-check"></span>&nbsp;Approved</span></button>
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
@@ -133,14 +133,14 @@
 					  				<p><i><b>*NOTE:</b> CTC of Guardian must only be submitted if CTC of parent is unavailable. Make sure that the CTC has been signed by the Municipal/City Treasurer. Thumbmarks should be affixed on the CTC. You must submit a scanned copy of this document.</i></p><br>
 							
 								</div>
-		<textarea name=""  class="my-textarea btn-block comment" rows="2" placeholder="<?php echo $MyReq['0']['Tax_Certificate_Parent'] ?>" disabled></textarea>
+					<textarea name=""  class="my-textarea btn-block comment" rows="2" placeholder="<?php echo $MyReq['0']['Tax_Certificate_Parent'] ?>" disabled></textarea>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<button class="upload-toggle" type="button" <?=($MyReq[0]['Resume']=='Approved'?'disabled':'')?> >Resume</button>
+						<button class="upload-toggle" type="button" <?=($MyReq[0]['Resume']=='Approved'?'disabled':'')?> >Resume&nbsp;<span class="text-gray small-text pull-right"><span class="fa fa-chevron-down"></span></span></button>
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
@@ -168,7 +168,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<button class="upload-toggle" type="button" <?=($MyReq[0]['Registration_Form']=='Approved'?'disabled':'')?> >Registration Form</button>
+						<button class="upload-toggle" type="button" <?=($MyReq[0]['Registration_Form']=='Approved'?'disabled':'')?> >Registration Form&nbsp;<span class="text-gray small-text pull-right"><span class="fa fa-chevron-down"></span></span></button>
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
@@ -194,11 +194,9 @@
 						</div>
 					</div>
 				</div>
-
-
-					<div class="row">
+				<div class="row">
 					<div class="col-md-12">
-						<button class="upload-toggle" type="button" <?=($MyReq[0]['TUP_Evaluation_Sheet']=='Approved'?'disabled':'')?>>Evaluation Form</button>
+						<button class="upload-toggle" type="button" <?=($MyReq[0]['TUP_Evaluation_Sheet']=='Approved'?'disabled':'')?>>Evaluation Sheet&nbsp;<span class="text-success small-text pull-right"><span class="fa fa-check"></span>&nbsp;Approved</span></button>
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
