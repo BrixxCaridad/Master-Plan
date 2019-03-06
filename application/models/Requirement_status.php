@@ -73,7 +73,7 @@ class  Requirement_status extends CI_Model {
    function read_status($data)
     {       
 
-           $this->db->where('Student_ID',$data['idnum']);    
+            $this->db->where('Student_ID',$data['idnum']);    
             $query = $this->db->get('pre_deployment_status');
             return $query->result_array();
     }

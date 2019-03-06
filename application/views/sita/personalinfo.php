@@ -50,19 +50,9 @@
                     </div>
 
 
-                    <div class="form-group" style="padding-bottom: 50px">
-                        <label class="control-label col-sm-2" for="email" style="font-size: 20px">Address</label>
-                            <div class="col-sm-5">          
-                                <input type="txt" class="form-control" id="txt" name="s_address" value="" style="font-size: 20px">
-                            </div>
-                    </div>
+          
                           
-                    <div class="form-group" style="padding-bottom: 50px">
-                        <label class="control-label col-sm-2" for="email" style="font-size: 20px">Birthday</label>
-                            <div class="col-sm-5">          
-                                <input type="txt" class="form-control" id="txt" name="s_birthday" value="<?php echo $row->Birthday; ?>" style="font-size: 20px">
-                            </div>
-                    </div>
+                  
 
                     <div class="form-group" style="padding-bottom: 50px">
                         <label class="control-label col-sm-2" for="email" style="font-size: 20px">Contact No.</label>

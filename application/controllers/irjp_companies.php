@@ -6,6 +6,7 @@ class irjp_companies extends CI_Controller {
 	public function __construct(){
 	    parent::__construct();
 	    $this->load->model('company_model');
+	     $this->load->model('Requirements_model','requirements');
 	  }
 	public function index()
 	{
@@ -29,8 +30,10 @@ class irjp_companies extends CI_Controller {
 		// $data["display_nature"] = $this->company_model->display_nature();
 		// $data["display_btype"] = $this->company_model->display_btype();
 		$headerdata['title'] = "SITA | Companies";
+		$data['data'] = $this->requirements->withReq($_SESSION['account_id']);
+		$data['menu'] =count($data['data']);
 		$this->load->view('include/header', $headerdata);
-			$this->load->view('include/ficnavbar2');
+			$this->load->view('include/ficnavbar2',$data);
 		$this->load->view('irjp/companies',$data);		
 		$this->load->view('include/footer');
 	}

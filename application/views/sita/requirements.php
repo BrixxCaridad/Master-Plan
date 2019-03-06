@@ -26,7 +26,28 @@
 
 				<div class="row">
 					<div class="col-md-12">
-						<button class="upload-toggle" type="button" <?=($MyReq[0]['NBI']=='Approved'?'disabled':'')?>>NBI Clearance&nbsp;<span class="text-danger small-text pull-right"><span class="fa fa-times"></span>&nbsp;Revision Needed</span></button>
+						<button class="upload-toggle" type="button" <?=($MyReq[0]['NBI']=='Approved'?'disabled':'')?>>NBI Clearance&nbsp;
+						<?php
+						if($MyReq[0]['NBI']=='Approved')
+						{
+							echo '<span class="text-success small-text pull-right"><span class="fa fa-check"></span>&nbsp;Approved</span>';
+						}
+						else if($MyReq[0]['NBI']=='Incomplete')
+						{
+							echo '<span class="text-gray small-text  pull-right"><span class="fa fa-chevron-down"></span></span>';
+						}
+						else{
+							echo '<span class="text-danger small-text pull-right"><span class="fa fa-times"></span>&nbsp;Revision Needed</span>';
+						}
+
+
+						?>			
+
+
+
+
+
+						</button>
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
@@ -54,7 +75,21 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<button class="upload-toggle" type="button" <?=($MyReq[0]['Medical_Certificate']=='Approved'?'disabled':'')?> >Medical Clearance&nbsp;<span class="text-success small-text pull-right"><span class="fa fa-check"></span>&nbsp;Approved</span></button>
+						<button class="upload-toggle" type="button" <?=($MyReq[0]['Medical_Certificate']=='Approved'?'disabled':'')?> >Medical Clearance&nbsp;
+					    <?php
+						if($MyReq[0]['Medical_Certificate']=='Approved')
+						{
+							echo '<span class="text-success small-text pull-right"><span class="fa fa-check"></span>&nbsp;Approved</span>';
+						}
+						else if($MyReq[0]['Medical_Certificate']=='Incomplete')
+						{
+							echo '<span class="text-gray small-text  pull-right"><span class="fa fa-chevron-down"></span></span>';
+						}
+						else{
+							echo '<span class="text-danger small-text pull-right"><span class="fa fa-times"></span>&nbsp;Revision Needed</span>';
+						}
+						?>		
+						</button>
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
@@ -82,7 +117,24 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<button class="upload-toggle" type="button" <?=($MyReq[0]['Tax_Certificate_Student']=='Approved'?'disabled':'')?>>Personal Community Task Certificate&nbsp;<span class="text-gray small-text  pull-right"><span class="fa fa-chevron-down"></span></span></button>
+						<button class="upload-toggle" type="button" <?=($MyReq[0]['Tax_Certificate_Student']=='Approved'?'disabled':'')?>>Personal Community Task Certificate&nbsp;
+
+					 <?php
+						if($MyReq[0]['Tax_Certificate_Student']=='Approved')
+						{
+							echo '<span class="text-success small-text pull-right"><span class="fa fa-check"></span>&nbsp;Approved</span>';
+						}
+						else if($MyReq[0]['Tax_Certificate_Student']=='Incomplete')
+						{
+							echo '<span class="text-gray small-text  pull-right"><span class="fa fa-chevron-down"></span></span>';
+						}
+						else{
+							echo '<span class="text-danger small-text pull-right"><span class="fa fa-times"></span>&nbsp;Revision Needed</span>';
+						}
+						?>	
+
+
+						</button>
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
@@ -111,7 +163,25 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<button class="upload-toggle" type="button" <?=($MyReq[0]['Tax_Certificate_Parent']=='Approved'?'disabled':'')?> >Community Task Certificate of Parent/Guardian&nbsp;<span class="text-success small-text pull-right"><span class="fa fa-check"></span>&nbsp;Approved</span></button>
+						<button class="upload-toggle" type="button" <?=($MyReq[0]['Tax_Certificate_Parent']=='Approved'?'disabled':'')?> >Community Task Certificate of Parent/Guardian&nbsp;<span class="text-success small-text pull-right">
+					    <?php
+						if($MyReq[0]['Tax_Certificate_Parent']=='Approved')
+						{
+							echo '<span class="text-success small-text pull-right"><span class="fa fa-check"></span>&nbsp;Approved</span>';
+						}
+						else if($MyReq[0]['Tax_Certificate_Parent']=='Incomplete')
+						{
+							echo '<span class="text-gray small-text  pull-right"><span class="fa fa-chevron-down"></span></span>';
+						}
+						else{
+							echo '<span class="text-danger small-text pull-right"><span class="fa fa-times"></span>&nbsp;Revision Needed</span>';
+						}
+						?>	
+
+
+
+
+						</button>
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
@@ -139,7 +209,24 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<button class="upload-toggle" type="button" <?=($MyReq[0]['Resume']=='Approved'?'disabled':'')?> >Resume&nbsp;<span class="text-gray small-text pull-right"><span class="fa fa-chevron-down"></span></span></button>
+						<button class="upload-toggle" type="button" <?=($MyReq[0]['Resume']=='Approved'?'disabled':'')?> >Resume&nbsp;
+							  <?php
+						if($MyReq[0]['Resume']=='Approved')
+						{
+							echo '<span class="text-success small-text pull-right"><span class="fa fa-check"></span>&nbsp;Approved</span>';
+						}
+						else if($MyReq[0]['Resume']=='Incomplete')
+						{
+							echo '<span class="text-gray small-text  pull-right"><span class="fa fa-chevron-down"></span></span>';
+						}
+						else{
+							echo '<span class="text-danger small-text pull-right"><span class="fa fa-times"></span>&nbsp;Revision Needed</span>';
+						}
+						?>	
+
+
+
+						</button>
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
@@ -167,7 +254,20 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<button class="upload-toggle" type="button" <?=($MyReq[0]['Registration_Form']=='Approved'?'disabled':'')?> >Registration Form&nbsp;<span class="text-gray small-text pull-right"><span class="fa fa-chevron-down"></span></span></button>
+						<button class="upload-toggle" type="button" <?=($MyReq[0]['Registration_Form']=='Approved'?'disabled':'')?> >Registration Form&nbsp;		
+						 <?php
+						if($MyReq[0]['Registration_Form']=='Approved')
+						{
+							echo '<span class="text-success small-text pull-right"><span class="fa fa-check"></span>&nbsp;Approved</span>';
+						}
+						else if($MyReq[0]['Registration_Form']=='Incomplete')
+						{
+							echo '<span class="text-gray small-text  pull-right"><span class="fa fa-chevron-down"></span></span>';
+						}
+						else{
+							echo '<span class="text-danger small-text pull-right"><span class="fa fa-times"></span>&nbsp;Revision Needed</span>';
+						}
+						?>	</button>
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">
@@ -195,7 +295,37 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<button class="upload-toggle" type="button" <?=($MyReq[0]['TUP_Evaluation_Sheet']=='Approved'?'disabled':'')?>>Evaluation Sheet&nbsp;<span class="text-success small-text pull-right"><span class="fa fa-check"></span>&nbsp;Approved</span></button>
+						<button class="upload-toggle" type="button" <?=($MyReq[0]['TUP_Evaluation_Sheet']=='Approved'?'disabled':'')?>>Evaluation Sheet&nbsp;
+
+					   <?php
+						if($MyReq[0]['TUP_Evaluation_Sheet']=='Approved')
+						{
+							echo '<span class="text-success small-text pull-right"><span class="fa fa-check"></span>&nbsp;Approved</span>';
+						}
+						else if($MyReq[0]['TUP_Evaluation_Sheet']=='Incomplete')
+						{
+							echo '<span class="text-gray small-text  pull-right"><span class="fa fa-chevron-down"></span></span>';
+						}
+						else{
+							echo '<span class="text-danger small-text pull-right"><span class="fa fa-times"></span>&nbsp;Revision Needed</span>';
+						}
+						?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						</button>
 						<div class="panel">
 							<div class="row">
 								<div class="col-md-12">

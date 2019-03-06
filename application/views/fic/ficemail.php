@@ -643,6 +643,7 @@ $(document).ready(function(){
 $(document).ready(function(){
    $(".submit-resume").click(function(e){
       e.preventDefault();
+     
     var userID = $("#view-id-num").val();
     var comment = $("#com-resume").val();
     if(comment ==''){
@@ -673,7 +674,7 @@ $(document).ready(function(){
           }
      }
     });
-    });
+     });
   });
 
 $(document).ready(function(){
@@ -763,11 +764,7 @@ $(document).ready(function(){
       $("#resume-button").toggle();
     });
 
-      $("#dis-resume").click(function(e){
-        e.preventDefault();
-      $("#com-resume").toggle();
-      $("#resume-button").toggle();
-    });
+    
        $("#dis-rform").click(function(e){
         e.preventDefault();
       $("#com-rform").toggle();

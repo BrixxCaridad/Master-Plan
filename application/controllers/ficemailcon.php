@@ -40,7 +40,8 @@ class ficemailcon extends CI_Controller {
 		$data['menu'] =count($data['data']);
 		$data['req'] = $this->requirements->read_req();
 		$data['courses'] = $this->course->get_course();
-		$this->load->view('include/header');
+		$header['title'] = 'Student requirements';
+		$this->load->view('include/header',$header);
 	    $this->load->view('include/ficnavbar2',$data); 
 		$this->load->view('fic/ficemail',$data);
 		

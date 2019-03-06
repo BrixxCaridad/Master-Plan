@@ -107,7 +107,7 @@ class Requirements_Model extends CI_Model {
 	
 	}
    public function withReq($fic_id){
-   		//$this->db->where('Overall_status',1);
+   		$this->db->where('Overall_status',1);
    		$this->db->join('sit', '(sit.Student_ID = pre_deployment_path.Student_ID)');
    		$this->db->where('Faculty_ID',$fic_id);
    		$this->db->join('student', 'student.Student_ID = pre_deployment_path.Student_ID');
