@@ -21,7 +21,7 @@
 
   </div>
 
-  
+
   <a href="<?php echo base_url();?>fic">Dashboard</a>
   <!-- <a href="<?php echo base_url();?>ficdepinfo">Deployments</a> -->
   <!-- <a href="<?php echo base_url();?>ficemailcon">Student Requirements</a> -->

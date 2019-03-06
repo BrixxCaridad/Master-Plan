@@ -22,6 +22,7 @@
     			if($_SESSION['account_type']=='IRJP'):?>
       			<div class="col-md-12 text-right" style="padding-top: 5px;">
         			<button type="button" class="btn btn-cmaroon btn-md add_comp"  data-toggle="modal" data-target="#add_company">Add Company</button>
+        			<button type="button" class="btn btn-cmaroon btn-md type_table" id="type_table" onclick="location.href = '<?php echo site_url('irjp_company_type/index') ?>'">Company Type</button>
       			</div>
   				<?php endif;?>
 			</div>
@@ -163,7 +164,6 @@
 			$('#type_div').html("");
 			$('.modal-title_add').html("Add New Company");
 			$("#company_code").attr('value','');
-			// $("#company_code").attr('readonly','false');
 			$("#company_code").removeAttr("readonly");
 
 			$("#company_name").attr('value','');
@@ -183,14 +183,8 @@
 					+"<button type='button' id='btn0' name='0' class='btn btn-danger center-block remove'><span class='fa fa-minus'></span></button></div>";
 					$('#type_div').append(select);
 					add[0] = 0;
-					// type_select_count++;
-					// console.log(obj);
-					// console.log(add);
 				}
 			});
-			// $('#default_body')show();
-			// $('#default_title').show();
-			// $('#default_header').show();
 		});
 		$(document).on('change','.type_select',function(){
 			let index = $(this).attr("name");
@@ -201,16 +195,12 @@
 				selected_type.push($(this).val());
 				selected_btn.push($(this).val());
 			}
-			console.log($(this).attr('name'));
 			var nn = $(this).attr('name');
 			var but = $("#btn"+nn).attr('id');
 			var da = document.getElementById(but).getElementsByClassName("fa fa-plus")[0];
 	    var sa = document.getElementById(but);
-			console.log($(this).attr('name'));
 	    $(da).attr("class","fa fa-minus");
 	    $(sa).attr("class","btn btn-danger center-block remove");
-			console.log(selected_type);
-			console.log(selected_btn);
 		});
 		$(document).on('click','#add_type',function(){
 			$.ajax({
@@ -228,8 +218,6 @@
 					$('#type_div').append(select);
 					add[type_select_count] = type_select_count;
 					type_select_count++;
-					console.log(obj);
-					console.log(add);
 				}
 			});
 		});
@@ -238,7 +226,6 @@
 			var da = document.getElementById(but).getElementsByClassName("fa fa-minus")[0];
 	    var sa = document.getElementById(but);
 			add[$(this).attr('name')] = null;
-			console.log(add);
 	    $(da).attr("class","fa fa-plus");
 	    $(sa).attr("class","btn btn-success center-block add");
 		});
@@ -247,7 +234,6 @@
 	    var da = document.getElementById(but).getElementsByClassName("fa fa-plus")[0];
 	    var sa = document.getElementById(but);
 			add[$(this).attr('name')] = $(this).attr('name');
-			console.log(add);
 	    $(da).attr("class","fa fa-minus");
 	    $(sa).attr("class","btn btn-danger center-block remove");
 		});
@@ -258,7 +244,6 @@
 			let tel = $("#tel_no").val();
 			let new_type = [];
 			if((code != '')&&(name != '')&&(address != '')&&(tel != '')&&(selected_type.length != 0)){
-				// alert("dcscscsc");
 				let b =0;
 				for(let a = 0; a<parseInt(selected_type.length);a++){
 					if(add[a]!= null){
@@ -307,7 +292,6 @@
 				+'<h4 class="modal-title" >Edit Company</h4>'
 				+'<button type="button" class="close" data-dismiss="modal">&times;</button>'
 			+'</div>';
-			// $('#default_body').hide();
 			$('.modal-title_add').html("Edit Company");
 			$(".default_select").html("");
 			$("#type_div").html("");
@@ -318,14 +302,11 @@
 				data:{code:$(this).attr('id')},
 				success: function(data){
 					var obj = JSON.parse(data);
-						// console.log(obj);
 						$("#company_code").attr('value',obj['company'][0]['Company_Code']);
 						$("#company_code").attr('readonly','true');
 						$("#company_name").attr('value',obj['company'][0]['Company_Name']);
 						$("#address").attr('value',obj['company'][0]['Company_Address']);
 						$("#tel_no").attr('value',obj['company'][0]['Company_Phone']);
-
-						// document.getElementById('type_list0').value=obj['type'][0]['Type_No'];
 						for(let a=0;a<parseInt(obj['type'].length);a++){
 							add[a] = a;
 							selected_type[a] = obj['type'][a]['Type_No'];
@@ -343,22 +324,13 @@
 				}
 			});
 		});
-		$(document).on('click','#editCompany',function(){			
+		$(document).on('click','#editCompany',function(){
 			let code = $("#company_code").val();
 			let name = $("#company_name").val();
 			let address = $("#address").val();
 			let tel = $("#tel_no").val();
-
-			console.log(code);
-			console.log(name);
-			console.log(address);
-			console.log(tel);
-			console.log(selected_type.length);
-			console.log(selected_type);
-			console.log(add);
 			let new_type = [];
 			if((code != '')&&(name != '')&&(address != '')&&(tel != '')&&(selected_type.length != 0)){
-				// alert("dcscscsc");
 				let b =0;
 				for(let a = 0; a<parseInt(selected_type.length);a++){
 					if(add[a]!= null){
@@ -368,19 +340,16 @@
 						}
 					}
 				}
-				console.log(new_type);
 				$.ajax({
 					url:"<?php echo site_url('irjp_companies/edit_company')?>",
 					method: "POST",
 					data:{code:code, name:name, address:address, tel:tel, new_type:new_type},
 					success: function(data){
-							console.log(data);
 							alert("Company successfully updated!");
 							location.reload();
 					}
 				});
 			}
 		});
-
 	});
  </script>
