@@ -59,11 +59,11 @@ textarea:disabled
 
 <div style="position:absolute;left:108.02px;top:199.74px" class="cls_003">I</div>
 <div class="bd-bot cls_003" style="position:absolute;left:114.02px;top:199.74px; font-size: 11px">
-	<input disabled type="text" style="width: 230px; padding-left: 2px; text-align:center" class="cls_003" "/>
+	<input value ="<?=$detail[0]['Student_Firstname'].' '.$detail[0]['Student_Middlename'].' '.$detail[0]['Student_Lastname']?>" disabled type="text" style="width: 230px; padding-left: 2px; text-align:center" class="cls_003" "/>
 </div>
 <div style="position:absolute;left:355.02px;top:199.74px" class="cls_003">age</div>
 <div class="bd-bot cls_003" style="position:absolute;left:375.02px;top:199.74px; font-size: 11px" class="cls_003">
-	<input disabled type="text" style="width: 50px; padding-left: 2px; text-align:center" class="cls_003" />
+	<input value="<?=$detail[0]['Age']?>" disabled type="text" style="width: 50px; padding-left: 2px; text-align:center" class="cls_003" />
 </div>
 <div style="position:absolute;left:440.02px;top:199.74px" class="cls_003">and residing at</div>
 
@@ -75,7 +75,7 @@ ________________________________________________________
 
 and applied for Supervised</span></div> -->
 <div class="bd-bot cls_003" style="position:absolute;left:72.02px;top:216.54px; font-size: 11px" class="cls_003">
-	<input disabled type="text" style="width: 320px; padding-left: 2px; text-align:center" class="cls_003"/>
+	<input disabled value="<?=$detail[0]['Address']?>" type="text" style="width: 320px; padding-left: 2px; text-align:center" class="cls_003"/>
 </div>
 <div class="cls_003" style="position:absolute;left:400.02px;top:216.54px;" class="cls_003">
 and applied for Supervised
@@ -100,15 +100,15 @@ and applied for Supervised
 <!-- <div style="position:absolute;left:108.02px;top:425.59px" class="cls_003"><span class="cls_003">Signed at Manila, Philippines, this ______ day of ______________20____.</span></div> -->
 <div style="position:absolute;left:108.02px;top:425.59px" class="cls_003"><span class="cls_003">Signed at Manila, Philippines, this</span></div>
 <div class="bd-bot" style="position:absolute;left:280.02px;top:425.59px; font-size: 11px" class="cls_003">
-	<input disabled type="text" style="width: 30px; padding-left: 2px; text-align:center" class="cls_003" />
+	<input value="<?php date_default_timezone_set("Asia/Bangkok"); echo date("jS"); ?>" disabled type="text" style="width: 30px; padding-left: 2px; text-align:center" class="cls_003" />
 </div>
 <div style="position:absolute;left:312.02px;top:425.59px" class="cls_003"><span class="cls_003">day of</span></div>
 <div class="bd-bot" style="position:absolute;left:350.02px;top:425.59px; font-size: 11px" class="cls_003">
-	<input disabled type="text" style="width: 50px; padding-left: 2px; text-align:center" class="cls_003" />
+	<input disabled value="<?php date_default_timezone_set("Asia/Bangkok"); echo date("F"); ?>" type="text" style="width: 50px; padding-left: 2px; text-align:center" class="cls_003" />
 </div>
 <div style="position:absolute;left:410.02px;top:425.59px" class="cls_003"><span class="cls_003">20</span></div>
 <div class="bd-bot" style="position:absolute;left:424.02px;top:425.59px; font-size: 11px">
-	<input disabled type="text" style="width: 20px; padding-left: 2px; text-align:center" class="cls_003" />
+	<input disabled value="<?php date_default_timezone_set("Asia/Bangkok"); echo date("y"); ?>" type="text" style="width: 20px; padding-left: 2px; text-align:center" class="cls_003" />
 </div>
 <div style="position:absolute;left:446.02px;top:425.59px" class="cls_003"><span class="cls_003">.</span></div>
 
@@ -131,7 +131,7 @@ and applied for Supervised
 
 <div style="position:absolute;left:300.68px;top:499.15px" class="cls_003"><span class="cls_003">Community Tax Certificate No:</span></div>
 <div class="bd-bot" style="position:absolute;left:460.68px;top:499.15px" class="cls_003">
-	<input disabled type="text" style="width: 100px; padding-left: 2px; text-align:center" class="cls_003" />
+	<input disabled  type="text" style="width: 100px; padding-left: 2px; text-align:center" class="cls_003" />
 </div>
 
 <div style="position:absolute;left:72.02px;top:512.95px" class="cls_003"><span class="cls_003">Thumb mark</span></div>
@@ -155,7 +155,7 @@ and applied for Supervised
 
 <!-- <div style="position:absolute;left:72.02px;top:682.78px" class="cls_003"><span class="cls_003">_____________________________</span></div> -->
 <div class="bd-bot cls_003" style="position:absolute;left:72.02px;top:687.78px">
-	<input disabled type="text" style="width: 200px; text-transform: uppercase; padding-left: 2px; text-align:center; font-weight: bold; font-size: 13" class="cls_003"/>
+	<input disabled  type="text" style="width: 200px; text-transform: uppercase; padding-left: 2px; text-align:center; font-weight: bold; font-size: 13" class="cls_003"/>
 </div>
 
 <div style="position:absolute;left:300.68px;top:682.78px" class="cls_003"><span class="cls_003">Address:</span></div>

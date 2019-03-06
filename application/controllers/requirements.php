@@ -24,7 +24,7 @@ class requirements extends CI_Controller {
   function submitReport(){
      
    $this->preDep->submitReview($_GET['id']);
-   redirect('/requirements');
+   redirect('/ficemailcon');
 
   }
 	public function guidelines()

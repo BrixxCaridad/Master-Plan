@@ -53,15 +53,11 @@
           </li>
           <li>
             <a href="<?php echo base_url();?>ficemailcon" class="s-sidebar__nav-link">
-              <!-- <i class="fa fa-copy"></i><em>Requirements<?=($menu!=0?'<span class="badge">'.$menu.'</span>':'')?></em> -->
+               <i class="fa fa-copy"></i><em>Requirements<?=($menu!=0?'<span class="badge">'.$menu.'</span>':'')?></em>
               <i class="fa fa-copy"></i><em>Requirements</em>
             </a>
           </li>
-          <li>
-            <a href="<?php echo base_url();?>ficgpscon" class="s-sidebar__nav-link">
-              <i class="fa fa-briefcase"></i><em>Companies</em>
-            </a>
-          </li>
+        
         <?php }?>
 				<li>
 				<a href="<?php echo base_url();?>ficaccountcon" class="s-sidebar__nav-link">

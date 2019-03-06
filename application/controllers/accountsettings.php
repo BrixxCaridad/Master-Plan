@@ -19,7 +19,8 @@ class accountsettings extends CI_Controller {
 	{
 		$this->load->model('sita_model');
 		$data["display_info"] = $this->sita_model->display_studentinfo_byid($_SESSION['account_id']);	
-		$this->load->view('include/header');
+		$header['title'] = 'Account Settings';
+		$this->load->view('include/header',$header);
 		$this->load->view('include/navbar2');
 		$this->load->view('sita/personalinfo',$data);
 		//$this->load->view('include/footer');

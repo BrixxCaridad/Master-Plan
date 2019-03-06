@@ -36,6 +36,7 @@ textarea:disabled
 </style>
 </head>
 <body>
+    
 <div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:936px;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
 <img src="<?php echo base_url('assets/printables_bg/irjpform_1_bg.jpg')?>" width=612 height=936></div>
@@ -98,7 +99,7 @@ textarea:disabled
     text-align: center;
     width: 270px;
 ">
-    <input disabled type="text" style="
+    <input value ="<?=$detail[0]['Student_Firstname'].' '.$detail[0]['Student_Middlename'].' '.$detail[0]['Student_Lastname']?>" disabled type="text" style="
     width: 100%;
     text-align: center;
     font-weight: bold;
@@ -124,7 +125,7 @@ textarea:disabled
 	border-bottom: 1px solid black;
 ">
 
-    <input disabled type="text" style="
+    <input value="<?=$detail[0]['Course_Code']?>" disabled type="text" style="
     width: 100%;
     text-align: center;
     font-weight: bold;

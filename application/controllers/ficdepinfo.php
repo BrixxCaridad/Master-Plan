@@ -39,9 +39,11 @@ class ficdepinfo extends CI_Controller {
 	{
 		$this->load->model('faculty_model');
 		$data["display_company"] = $this->faculty_model->display_company();
-		$data["display_dep"] = $this->faculty_model->display_dep_byid($id);				
+		$data["display_dep"] = $this->faculty_model->display_dep_byid($id);	
+		 $data['requirements'] = $this->requirements->withReq($_SESSION['account_id']);
+		  $data['menu'] =count($data['requirements']);			
 		$this->load->view('include/header');
-        $this->load->view('include/ficnavbar2'); 
+        $this->load->view('include/ficnavbar2',$data); 
 		$this->load->view('sita/update_depinfo',$data);
 	}
 	

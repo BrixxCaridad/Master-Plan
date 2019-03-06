@@ -53,11 +53,11 @@ textarea:disabled
 
 <div style="position:absolute;left:366.07px;top:227.78px" class="cls_002"><span class="cls_002">Date:</span></div>
 <div class="bd-bot cls_003" style="position:absolute;left:400.07px;top:227.78px; font-size: 11px">
-	<input disabled type="text" style="width: 100px; padding-left: 2px; text-align:center" class="cls_003"/>
+	<input disabled  value="<?php date_default_timezone_set("Asia/Bangkok"); echo date("F j"); ?>"  type="text" style="width: 100px; padding-left: 2px; text-align:center" class="cls_003"/>
 </div>
 <div style="position:absolute;left:502.07px;top:227.78px;" class="cls_002"><span class="cls_002">, 20</span></div>
 <div class="bd-bot cls_003" style="position:absolute;left:520.07px;top:227.78px; font-size: 11px">
-	<input disabled type="text" style="width: 20px; padding-left: 2px; text-align:center" class="cls_003"/>
+	<input disabled type="text" value="<?php date_default_timezone_set("Asia/Bangkok"); echo date("y"); ?>" style="width: 20px; padding-left: 2px; text-align:center" class="cls_003"/>
 </div>
 
 
@@ -72,28 +72,28 @@ textarea:disabled
 
 <div style="position:absolute;left:90.02px;top:406.77px" class="cls_002"><span class="cls_002">Name:</span></div>
 <div class="bd-bot cls_003" style="position:absolute;left:130.07px;top:406.77px; font-size: 11px">
-	<input value="" disabled type="text" style="width: 295px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+	<input value ="<?=$detail[0]['Student_Firstname'].' '.$detail[0]['Student_Middlename'].' '.$detail[0]['Student_Lastname']?>" disabled type="text" style="width: 295px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
 </div>
 
 
 <div style="position:absolute;left:432.07px;top:406.77px" class="cls_002"><span class="cls_002">ID #:</span></div>
 <div class="bd-bot cls_003" style="position:absolute;left:460.07px;top:406.77px; font-size: 11px">
-	<input disabled type="text" style="width: 80px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+	<input value="<?=$detail[0]['Student_ID']?>" disabled type="text" style="width: 80px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
 </div>
 
 <div style="position:absolute;left:90.02px;top:423.59px" class="cls_002"><span class="cls_002">Sex:</span></div>
-<div class="bd-bot cls_003" style="position:absolute;left:120.14px;top:423.59px; font-size: 11px">
-	<input disabledtype="text" style="width: 100px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+<div class="bd-bot cls_003"   style="position:absolute;left:120.14px;top:423.59px; font-size: 11px">
+	<input value="<?=$detail[0]['Sex']?>" disabled type="text" style="width: 100px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
 </div>
 
 <div style="position:absolute;left:222.05px;top:423.59px" class="cls_002"><span class="cls_002">Civil Status:</span></div>
 <div class="bd-bot cls_003" style="position:absolute;left:284.05px;top:423.59px; font-size: 11px">
-	<input disabled value="" type="text" style="width: 100px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+	<input disabled value="<?=$detail[0]['Civil_Stat']?>" type="text" style="width: 100px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
 </div>
 
 <div style="position:absolute;left:392.07px;top:423.59px" class="cls_002"><span class="cls_002">Religion:</span></div>
 <div class="bd-bot cls_003" style="position:absolute;left:442.07px;top:423.59px; font-size: 11px">
-	<input disabled type="text" style="width: 98px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+	<input value="<?=$detail[0]['Religion']?>" disabled type="text" style="width: 98px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
 </div>
 
 
@@ -102,28 +102,28 @@ textarea:disabled
 
 <div style="position:absolute;left:90.02px;top:443.39px" class="cls_002"><span class="cls_002">Home Address:</span></div>
 <div class="bd-bot cls_003" style="position:absolute;left:170.02px;top:443.39px; font-size: 11px">
-	<input disabled type="text" style="width: 370px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+	<input value="<?=$detail[0]['Address']?>" disabled type="text" style="width: 370px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
 </div>
 
 
 <div style="position:absolute;left:90.02px;top:461.99px" class="cls_002"><span class="cls_002">Telephone no. :</span></div>
 <div class="bd-bot cls_003" style="position:absolute;left:160.02px;top:461.99px; font-size: 11px">
-	<input disabled type="text" style="width: 130px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+	<input value="<?=$detail[0]['Telephone']?>" disabled type="text" style="width: 130px; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
 </div>
 
 <div style="position:absolute;left:324.05px;top:461.99px" class="cls_002"><span class="cls_002">Cellphone no.:</span></div>
 <div class="bd-bot cls_003" style="position:absolute;left:400.05px;top:461.99px; font-size: 11px">
-	<input disabled type="text" style="width: 140px;; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+	<input value="<?=$detail[0]['Cellphone']?>" disabled type="text" style="width: 140px;; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
 </div>
 
 <div style="position:absolute;left:72.02px;top:494.59px" class="cls_004"><span class="cls_004">II. ACADEMIC DATA</span></div>
 <div style="position:absolute;left:90.02px;top:517.19px" class="cls_002"><span class="cls_002">Course:</span></div>
 <div class="bd-bot cls_003" style="position:absolute;left:130.05px;top:517.19px; font-size: 11px">
-	<input disabled type="text" style="width: 160px;; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+	<input value="<?=$detail[0]['Course_Code']?>" disabled type="text" style="width: 160px;; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
 </div>
 <div style="position:absolute;left:324.05px;top:517.19px" class="cls_002"><span class="cls_002">Major:</span></div>
 <div class="bd-bot cls_003" style="position:absolute;left: 361.05px;top:517.19px; font-size: 11px">
-	<input disabled type="text" style="width: 180px;; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
+	<input value="<?=$detail[0]['Major']?>" disabled type="text" style="width: 180px;; padding-left: 2px; text-align:center" class="cls_003" placeholder=""/>
 </div>
 
 <div style="position:absolute;left:90.02px;top:535.99px" class="cls_002"><span class="cls_002">Year & Section:</span></div>
@@ -184,7 +184,7 @@ textarea:disabled
 
 <!-- <div style="position:absolute;left:336.05px;top:674.02px" class="cls_002"><span class="cls_002">__________________________________</span></div> -->
 <div class="bd-bot cls_003" style="position:absolute;left:336.05px;top:678.02px">
-	<input disabled type="text" style="width: 200px; text-transform: uppercase; padding-left: 2px; text-align:center; font-weight: bold; font-size: 13" class="cls_003"/>
+	<input  value ="<?=$detail[0]['Student_Firstname'].' '.$detail[0]['Student_Middlename'].' '.$detail[0]['Student_Lastname']?>" disabled type="text" style="width: 200px; text-transform: uppercase; padding-left: 2px; text-align:center; font-weight: bold; font-size: 13" class="cls_003"/>
 </div>
 <div style="position:absolute;left:339.29px;top:692.54px" class="cls_002"><span class="cls_002">(Signature of student over Printed Name)</span></div>
 <div style="position:absolute;left:72.02px;top:715.42px" class="cls_002"><span class="cls_002">Recommending Approval:</span></div>
