@@ -395,7 +395,7 @@
 								<a href="<?php echo base_url('forms/reqplacement');?>" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Request for Placement Letter</a>
 							</li>
 							<li class="">
-								<a href="" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Placement Letter</a>
+								<a href="<?php echo base_url('forms/placement');?>" class="text-gray"><span class="fa fa-circle"></span>&nbsp;Placement Letter</a>
 							</li>
 							</li>
 						</ul>

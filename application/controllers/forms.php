@@ -14,6 +14,14 @@ class forms extends CI_Controller {
 		redirect(base_url('requirements'),'refresh');
 	}
 
+	public function placement()
+	{
+		$data['detail'] = $this->student->get_student();
+		$headerdata['title'] = "SITA | Placement";
+		$this->load->view('include/header',$headerdata);
+		$this->load->view('printables/recommendation', $data);
+	}
+
 	function guideline()
 	{
 		$data['detail'] = $this->student->get_student();
