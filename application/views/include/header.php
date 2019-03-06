@@ -14,6 +14,9 @@
 	<script src="<?php echo base_url()?>assets/js/jquery.min.js"></script>
 	<!--<script src="<?php echo base_url()?>assets/js/jquery.js"></script>-->
 	
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jszip-2.5.0/dt-1.10.18/b-1.5.4/b-colvis-1.5.4/b-flash-1.5.4/b-html5-1.5.4/b-print-1.5.4/sl-1.2.6/datatables.min.css"/>
+
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs/jszip-2.5.0/dt-1.10.18/b-1.5.4/b-colvis-1.5.4/b-flash-1.5.4/b-html5-1.5.4/b-print-1.5.4/sl-1.2.6/datatables.min.js"></script>
 
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="<?php echo base_url('assets/img/TUPlogo.png')?>"/>

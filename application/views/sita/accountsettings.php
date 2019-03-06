@@ -12,12 +12,6 @@
       			<div class="col-md-8">
       				<h4>Name:	<?php echo $row->Student_Firstname . " " . $row->Student_Middlename . " " .  $row->Student_Lastname;?></h4>
       			</div>
-      			<div class="col-md-8">
-      				<h4>Address:	</h4>
-      			</div>
-      			<div class="col-md-8">
-              <h4>Birthday:  <?php echo $row->Birthday; ?></h4>
-            </div>
             <div class="col-md-8">
               <h4>Cellphone No.:  <?php echo $row->Cellphone; ?></h4>
             </div>

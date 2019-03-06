@@ -30,8 +30,8 @@ class ficemailcon extends CI_Controller {
         }*/
 		$this->load->model('faculty_model','ficm');
         $this->load->model('Requirements_model','requirements');
-       $this->load->model('course_model','course');
-       $this->load->model('Requirement_status','status');
+       	$this->load->model('course_model','course');
+       	$this->load->model('Requirement_status','status');
     } 
 	
 	public function index()
@@ -47,8 +47,7 @@ class ficemailcon extends CI_Controller {
 		//$this->load->view('include/footer');
 	}
 	function Student_Status(){
-
-			echo json_encode($this->status->read_status($_POST));
+		echo json_encode($this->status->read_status($_POST));
 	}
 	
 	

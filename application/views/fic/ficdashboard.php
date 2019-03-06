@@ -28,20 +28,22 @@
   				<table class="table table-hover" id="dataTables-user-list">
     				<thead style="color: #800000">
       				<tr>
+                <th></th>
         				<th>ID NUMBER</th>
         				<th>SURNAME</th>
+                <th>COLLEGE</th>
         				<th>COURSE</th>
-        				<th>STATUS</th>
         				<th>ACTION</th>
       				</tr>
     				</thead>        
     				<tbody>
       				<?php foreach($data as $row): ?>             
         			<tr>
+                <td></td>
         				<td><?php echo $row['Student_ID']; ?></td>
         				<td><?php echo $row['Student_Lastname']; ?></td>
-        				<td><?php echo $row['Course_Code']; ?></td>
-        				<td><?php echo $row['Status']; ?></td>       
+                <td><?php echo $row['College_Code']; ?></td>    
+        				<td><?php echo $row['Course_Code']; ?></td>    
         				<td style="text-align: center";> <span data-toggle="tooltip" data-placement="top" title="View Student Details">
           				<a  class="openModal" href="#viewStudent" data-toggle="modal" data-id="<?=$row['Student_ID']?>" data-surname="<?=$row['Student_Lastname']?>"
            						data-firstname="<?=$row['Student_Firstname']?>" data-middle="<?=$row['Student_Middlename']?>" data-cnum="<?=$row['Cellphone']?>"
@@ -177,9 +179,6 @@
             <div class="col-lg-6">
               <div class="form-group">
                 <p>CELLPHONE NUMBER</p>
-<!--              <label class="error" id="edit-error_email"> field is required.</label>
-                  <label class="error" id="edit-error_email2"> email has already exist.</label>
-                  <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
                 <input class="form-control" id="view-cp-num" placeholder="cellphonenumber" name="view-cp-num" disabled>
               </div> 
             </div>
@@ -213,8 +212,7 @@
                           <div class="col-lg-6">
                             <div class="form-group">
                               <p>ID Number</p>
-<!--                          <label class="error" id="edit-error_name"> field is required.</label>
-                              <label class="error" id="edit-error_name2"> name must be alphanumeric.</label> -->
+
                               <input class="form-control" id="edit-id-num" placeholder="ID Num" name="edit-id-num" type="text" autofocus>
                             </div> 
                           </div>
@@ -231,18 +229,14 @@
                           <div class="col-lg-6">
                             <div class="form-group">
                               <p>First Name</p>
-<!--                           <label class="error" id="edit-error_email"> field is required.</label>
-                              <label class="error" id="edit-error_email2"> email has already exist.</label>
-                              <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
+
                               <input class="form-control" id="edit-s-fname" placeholder="firstname" name="edit-s-fname" type="text" autofocus>
                             </div> 
                           </div>
                           <div class="col-lg-6">
                             <div class="form-group">
                               <p>Middle Name</p>
-<!--                           <label class="error" id="edit-error_email"> field is required.</label>
-                              <label class="error" id="edit-error_email2"> email has already exist.</label>
-                              <label class="error" id="edit-error_email3"> invalid email adress.</label> -->
+
                               <input class="form-control" id="edit-s-mname"  placeholder="MiddleName" name="edit-s-mname" type="text" autofocus>
                             </div> 
                           </div>
@@ -250,14 +244,14 @@
                           
                         
                                                 
-                    </div> <!-- /. modal-body -->
+                    </div> 
                     <div class="modal-footer">                      
                         <button id="editStudentSubmit" type="button" class="btn btn-info">UPDATE</button>
                         <button id="cancel" type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
                     </div>
-                </div> <!-- /.Content-->
-            </div>  <!-- /.Dialog-->
-        </div>  <!-- /.Modal-->
+                </div> 
+            </div>  
+        </div> 
 
 
 <script>
@@ -302,4 +296,63 @@ $(document).ready(function(){
 
   });
    });
+
+  $(document).ready(function() {
+      var table=$('#dataTables-user-list').DataTable({
+        bPaginate: false,
+        "ordering": false,  
+        "info": false,  
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                text: 'Add Selected Student',//
+                className: 'btn btn-success',
+                action: function () { 
+                    var ids=[];
+                    var id = table.rows( { selected: true } ).data().toArray();
+                    for(var i=0; i<id.length; i++){
+                       $.ajax({
+                        type: 'POST',
+                        url: '<?php echo base_url()?>fic/addmystudent?sid='+id[i][1],
+                        success: function(response){
+                          alert('Successfully Added as your Student(s)');
+                          location.reload();
+                        }
+                      });
+                    }      
+                }
+          }
+        ],
+        columnDefs: [
+        {
+            orderable: false,
+            className: 'select-checkbox',
+            targets:   0
+        }],
+        select: {
+            style:    'multi',
+            selector: 'td:first-child'
+        },
+        order: [[ 1, 'asc' ]]
+        });
+
+      table.on("click", "th.select-checkbox", function() {
+          if ($("th.select-checkbox").hasClass("selected")) {
+              table.rows().deselect();
+              $("th.select-checkbox").removeClass("selected");
+          } else {
+              table.rows().select();
+              $("th.select-checkbox").addClass("selected");
+          }
+      }).on("select deselect", function() {
+          ("Some selection or deselection going on")
+          if (table.rows({
+                  selected: true
+              }).count() !== table.rows().count()) {
+              $("th.select-checkbox").removeClass("selected");
+          } else {
+              $("th.select-checkbox").addClass("selected");
+          }
+      });
+    });
 </script>

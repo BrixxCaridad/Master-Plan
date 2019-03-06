@@ -46,8 +46,9 @@ class  faculty_model extends CI_Model {
     function display_dep_byfic($id){
         $this->db->select('*');
         $this->db->from('sit');
-        $this->db->where('Faculty_ID', $id);
+        $this->db->where('sit.Faculty_ID', $id);
         $this->db->join('student', 'sit.Student_ID = student.Student_ID', 'left');
+        $this->db->join('faculty', 'sit.Faculty_ID = faculty.Faculty_ID', 'left');
         $this->db->join('company', 'sit.Company_Code = company.Company_Code', 'left');
         $query = $this->db->get();
         return $query;
@@ -55,9 +56,12 @@ class  faculty_model extends CI_Model {
 
 
     function get_student_list($id){
-         $this->db->select('*');
-        $this->db->from('sit');
-        $this->db->join('student', 'sit.Student_ID = student.Student_ID', 'left');
+        $this->db->select('*');
+        $this->db->from('student');
+        $this->db->join('course', 'student.Course_Code = course.Course_Code', 'left');
+        $this->db->join('department', 'course.Department_Code = department.Department_Code', 'left');
+        $this->db->where('student.Student_ID NOT IN (SELECT sit.Student_ID FROM sit)');
+        $this->db->where('department.College_Code',$_SESSION['college_code']);
         $query = $this->db->get();
         
         return $query->result_array();
