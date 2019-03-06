@@ -10,7 +10,7 @@
 				<div class="search">
           <form class="search-form">
             <!-- <input id="myInput" type="text" name="type_query" placeholder="Search for type number or type" onkeyup="type()"> -->
-            <input id="myInput" type="text" name="search_query" placeholder="Search for type number or type" >
+            <input id="myInput" type="text" name="search_query" placeholder="Search for Faculty Name or Student Name or ID Number" >
             <!-- <input id="myInput" type="text" name="type_query" placeholder="Search for type number or type"> -->
             <input type="submit" value="Search">
           </form>

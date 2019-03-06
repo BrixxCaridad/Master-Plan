@@ -38,7 +38,9 @@
               <th>COMPANY ADDRESS</th>
               <th>COMPANY CODE</th>
               <th>TYPE</th>
+							<?php if($_SESSION['account_type']=='IRJP'):?>
               <th colspan="2">ACTION</th>
+							<?php endif;?>
             </tr>
           </thead>
           <tbody>
@@ -53,9 +55,10 @@
             	<td><?php echo $row->Company_Address; ?> </td>
             	<td><?php echo $row->Company_Code; ?> </td>
             	<td><?php echo $row->Type; ?> </td>
-            	<td><button type='button' id='<?php echo $row->Company_Code; ?>' name="<?php echo $row->Company_Name; ?>" class='btn btn-danger center-block delete'><span class='fa fa-trash'></span></button></td>
-            	<td><button type='button' id='<?php echo $row->Company_Code; ?>' name="<?php echo $row->Company_Name; ?>" class='btn btn-warning center-block edit' data-toggle="modal" data-target="#add_company"><span class='fa fa-edit'></span></button></td>
-          	</tr>
+							<?php if($_SESSION['account_type']=='IRJP'):?>
+								<td><button type='button' id='<?php echo $row->Company_Code; ?>' name="<?php echo $row->Company_Name; ?>" class='btn btn-danger center-block delete'><span class='fa fa-trash'></span></button></td>
+								<td><button type='button' id='<?php echo $row->Company_Code; ?>' name="<?php echo $row->Company_Name; ?>" class='btn btn-warning center-block edit' data-toggle="modal" data-target="#add_company"><span class='fa fa-edit'></span></button></td>
+							<?php endif;?>
         		<?php }} else {?>
         		<tr>
         			<td colspan="3"> No Data Found</td>
