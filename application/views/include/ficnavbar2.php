@@ -1,6 +1,6 @@
 <div class="s-layout__sidebar">
   <div class="s-sidebar__trigger fic-trigger" style="cursor:pointer">
-		 <i class="fa fa-bars"></i>	
+		 <i class="fa fa-bars"></i>
 		 <img src="<?php echo base_url('assets/img/sita2reverse.png')?>" alt="TUP Logo" style="height:50px;">
 </div>
 
@@ -13,7 +13,7 @@
 					<a class="s-sidebar__nav-link profile-link">
 					<div class="profile-link-div">
 						<div class="profile-img">
-							<img class="img-responsive img-circle large-avatar" src="<?php echo base_url('assets/img/default.png')?>" alt="Meredith Grey" width="50%" height="50%" style="border-radius: 50%"> 
+							<img class="img-responsive img-circle large-avatar" src="<?php echo base_url('assets/img/default.png')?>" alt="Meredith Grey" width="50%" height="50%" style="border-radius: 50%">
 						</div>
 						<div class="profile-info">
 							<p class="no-margin"><?php echo $_SESSION['account_name']; ?></p>
@@ -27,26 +27,41 @@
 					</div>
 					</a>
         </li>
+
 				<li>
 				<a href="<?php echo base_url();?>fic" class="s-sidebar__nav-link">
               <i class="fa fa-dashboard"></i><em>Dashboard</em>
           </a>
         </li>
         <li>
-				<a href="<?php echo base_url();?>ficdepinfo" class="s-sidebar__nav-link">
-             <i class="fa fa-building"></i><em>Deployments</em>
-           </a>
+          <a href="<?php echo base_url();?>irjp_companies" class="s-sidebar__nav-link">
+            <i class="fa fa-briefcase"></i><em>Companies</em>
+          </a>
         </li>
-        <li>
-					<a href="<?php echo base_url();?>ficemailcon" class="s-sidebar__nav-link">
-              <i class="fa fa-copy"></i><em>Requirements <?=($menu!=0?'<span class="badge">'.$menu.'</span>':'')?></em>
-           </a>
-				</li>
-				<li>
-				<a href="<?php echo base_url();?>ficgpscon" class="s-sidebar__nav-link">
+        <?php if($_SESSION['access_level'] == 'IRJP'){?>
+          <li>
+            <a href="<?php echo base_url();?>irjp_fic_visit" class="s-sidebar__nav-link">
+              <i class="fa fa-user"></i><em>Faculty Visit</em>
+            </a>
+          </li>
+        <?php } else{?>
+          <li>
+            <a href="<?php echo base_url();?>ficdepinfo" class="s-sidebar__nav-link">
+              <i class="fa fa-building"></i><em>Deployments</em>
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo base_url();?>ficemailcon" class="s-sidebar__nav-link">
+              <!-- <i class="fa fa-copy"></i><em>Requirements<?=($menu!=0?'<span class="badge">'.$menu.'</span>':'')?></em> -->
+              <i class="fa fa-copy"></i><em>Requirements</em>
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo base_url();?>ficgpscon" class="s-sidebar__nav-link">
               <i class="fa fa-briefcase"></i><em>Companies</em>
-           </a>
-				</li>
+            </a>
+          </li>
+        <?php }?>
 				<li>
 				<a href="<?php echo base_url();?>ficaccountcon" class="s-sidebar__nav-link">
               <i class="fa fa-gear"></i><em>Account Settings</em>
@@ -57,14 +72,14 @@
               <i class="fa fa-sign-out"></i><em>Logout</em>
            </a>
 				</li>
-				
+
      </ul>
   </nav>
 </div>
 
 <style type="text/css">
   a.disabled {
-    cursor: not-allowed; 
+    cursor: not-allowed;
     pointer-events: none;
   }
 </style>
