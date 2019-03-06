@@ -317,3 +317,75 @@ div.panel {
 .text-gray{
 	color:gray;
 }
+
+.fic-snav{
+	background-color: #108496 !important;
+}
+.fic-brand{
+	background-color: #0d4f58 !important;
+}
+.fic-trigger{
+	background-color: #0d4f58 !important;
+}
+.fic-dash{
+	background-color: #d7f1f5 !important;
+}
+.fic-dash > h4{
+	color: #0a393f !important;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 200;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+.close-mod-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0 20px;
+    height: 50px;
+}
+/* .modal-dialog {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    top: 50px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    margin-bottom: 2em;
+    height: auto;
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px 30px !important;
+} */
+
+.my-textarea, .my-textarea:focus{
+	border: 1px solid lightgray;
+	padding: 3px 5px;
+	font-size: 12px;
+	width: 100%;
+	resize: none;
+}
+.my-textarea::placeholder{
+	color: gray;
+}
+/* 
+.modal-backdrop .fade .in {
+	display: none !important;
+	z-index: 100 !important;
+} */
