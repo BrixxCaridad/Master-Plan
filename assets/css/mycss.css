@@ -239,11 +239,13 @@
   .no-lh{
 	line-height: 1.3 !important;
   }
-
+  .txt-bold{
+	  font-weight: bold;
+  }
 
 
   .upload-toggle {
-    background-color: #eee;
+    background-color:#efefef;
     color: #444;
     cursor: pointer;
     padding: 10px;
@@ -260,20 +262,20 @@
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .upload-toggle.active, .upload-toggle:hover, .upload-toggle.active, .upload-toggle:hover {
-    border-left: 4px solid #e43c3c;
+    border-left: 4px solid #706d6d;
     /* color: white; */
 }
-.upload-toggle:after,.upload-toggle:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
-    font-size: 13px;
+/* .upload-toggle:after,.upload-toggle:after { */
+    /* content: '&#xf078'; Unicode character for "plus" sign (+) */
+    /* font-size: 13px;
     color: #777;
     float: right;
     margin-left: 5px;
-}
+} */
 
-.upload-toggle.active:after , .upload-toggle.active:after{
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
-}
+/* .upload-toggle.active:after , .upload-toggle.active:after{ */
+    /* content: "\2796"; Unicode character for "minus" sign (-) */
+/* } */
 
 /* Style the accordion panel. Note: hidden by default */
 div.panel {
@@ -373,7 +375,12 @@ div.panel {
     border-radius: 5px;
     padding: 15px 30px !important;
 } */
-
+.small-text{
+	font-size: 12px;
+}
+.text-gray{
+	color: rgb(163, 163, 163);
+}
 .my-textarea, .my-textarea:focus{
 	border: 1px solid lightgray;
 	padding: 3px 5px;
