@@ -77,22 +77,22 @@
 
 		 <!-- Modal content-->
 		 <div class="modal-content">
-			 <div class="modal-header" id="default_header">
-				 <h4 class="modal-title_add">Add New Type</h4>
+			 <div class="modal-header bg-dark" id="default_header">
+				 <h4 class="modal-title_add text-white">Add New Type</h4>
 				 <!-- <h4 class="modal-title_edit" hidden>Edit Type</h4> -->
-				 <button type="button" class="close" data-dismiss="modal">&times;</button>
+				 <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
 			 </div>
 			 <div class="modal-body" id="default_body">
 				 <div class="row">
-						 <div class="col-lg-12">
+						 <div class="col-md-12">
 							 <div class="form-group">
-									 <label>Type No</label> &nbsp;&nbsp;
+									 <p>Type No</p>
 									 <input class="form-control" id="type_no" name="type_no" type="text" autofocus readonly>
 							 </div>
 						 </div>
-						 <div class="col-lg-12">
+						 <div class="col-md-12">
 							 <div class="form-group">
-									 <label>Type</label> &nbsp;&nbsp;
+									 <p>Type</p>
 									 <input class="form-control" id="type" name="type" type="text" autofocus>
 							 </div>
 						 </div>

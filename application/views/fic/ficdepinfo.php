@@ -111,14 +111,14 @@
   
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
+  <div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog" style="">
     
       <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
+      <div class="modal-content" style="width:700px;">
+        <div class="modal-header bg-dark">
 			
-          <h4 class="modal-title">Deployment Info</h4>
+          <h4 class="modal-title text-white">Deployment Info</h4>
         </div>
         <div class="modal-body">
          <form method="post" id="insert_form">
@@ -129,56 +129,47 @@
 				
 				foreach ($display_dep->result() as $row)
 				{?>
-                          <label>Company Name</label> &nbsp;&nbsp;
+                          <p class="mt-4">Company Name</p>
                           <!-- <label class="error" id="error_name"> field is required.</label>
                           <label class="error" id="error_name2"> industry already exists.</label> -->
-                          <input disabled class="form-control" placeholder="<?php echo $row->Company_Name; ?>" id="comp_name" name="comp_name" type="text" autofocus>
-						<br>
+                          <input disabled class="form-control" placeholder="<?php echo $row->Company_Name; ?>" id="comp_name" name="comp_name" type="text" autofocus>					
                      
                 
                
-                          <label>Supervisor</label> &nbsp;&nbsp;
+                          <p class="mt-4">Supervisor</p>
                           <!-- <label class="error" id="error_name"> field is required.</label>
                           <label class="error" id="error_name2"> industry already exists.</label> -->
                           <input disabled class="form-control" placeholder="<?php echo $row->Faculty_Lastname; ?>" id="supervisor" name="supervisor" type="text" >
-						<br>
                 
-                          <label>Date Deployed</label> &nbsp;&nbsp;
+                          <p class="mt-4">Date Deployed</p>
                           <!-- <label class="error" id="error_name"> field is required.</label>
                           <label class="error" id="error_name2"> industry already exists.</label> -->
                           <input disabled class="form-control" placeholder="<?php echo $row->Date_Deployed; ?>" id="date_dep" name="date_dep" type="text" >
-                      <br>
-					  <label>End of Training</label> &nbsp;&nbsp;
+					  <p class="mt-4">End of Training</p>
                           <!-- <label class="error" id="error_name"> field is required.</label>
                           <label class="error" id="error_name2"> industry already exists.</label> -->
                           <input disabled class="form-control" placeholder="<?php echo $row->Date_Ending; ?>" id="end_train" name="end_train" type="text" >
-                      <br>
 					  
-					  <label>Required Hours</label> &nbsp;&nbsp;
+					  <p class="mt-4">Required Hours</p>
                           <!-- <label class="error" id="error_name"> field is required.</label>
                           <label class="error" id="error_name2"> industry already exists.</label> -->
                           <input disabled class="form-control" placeholder="<?php echo (int)$row->Rendered_Hours+(int)$row->Remaining_Hours; ?>" id="req_hrs" name="req_hrs" type="text" >
-                      <br>
-					   <label>Rendered Hours</label> &nbsp;&nbsp;
+					   <p class="mt-4">Rendered Hours</p>
                           <!-- <label class="error" id="error_name"> field is required.</label>
                           <label class="error" id="error_name2"> industry already exists.</label> -->
                           <input disabled class="form-control" placeholder="<?php echo $row->Rendered_Hours; ?>" id="rend_hrs" name="rend_hrs" type="text" >
-                      <br>
-					   <label>Remaining Hours</label> &nbsp;&nbsp;
+					   <p class="mt-4">Remaining Hours</p>
                           <!-- <label class="error" id="error_name"> field is required.</label>
                           <label class="error" id="error_name2"> industry already exists.</label> -->
                           <input disabled class="form-control" placeholder="<?php echo $row->Remaining_Hours; ?>" id="remain_hrs" name="remain_hrs" type="text" >
-                      <br>
-					   <label>On-site Visitation</label> &nbsp;&nbsp;
+					   <p class="mt-4">On-site Visitation</p>
                           <!-- <label class="error" id="error_name"> field is required.</label>
                           <label class="error" id="error_name2"> industry already exists.</label> -->
                           <input disabled class="form-control" placeholder="<?php echo $row->Visit_Date; ?>" id="date_visit" name="date_visit" type="text" >
-                      <br>
-					   <label>Status of SIT</label> &nbsp;&nbsp;
+					   <p class="mt-4">Status of SIT</p>
                           <!-- <label class="error" id="error_name"> field is required.</label>
                           <label class="error" id="error_name2"> industry already exists.</label> -->
                           <input disabled class="form-control" placeholder="<?php echo $row->Status; ?>" id="status" name="status" type="text" >
-                      <br>
 				<?php }
 
 		   }				?>
