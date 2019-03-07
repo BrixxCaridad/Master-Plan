@@ -78,48 +78,48 @@
 
 <!-- Modal -->
  <div class="modal fade" id="add_company" role="dialog">
-	 <div class="modal-dialog">
+	 <div class="modal-dialog" style="top:50px">
 
 		 <!-- Modal content-->
-		 <div class="modal-content">
-			 <div class="modal-header" id="default_header">
-				 <h4 class="modal-title_add">Add New Company</h4>
+		 <div class="modal-content" style="width:700px;">
+			 <div class="modal-header bg-dark" id="default_header">
+				 <h4 class="modal-title_add text-white">Add New Company</h4>
 				 <!-- <h4 class="modal-title_edit" hidden>Edit Company</h4> -->
-				 <button type="button" class="close" data-dismiss="modal">&times;</button>
+				 <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
 			 </div>
 			 <div class="modal-body" id="default_body">
 				 <div class="row">
 						 <div class="col-lg-12">
 							 <div class="form-group">
 								 <!-- <?=form_open('fic/add_student' , 'id="StudentAdd"');?> -->
-									 <label>Company Code</label> &nbsp;&nbsp;
+									 <p>Company Code</p>
 									 <input class="form-control" id="company_code" name="company_code" type="text" autofocus>
 							 </div>
 						 </div>
 						 <div class="col-lg-12">
 							 <div class="form-group">
 								 <!-- <?=form_open('fic/add_student' , 'id="StudentAdd"');?> -->
-									 <label>Company Name</label> &nbsp;&nbsp;
+									 <p>Company Name</p>
 									 <input class="form-control" id="company_name" name="company_name" type="text" autofocus>
 							 </div>
 						 </div>
 						 <div class="col-lg-12">
 							 <div class="form-group">
 								 <!-- <?=form_open('fic/add_student' , 'id="StudentAdd"');?> -->
-									 <label>Telephone Number</label> &nbsp;&nbsp;
+									 <p>Telephone Number</p>
 									 <input class="form-control" id="tel_no" name="tel_no" type="text" autofocus>
 							 </div>
 						 </div>
 						 <div class="col-lg-12">
 							 <div class="form-group">
 								 <!-- <?=form_open('fic/add_student' , 'id="StudentAdd"');?> -->
-									 <label>Address</label> &nbsp;&nbsp;
+									 <p>Address</p>
 									 <input class="form-control" id="address" name="address" type="address" autofocus>
 							 </div>
 						 </div>
 							 <div class="col-md-12" >
 							 <!-- <div class="col-md-12" id="type_div"> -->
-								<label>Type<button type="button" class="btn btn-cmaroon btn-md" id="add_type">Add</button></label>
+								<p>Type<button type="button" class="btn btn-cmaroon btn-md" id="add_type">Add</button></p>
 
 								<div class="col-md-12" id="type_div">
 									<!-- <div class='form-group form-row default_select' id="div_select0" ><div class='col-10'>
