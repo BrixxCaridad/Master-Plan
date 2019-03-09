@@ -2,7 +2,8 @@
 
 <div class="main-main-container">
 	<div class="page-title">
-    <h4 class="text-bold"><b><span class="fa fa-briefcase"></span> FACULTY IN CHARGE VISITATION<small></small></b></h4>
+
+    <h4 class="text-bold"><b><a href="<?php echo base_url();?>irjp_fic"><span class="fa fa-user"></span> FACULTY IN CHARGE</a> / <span class="fa fa-users"></span> STUDENTS<small></small></b></h4>
   </div>
 	<div class="container-fluid">
 		<div class="row mt-4">
@@ -36,8 +37,8 @@
           <tbody>
 
            	<?php
-       					if (count($visit) > 0){
-        					foreach ($visit as $row)
+       					if (isset($sit)){
+        					foreach ($sit as $row)
         		{?>
           	<tr>
             	<td><?php echo $row["Sit_No"]; ?> </td>

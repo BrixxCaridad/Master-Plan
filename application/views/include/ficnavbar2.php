@@ -32,7 +32,7 @@
             <a href="<?php echo base_url();?>fic" class="s-sidebar__nav-link">
               <i class="fa fa-dashboard"></i><em>Dashboard</em>
             </a>
-          </li>          
+          </li>
         <?php }?>
         <li>
           <a href="<?php echo base_url();?>irjp_companies" class="s-sidebar__nav-link">
@@ -42,7 +42,12 @@
         <?php if($_SESSION['access_level'] == 'IRJP'){?>
           <li>
             <a href="<?php echo base_url();?>irjp_fic_visit" class="s-sidebar__nav-link">
-              <i class="fa fa-user"></i><em>Faculty Visit</em>
+              <i class="fa fa-users"></i><em>Visitation</em>
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo base_url();?>irjp_fic" class="s-sidebar__nav-link">
+              <i class="fa fa-user"></i><em>Faculty in Charge</em>
             </a>
           </li>
         <?php } else{?>
@@ -56,8 +61,12 @@
                <i class="fa fa-copy"></i><em>Requirements<?=($menu!=0?'<span class="badge">'.$menu.'</span>':'')?></em>
               <i class="fa fa-copy"></i><em>Requirements</em>
             </a>
+<<<<<<< Updated upstream
           </li>
-        
+
+=======
+          </li>
+>>>>>>> Stashed changes
         <?php }?>
 				<li>
 				<a href="<?php echo base_url();?>ficaccountcon" class="s-sidebar__nav-link">

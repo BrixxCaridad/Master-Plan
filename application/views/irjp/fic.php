@@ -2,7 +2,7 @@
 
 <div class="main-main-container">
 	<div class="page-title">
-    <h4 class="text-bold"><b><span class="fa fa-briefcase"></span> FACULTY IN CHARGE VISITATION<small></small></b></h4>
+    <h4 class="text-bold"><b><span class="fa fa-user"></span> FACULTY IN CHARGE<small></small></b></h4>
   </div>
 	<div class="container-fluid">
 		<div class="row mt-4">
@@ -10,7 +10,7 @@
 				<div class="search">
           <form class="search-form">
             <!-- <input id="myInput" type="text" name="type_query" placeholder="Search for type number or type" onkeyup="type()"> -->
-            <input id="myInput" type="text" name="search_query" placeholder="Search for Faculty Name or Student Name or ID Number" >
+            <input id="myInput" type="text" name="search_query" placeholder="Search for Faculty Name" >
             <!-- <input id="myInput" type="text" name="type_query" placeholder="Search for type number or type"> -->
             <input type="submit" value="Search">
           </form>
@@ -23,35 +23,20 @@
         <table class="table  table-hover" id="dataTables-user-list">
           <thead style="background-color: #e4e4e4">
             <tr>
-              <th>SIT NO</th>
-              <!-- <th>STUDENT ID</th> -->
-							<th>FACULTY NAME</th>
-              <th>STUDENT NAME</th>
               <!-- <th>FACULTY ID</th> -->
-              <th>COMPANY</th>
-              <th>VISIT</th>
-              <!-- <th>VIEW</th> -->
+              <th style="text-align:center; font-size: 20px;">FACULTY NAME</th>
             </tr>
           </thead>
           <tbody>
 
            	<?php
-       					if (count($visit) > 0){
-        					foreach ($visit as $row)
+       					if (count($fic) > 0){
+        					foreach ($fic as $row)
         		{?>
-          	<tr>
-            	<td><?php echo $row["Sit_No"]; ?> </td>
-            	<!-- <td><?php echo $row["Student_ID"]; ?> </td> -->
-							<td><?php echo $row["Faculty_Name"]; ?> </td>
-            	<td><?php echo $row["Student_Name"]; ?> </td>
-            	<!-- <td><?php echo $row["Faculty_ID"]; ?> </td> -->
-            	<td><?php echo $row["Company_Name"]; ?> </td>
-							<?php if($row["Visit"] != ''){?>
-								<td><i class="fa fa-check"></i></td>
-							<?php } else{?>
-								<td><i class="fa fa-times"></i></td>
-							<?php }?>
-							<!-- <td><button type='button' id='<?php echo $row["Sit_No"]; ?>' name="<?php echo $row['Sit_No']; ?>" class='btn btn-info center-block view'><span class='fa fa-eye'></span></button></td> -->
+          	<tr style="font-size: 10px;">
+            	<!-- <td><?php echo $row["Faculty_ID"]; ?> </td>            	 -->
+            	<!-- <td style="text-align:center;" href=""><?php echo $row["Faculty_Name"]; ?> </td> -->
+            	<td style="text-align:center;" href=""><a href="<?php echo site_url('irjp_fic/fic_students/'.$row["Faculty_ID"])?>"><?php echo $row["Faculty_Name"]; ?></a></td>;
           	</tr>
         		<?php }} else {?>
         		<tr>
@@ -140,13 +125,8 @@
 		tr = table.getElementsByTagName("tr");
 		for (i = 0; i < tr.length; i++) {
 		td = tr[i].getElementsByTagName("td")[0];
-		td2 = tr[i].getElementsByTagName("td")[1];
-		td3 = tr[i].getElementsByTagName("td")[2];
-		td4 = tr[i].getElementsByTagName("td")[3];
-		td5 = tr[i].getElementsByTagName("td")[4];
-		td6 = tr[i].getElementsByTagName("td")[5];
-			if (td||td2||td3||td4||td5) {
-	      if (td.innerHTML.toUpperCase().indexOf(filter) > -1 || td2.innerHTML.toUpperCase().indexOf(filter) > -1 || td3.innerHTML.toUpperCase().indexOf(filter) > -1 || td4.innerHTML.toUpperCase().indexOf(filter) > -1 || td5.innerHTML.toUpperCase().indexOf(filter) > -1)  {
+			if (td) {
+	      if (td.innerHTML.toUpperCase().indexOf(filter) > -1)  {
 	        tr[i].style.display = "";
 			} else {
 				tr[i].style.display = "none";
