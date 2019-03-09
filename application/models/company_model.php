@@ -85,11 +85,24 @@ class company_model extends CI_Model {
 		$this->db->query("UPDATE type SET Type = '$type' WHERE Type_No = '$type_no'");
 	}
 	function get_all_visit(){
-		$query = $this->db->query("SELECT * FROM sit JOIN faculty JOIN student JOIN company WHERE sit.Faculty_ID = faculty.Faculty_ID AND sit.Student_ID = student.Student_ID AND sit.Company_Code = company.Company_Code");
+		$query = $this->db->query("SELECT * FROM sit JOIN faculty JOIN student JOIN company WHERE sit.Faculty_ID = faculty.Faculty_ID AND sit.Student_ID = student.Student_ID AND sit.Company_Code = company.Company_Code ORDER BY faculty.Faculty_Lastname desc");
 		return $query->result_array();
 	}
 	function search_visit($q){
-		$query = $this->db->query("SELECT * FROM sit JOIN faculty JOIN student JOIN company WHERE (sit.Faculty_ID = faculty.Faculty_ID AND sit.Student_ID = student.Student_ID AND sit.Company_Code = company.Company_Code) AND (sit.Sit_No LIKE '$q%' OR faculty.Faculty_ID LIKE '$q%' OR faculty.Faculty_Lastname LIKE '$q%' OR faculty.Faculty_Firstname LIKE '$q%' OR faculty.Faculty_Middlename LIKE '$q%' OR student.Student_ID LIKE '$q%' OR student.Student_Lastname LIKE '$q%' OR student.Student_Firstname LIKE '$q%' OR student.Visit_Date LIKE '$q%')");
+		$query = $this->db->query("SELECT * FROM sit JOIN faculty JOIN student JOIN company WHERE (sit.Faculty_ID = faculty.Faculty_ID AND sit.Student_ID = student.Student_ID AND sit.Company_Code = company.Company_Code) AND (faculty.Faculty_Lastname LIKE '$q%' OR student.Student_Lastname LIKE '$q%') ORDER BY faculty.Faculty_Lastname desc");
+		// $query = $this->db->query("SELECT * FROM sit JOIN faculty JOIN student JOIN company WHERE (sit.Faculty_ID = faculty.Faculty_ID AND sit.Student_ID = student.Student_ID AND sit.Company_Code = company.Company_Code) AND (sit.Sit_No LIKE '$q%' OR faculty.Faculty_ID LIKE '$q%' OR faculty.Faculty_Lastname LIKE '$q%' OR faculty.Faculty_Firstname LIKE '$q%' OR faculty.Faculty_Middlename LIKE '$q%' OR student.Student_ID LIKE '$q%' OR student.Student_Lastname LIKE '$q%' OR student.Student_Firstname LIKE '$q%' OR student.Visit_Date LIKE '$q%') ORDER BY faculty.Faculty_Lastname desc");
+		return $query->result_array();
+	}
+	function get_all_fic(){
+		$query = $this->db->query("SELECT * FROM faculty JOIN access_level WHERE faculty.Access_Level_Code = access_level.Access_Level_Code AND faculty.Access_Level_Code IN ('PROF')  ORDER BY faculty.Faculty_Lastname desc");
+		return $query->result_array();
+	}
+	function search_fic($q){
+		$query = $this->db->query("SELECT * FROM faculty JOIN access_level WHERE (faculty.Access_Level_Code = access_level.Access_Level_Code AND faculty.Access_Level_Code IN ('PROF')  ORDER BY faculty.Faculty_Lastname desc) AND (faculty.Faculty_ID LIKE '$q%' OR faculty.Faculty_Lastname LIKE '$q%' OR faculty.Faculty_Firstname LIKE '$q%' OR faculty.Faculty_Middlename LIKE '$q%')");
+		return $query->result_array();
+	}
+	function get_fic_student($q){
+		$query = $this->db->query("SELECT * FROM sit JOIN faculty JOIN student JOIN company WHERE sit.Faculty_ID = faculty.Faculty_ID AND sit.Student_ID = student.Student_ID AND sit.Company_Code = company.Company_Code AND faculty.Faculty_ID = '$q'");
 		return $query->result_array();
 	}
 	// public function nature_business()
